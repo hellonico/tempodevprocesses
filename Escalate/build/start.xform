@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/start/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_Message {position : absolute; top : 165px; left : 180px; width : 375px; height : 27px; margin : 0px; padding : 0px;}
+#xforms_cntrl_Message input {width : 321px; height : 19px}
+#xforms_cntrl_Enter_the_message {position : absolute; top : 60px; left : 225px; width : 315px; height : 60px; margin : 0px; padding : 0px;}
+</xhtml:style>
+    <xforms:model schema="start.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <Message xmlns="http://example.com/start/xform"/>
+          <Enter_the_message xmlns="http://example.com/start/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <Message xmlns="http://example.com/start/xform"/>
+          <Enter_the_message xmlns="http://example.com/start/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:Message" value="instance('taskinput')/fe:Message"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:Enter_the_message" value="instance('taskinput')/fe:Enter_the_message"/>
+        </xforms:action>
+      </xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_Message">
+        <xforms:input ref="instance('taskoutput')/fe:Message">
+          <xforms:label>Message:</xforms:label>
+        </xforms:input>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_Enter_the_message">
+        <xforms:output ref="instance('taskoutput')/fe:Enter_the_message">
+          <xforms:label>Enter the message.</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/result/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_Message_Received {position : absolute; top : 135px; left : 105px; width : 435px; height : 27px; margin : 0px; padding : 0px;}
+#xforms_cntrl_Message_Received input {width : 334px; height : 19px}
+#xforms_cntrl_Escalted_Task {position : absolute; top : 60px; left : 135px; width : 390px; height : 30px; margin : 0px; padding : 0px;}
+</xhtml:style>
+    <xforms:model schema="result.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <Message_Received xmlns="http://example.com/result/xform"/>
+          <Escalted_Task xmlns="http://example.com/result/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <Message_Received xmlns="http://example.com/result/xform"/>
+          <Escalted_Task xmlns="http://example.com/result/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:Message_Received" value="instance('taskinput')/fe:Message_Received"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:Escalted_Task" value="instance('taskinput')/fe:Escalted_Task"/>
+        </xforms:action>
+      </xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_Message_Received">
+        <xforms:input ref="instance('taskoutput')/fe:Message_Received">
+          <xforms:label>Message Received:</xforms:label>
+        </xforms:input>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_Escalted_Task">
+        <xforms:output ref="instance('taskoutput')/fe:Escalted_Task">
+          <xforms:label>Escalted Task.</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>

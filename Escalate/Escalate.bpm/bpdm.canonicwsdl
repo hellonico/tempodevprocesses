@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:result1="http://example.com/result/xform/attachments" xmlns:start1="http://example.com/start/xform/attachments" xmlns:result="http://example.com/result/xform" xmlns:start="http://example.com/start/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Escalate="http://thisdiagram/Escalate" xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="5200061" bpdm:canid="_snLKQMjrEd2lqYApHlJ9vw" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="EscalateAndClient" bpdm:poolOneId="_tV870MjrEd2lqYApHlJ9vw" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Escalate" bpdm:poolTwoId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="Escalate_for_Client" portType="Escalate:ForClient" bpdm:thisPoolId="_tV870MjrEd2lqYApHlJ9vw">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="complete" bpdm:canid="_U259kMjsEd2lqYApHlJ9vw._8KqGUsjrEd2lqYApHlJ9vw." bpdm:dataobjectPointer="project:///result.xform.all.wsdl?wsdloperation={http://example.com/result/xform}Process/notifyTaskCompletion">
+          <wsdl:input message="result:notifyTaskCompletionRequest" name="complete" bpdm:canid="_WtfrwMjsEd2lqYApHlJ9vw" bpdm:senderId="_8KqGUsjrEd2lqYApHlJ9vw" bpdm:receiverId="_U259kMjsEd2lqYApHlJ9vw" bpdm:senderName="result-complete" bpdm:receiverName="complete" bpdm:receiverPoolId="_tV870MjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForOperation={http://example.com/result/xform}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest" bpdm:plnkTypeKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:plnkVarKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw"></wsdl:input>
+          <wsdl:output message="result:notifyTaskCompletionResponse" name="completeResponse" bpdm:canid="_XBdJkMjsEd2lqYApHlJ9vw" bpdm:senderId="_U259kMjsEd2lqYApHlJ9vw" bpdm:receiverId="_8KqGUsjrEd2lqYApHlJ9vw" bpdm:senderName="complete" bpdm:receiverName="result-complete" bpdm:receiverPoolId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForOperation={http://example.com/result/xform}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse" bpdm:plnkTypeKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:plnkVarKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="init" bpdm:canid="_7gM0CMjrEd2lqYApHlJ9vw._IYNoQMjsEd2lqYApHlJ9vw." bpdm:dataobjectPointer="project:///start.xform.all.wsdl?wsdloperation={http://example.com/start/xform}Process/initProcess">
+          <wsdl:input message="start:initProcessRequest" name="init" bpdm:canid="_IYXZQMjsEd2lqYApHlJ9vw" bpdm:senderId="_7gM0CMjrEd2lqYApHlJ9vw" bpdm:receiverId="_IYNoQMjsEd2lqYApHlJ9vw" bpdm:senderName="start-init" bpdm:receiverName="init" bpdm:receiverPoolId="_tV870MjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///start.xform.all.wsdl?messageForOperation={http://example.com/start/xform}Process/initProcess/input/initProcessRequest"></wsdl:input>
+          <wsdl:output message="start:initProcessResponse" name="initResponse" bpdm:canid="_JliXAMjsEd2lqYApHlJ9vw" bpdm:senderId="_IYNoQMjsEd2lqYApHlJ9vw" bpdm:receiverId="_7gM0CMjrEd2lqYApHlJ9vw" bpdm:senderName="init" bpdm:receiverName="start-init" bpdm:receiverPoolId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///start.xform.all.wsdl?messageForOperation={http://example.com/start/xform}Process/initProcess/output/initProcessResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+    <pnlk:role name="Client_for_Escalate" portType="Client:ForEscalate" bpdm:thisPoolId="_snxAIMjrEd2lqYApHlJ9vw">
+      <wsdl:portType name="ForEscalate">
+        <wsdl:operation name="result-create" bpdm:canid="_8KqGSMjrEd2lqYApHlJ9vw._LMVVsMjsEd2lqYApHlJ9vw." bpdm:dataobjectPointer="project:///result.xform.all.wsdl?wsdloperationbound={http://example.com/result/xform}WorkflowSoapService/xformPort/createTask">
+          <wsdl:input message="result:createTaskRequest" name="result-create" bpdm:canid="_NTTpQMjsEd2lqYApHlJ9vw" bpdm:senderId="_LMVVsMjsEd2lqYApHlJ9vw" bpdm:receiverId="_8KqGSMjrEd2lqYApHlJ9vw" bpdm:senderName="create" bpdm:receiverName="result-create" bpdm:receiverPoolId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForBoundOperation={http://example.com/result/xform}WorkflowSoapService/xformPort/createTask/input/createTaskRequest" bpdm:plnkTypeKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:plnkVarKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw"></wsdl:input>
+          <wsdl:output message="result:createTaskResponse" name="result-createResponse" bpdm:canid="_OHv98MjsEd2lqYApHlJ9vw" bpdm:senderId="_8KqGSMjrEd2lqYApHlJ9vw" bpdm:receiverId="_LMVVsMjsEd2lqYApHlJ9vw" bpdm:senderName="result-create" bpdm:receiverName="create" bpdm:receiverPoolId="_tV870MjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForBoundOperation={http://example.com/result/xform}WorkflowSoapService/xformPort/createTask/output/createTaskResponse" bpdm:plnkTypeKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:plnkVarKey="WFmagic_8KqGSMjrEd2lqYApHlJ9vw"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="result-escalate" bpdm:canid="_O1yIoMjsEd2lqYApHlJ9vw._Eke3-MjsEd2lqYApHlJ9vw." bpdm:dataobjectPointer="project:///result.xform.all.wsdl?wsdloperationbound={http://example.com/result/xform}WorkflowSoapService/xformPort/escalate">
+          <wsdl:input message="result:escalateRequest" name="result-escalate" bpdm:canid="_UMJJUMjsEd2lqYApHlJ9vw" bpdm:senderId="_O1yIoMjsEd2lqYApHlJ9vw" bpdm:receiverId="_Eke3-MjsEd2lqYApHlJ9vw" bpdm:senderName="escalate" bpdm:receiverName="result-escalate" bpdm:receiverPoolId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForBoundOperation={http://example.com/result/xform}WorkflowSoapService/xformPort/escalate/input/escalateRequest"></wsdl:input>
+          <wsdl:output message="result:escalateResponse" name="result-escalateResponse" bpdm:canid="_UfXAQMjsEd2lqYApHlJ9vw" bpdm:senderId="_Eke3-MjsEd2lqYApHlJ9vw" bpdm:receiverId="_O1yIoMjsEd2lqYApHlJ9vw" bpdm:senderName="result-escalate" bpdm:receiverName="escalate" bpdm:receiverPoolId="_tV870MjrEd2lqYApHlJ9vw" bpdm:dataobjectPointer="project:///result.xform.all.wsdl?messageForBoundOperation={http://example.com/result/xform}WorkflowSoapService/xformPort/escalate/output/escalateResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:canPlkId="_tV870MjrEd2lqYApHlJ9vw-_snxAIMjrEd2lqYApHlJ9vw">
+    <pnlk:role name="Escalate_for_ClientForThePortTypeProcess" portType="result:Process"></pnlk:role>
+    <pnlk:role name="Client_for_EscalateForXformPort" portType="result:Workflow"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="EscalateAndClientForXformPortPlk" bpdm:canPlkId="_tV870MjrEd2lqYApHlJ9vw-_snxAIMjrEd2lqYApHlJ9vw">
+    <pnlk:role name="Client_for_Escalate" portType="result:Workflow"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="EscalateAndClientForPortTypeProcessPlk" bpdm:canPlkId="_tV870MjrEd2lqYApHlJ9vw-_snxAIMjrEd2lqYApHlJ9vw">
+    <pnlk:role name="Escalate_for_Client" portType="start:Process"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

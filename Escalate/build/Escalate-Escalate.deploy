@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:result="http://example.com/result/xform" xmlns:result1="http://example.com/result/xform/attachments" xmlns:diag="http://example.com/Escalate" xmlns:start="http://example.com/start/xform" xmlns:start1="http://example.com/start/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://example.com/Escalate/Escalate" xmlns:Client="http://example.com/Escalate/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Escalate" fileName="Escalate-Escalate.bpel">
+  <dd:property name="PATH">Escalate</dd:property>
+  <dd:property name="SVG">Escalate.svg</dd:property>
+  <dd:provide partnerLink="escalateAndClientForPortTypeProcessPlkVar">
+    <dd:service name="this:EscalateAndClientForPortTypeProcessPlkService" port="Escalate_for_ClientPort"/>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar">
+    <dd:service name="this:WFmagic_8KqGSMjrEd2lqYApHlJ9vwService" port="Escalate_for_ClientForThePortTypeProcessPort"/>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar">
+    <dd:service name="result:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="escalateAndClientForXformPortPlkVar">
+    <dd:service name="result:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+</dd:process>

@@ -1,0 +1,235 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:result1="http://example.com/result/xform/attachments" xmlns:result="http://example.com/result/xform" xmlns:start1="http://example.com/start/xform/attachments" xmlns:start="http://example.com/start/xform" xmlns:this="http://example.com/Escalate/Escalate" xmlns:diag="http://example.com/Escalate" xmlns:Client="http://example.com/Escalate/Client" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Escalate" bpmn:id="_tV870MjrEd2lqYApHlJ9vw" name="Escalate" targetNamespace="http://example.com/Escalate/Escalate">
+  <bpel:import namespace="http://example.com/result/xform" location="result.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/start/xform" location="start.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/Escalate" location="Escalate.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="escalateAndClientForPortTypeProcessPlkVar" partnerLinkType="diag:EscalateAndClientForPortTypeProcessPlk" myRole="Escalate_for_Client"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" partnerLinkType="diag:WFmagic_8KqGSMjrEd2lqYApHlJ9vw" initializePartnerRole="false" myRole="Escalate_for_ClientForThePortTypeProcess" partnerRole="Client_for_EscalateForXformPort"></bpel:partnerLink>
+    <bpel:partnerLink name="escalateAndClientForXformPortPlkVar" partnerLinkType="diag:EscalateAndClientForXformPortPlk" initializePartnerRole="true" partnerRole="Client_for_Escalate"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="startInitProcessRequestMsg" messageType="start:initProcessRequest"></bpel:variable>
+    <bpel:variable name="startInitProcessResponseMsg" messageType="start:initProcessResponse"></bpel:variable>
+    <bpel:variable name="resultCreateTaskRequestMsg" messageType="result:createTaskRequest"></bpel:variable>
+    <bpel:variable name="resultCreateTaskResponseMsg" messageType="result:createTaskResponse"></bpel:variable>
+    <bpel:variable name="resultEscalateRequestMsg" messageType="result:escalateRequest"></bpel:variable>
+    <bpel:variable name="resultEscalateResponseMsg" messageType="result:escalateResponse"></bpel:variable>
+    <bpel:variable name="resultNotifyTaskCompletionRequestMsg" messageType="result:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="resultNotifyTaskCompletionResponseMsg" messageType="result:notifyTaskCompletionResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="escalateAndClientForPortTypeProcessPlkVar" portType="start:Process" operation="initProcess" variable="startInitProcessRequestMsg" createInstance="yes" bpmn:label="init" bpmn:id="_IYNoQMjsEd2lqYApHlJ9vw"></bpel:receive>
+    <bpel:assign name="init-variables-Escalate">
+      <bpel:copy bpmn:label="$startInitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<start:initProcessResponse>
+  <start:status>OK</start:status>
+  <start:errorCode></start:errorCode>
+  <start:errorReason></start:errorReason>
+  <start:taskMetaData>
+    <start:nextTaskId></start:nextTaskId>
+    <start:nextTaskURL></start:nextTaskURL>
+  </start:taskMetaData>
+</start:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$startInitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$resultCreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<result:createTaskRequest>
+  <result:taskMetaData>
+    <result:taskId>_8KqGSMjrEd2lqYApHlJ9vw</result:taskId>
+    <result:taskState></result:taskState>
+    <result:taskType></result:taskType>
+    <result:description>Create Escalate</result:description>
+    <result:processId></result:processId>
+    <result:creationDate></result:creationDate>
+    <result:userOwner>examples/msmith</result:userOwner>
+    <result:roleOwner />
+    <result:claimAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:claimAction>
+    <result:revokeAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:revokeAction>
+    <result:saveAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:saveAction>
+    <result:completeAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:completeAction>
+    <result:formUrl>oxf://Escalate/result.xform</result:formUrl>
+    <result:failureCode></result:failureCode>
+    <result:failureReason></result:failureReason>
+    <result:priority></result:priority>
+    <result:scheduledActions>
+      <result:expiration>
+        <result:until></result:until>
+        <result:for></result:for>
+      </result:expiration>
+      <result:deferActivation>
+        <result:until></result:until>
+        <result:for></result:for>
+      </result:deferActivation>
+    </result:scheduledActions>
+    <result:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>Create Escalate</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </result:attachments>
+    <result:userProcessCompleteSOAPAction>http://example.com/result/xform/Process/notifyTaskCompletion</result:userProcessCompleteSOAPAction>
+    <result:isChainedBefore></result:isChainedBefore>
+    <result:previousTaskId></result:previousTaskId>
+    <result:userProcessEndpoint>http://preprod.adomnes.com:8080/ode/processes/Escalate/Escalate/Escalate/Client/WFmagic_8KqGSMjrEd2lqYApHlJ9vw</result:userProcessEndpoint>
+    <result:userProcessNamespaceURI>http://example.com/result/xform</result:userProcessNamespaceURI>
+  </result:taskMetaData>
+  <result:participantToken></result:participantToken>
+  <result:taskInput>
+    <result:input>
+      <result:Message_Received></result:Message_Received>
+      <result:Escalted_Task></result:Escalted_Task>
+    </result:input>
+  </result:taskInput>
+</result:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$resultEscalateRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<result:escalateRequest>
+  <result:taskId>_Eke3-MjsEd2lqYApHlJ9vw</result:taskId>
+  <result:userOwner>intalio/admin</result:userOwner>
+  <result:roleOwner />
+</result:escalateRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$resultEscalateRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$resultNotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<result:response>
+  <result:isChainedAfter></result:isChainedAfter>
+  <result:taskMetaData>
+    <result:taskId></result:taskId>
+    <result:taskState></result:taskState>
+    <result:taskType></result:taskType>
+    <result:description></result:description>
+    <result:processId></result:processId>
+    <result:creationDate></result:creationDate>
+    <result:userOwner></result:userOwner>
+    <result:roleOwner></result:roleOwner>
+    <result:claimAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:claimAction>
+    <result:revokeAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:revokeAction>
+    <result:saveAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:saveAction>
+    <result:completeAction>
+      <result:user></result:user>
+      <result:role></result:role>
+    </result:completeAction>
+    <result:formUrl></result:formUrl>
+    <result:failureCode></result:failureCode>
+    <result:failureReason></result:failureReason>
+    <result:priority></result:priority>
+    <result:scheduledActions>
+      <result:expiration>
+        <result:until></result:until>
+        <result:for></result:for>
+      </result:expiration>
+      <result:deferActivation>
+        <result:until></result:until>
+        <result:for></result:for>
+      </result:deferActivation>
+    </result:scheduledActions>
+    <result:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </result:attachments>
+    <result:userProcessCompleteSOAPAction></result:userProcessCompleteSOAPAction>
+    <result:isChainedBefore></result:isChainedBefore>
+    <result:previousTaskId></result:previousTaskId>
+    <result:userProcessEndpoint></result:userProcessEndpoint>
+    <result:userProcessNamespaceURI></result:userProcessNamespaceURI>
+  </result:taskMetaData>
+  <result:status>OK</result:status>
+  <result:errorCode></result:errorCode>
+  <result:errorReason></result:errorReason>
+</result:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$resultNotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="escalateAndClientForPortTypeProcessPlkVar" portType="start:Process" operation="initProcess" variable="startInitProcessResponseMsg" bpmn:label="init" bpmn:id="_IYNoQMjsEd2lqYApHlJ9vw"></bpel:reply>
+    <bpel:assign bpmn:label="create" bpmn:id="_LMVVsMjsEd2lqYApHlJ9vw">
+      <bpel:copy>
+        <bpel:from>$startInitProcessRequestMsg.root/start:taskOutput/start:output/start:Message</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskInput/result:input/result:Message_Received</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://preprod.adomnes.com:8080/ode/processes/Escalate/Escalate/Escalate/Client/WFmagic_8KqGSMjrEd2lqYApHlJ9vw"</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskMetaData/result:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://example.com/result/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskMetaData/result:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_8KqGUsjrEd2lqYApHlJ9vw"</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskMetaData/result:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"Create Escalate"</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskMetaData/result:description</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"intalio/admin"</bpel:from>
+        <bpel:to>$resultCreateTaskRequestMsg.root/result:taskMetaData/result:userOwner</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" portType="result:Workflow" operation="createTask" inputVariable="resultCreateTaskRequestMsg" outputVariable="resultCreateTaskResponseMsg" bpmn:label="create" bpmn:id="_LMVVsMjsEd2lqYApHlJ9vw"></bpel:invoke>
+    <bpel:wait bpmn:label="Timer_Intermediate_Event" bpmn:id="_ZN9hYAXJEd60TZCPDAP7QA">
+      <bpel:for>"PT30S"</bpel:for>
+    </bpel:wait>
+    <bpel:assign bpmn:label="escalate" bpmn:id="_O1yIoMjsEd2lqYApHlJ9vw">
+      <bpel:copy>
+        <bpel:from>$resultCreateTaskResponseMsg.root/result:taskMetaData/result:taskId</bpel:from>
+        <bpel:to>$resultEscalateRequestMsg.root/result:taskId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="escalateAndClientForXformPortPlkVar" portType="result:Workflow" operation="escalate" inputVariable="resultEscalateRequestMsg" outputVariable="resultEscalateResponseMsg" bpmn:label="escalate" bpmn:id="_O1yIoMjsEd2lqYApHlJ9vw"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" portType="result:Process" operation="notifyTaskCompletion" variable="resultNotifyTaskCompletionRequestMsg" bpmn:label="complete" bpmn:id="_U259kMjsEd2lqYApHlJ9vw"></bpel:receive>
+    <bpel:reply partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" portType="result:Process" operation="notifyTaskCompletion" variable="resultNotifyTaskCompletionResponseMsg" bpmn:label="complete" bpmn:id="_U259kMjsEd2lqYApHlJ9vw"></bpel:reply>
+  </bpel:sequence>
+</bpel:process>

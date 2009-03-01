@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fe="http://example.com/result/xform"
+    xmlns:xform="http://example.com/result/xform"
+    targetNamespace="http://example.com/result/xform" elementFormDefault="qualified">
+    <xs:element name="output">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Message_Received" type="xs:string"/>
+                <xs:element name="Escalted_Task" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="taskId" type="xs:string"/>
+            <xs:attribute name="participantToken" type="xs:string"/>
+            <xs:attribute name="user" type="xs:string"/>
+            <xs:attribute name="formUrl" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="input">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Message_Received" type="xs:string"/>
+                <xs:element name="Escalted_Task" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

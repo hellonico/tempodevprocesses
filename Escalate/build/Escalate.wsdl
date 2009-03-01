@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:result="http://example.com/result/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:start1="http://example.com/start/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:result1="http://example.com/result/xform/attachments" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://example.com/Escalate" xmlns:start="http://example.com/start/xform" xmlns:Escalate="http://example.com/Escalate/Escalate" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:Client="http://example.com/Escalate/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://example.com/Escalate">
+    <wsdl:import namespace="http://example.com/result/xform" location="result.xform.all.wsdl"/>
+    <wsdl:import namespace="http://example.com/start/xform" location="start.xform.all.wsdl"/>
+    <pnlk:partnerLinkType name="WFmagic_8KqGSMjrEd2lqYApHlJ9vw">
+        <pnlk:role name="Escalate_for_ClientForThePortTypeProcess" portType="result:Process"/>
+        <pnlk:role name="Client_for_EscalateForXformPort" portType="result:Workflow"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="EscalateAndClientForXformPortPlk">
+        <pnlk:role name="Client_for_Escalate" portType="result:Workflow"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="EscalateAndClientForPortTypeProcessPlk">
+        <pnlk:role name="Escalate_for_Client" portType="start:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

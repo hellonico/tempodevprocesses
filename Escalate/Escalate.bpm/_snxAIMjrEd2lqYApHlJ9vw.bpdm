@@ -1,0 +1,79 @@
+﻿<bpel:process xmlns:result="http://example.com/result/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:start1="http://example.com/start/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:result1="http://example.com/result/xform/attachments" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://thisdiagram" xmlns:start="http://example.com/start/xform" xmlns:Escalate="http://thisdiagram/Escalate" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://thisdiagram/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://thisdiagram/Client">
+    <bpdm:dependencies version="5200061">
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/result/xform/attachments" bpdm:prefix="result1" bpdm:comment="contrib=&apos;project:///result.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/start/xform/attachments" bpdm:prefix="start1" bpdm:comment="contrib=&apos;project:///start.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/result/xform" bpdm:prefix="result" bpdm:comment="contrib=&apos;project:///result.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/start/xform" bpdm:prefix="start" bpdm:comment="contrib=&apos;project:///start.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Escalate" bpdm:prefix="Escalate" bpdm:comment="contrib=&apos;partner-pool:///_tV870MjrEd2lqYApHlJ9vw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_tV870MjrEd2lqYApHlJ9vw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_tV870MjrEd2lqYApHlJ9vw" bpdm:label="Escalate"/>
+        <bpdm:namespaceContributor bpdm:url="project:///start.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///start.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///result.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///result.xform.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope name="Client_snxAIMjrEd2lqYApHlJ9vw" bpdm:label="Client" bpdm:ID="_snxAIMjrEd2lqYApHlJ9vw">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="escalateAndClientForPortTypeProcessPlkVar" partnerLinkType="diag:EscalateAndClientForPortTypeProcessPlk" initializePartnerRole="true" partnerRole="Escalate_for_Client" bpdm:invokedService="Escalate:EscalateAndClientForPortTypeProcessPlkService" bpdm:invokedPort="Escalate_for_ClientPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Escalate/Client/EscalateAndClientForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_snxAIMjrEd2lqYApHlJ9vw:_7gM0CMjrEd2lqYApHlJ9vw" bpdm:isManaged="true" bpdm:otherPoolId="_tV870MjrEd2lqYApHlJ9vw"/>
+            <bpel:partnerLink name="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" partnerLinkType="diag:WFmagic_8KqGSMjrEd2lqYApHlJ9vw" initializePartnerRole="false" myRole="Client_for_EscalateForXformPort" bpdm:providedService="result:WorkflowSoapService" bpdm:providedPort="xformPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:providedIsDefault="true" partnerRole="Escalate_for_ClientForThePortTypeProcess" bpdm:invokedService="Escalate:WFmagic_8KqGSMjrEd2lqYApHlJ9vwService" bpdm:invokedPort="Escalate_for_ClientForThePortTypeProcessPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Escalate/Client/WFmagic_8KqGSMjrEd2lqYApHlJ9vw" bpdm:invokedIsDefault="true" bpdm:clientTasks="_snxAIMjrEd2lqYApHlJ9vw:_8KqGSMjrEd2lqYApHlJ9vw, _snxAIMjrEd2lqYApHlJ9vw:_8KqGUsjrEd2lqYApHlJ9vw" bpdm:isManaged="true" bpdm:otherPoolId="_tV870MjrEd2lqYApHlJ9vw"/>
+            <bpel:partnerLink name="escalateAndClientForXformPortPlkVar" partnerLinkType="diag:EscalateAndClientForXformPortPlk" myRole="Client_for_Escalate" bpdm:providedService="result:WorkflowSoapService" bpdm:providedPort="xformPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:providedIsDefault="true" bpdm:clientTasks="_snxAIMjrEd2lqYApHlJ9vw:_Eke3-MjsEd2lqYApHlJ9vw" bpdm:isManaged="true" bpdm:otherPoolId="_tV870MjrEd2lqYApHlJ9vw"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="startInitProcessRequestMsg" messageType="start:initProcessRequest" bpdm:id="_IY9PIMjsEd2lqYApHlJ9vw" bpdm:messageIds=" out:_IYXZQMjsEd2lqYApHlJ9vw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="start:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="startInitProcessResponseMsg" messageType="start:initProcessResponse" bpdm:id="_JmIM6MjsEd2lqYApHlJ9vw" bpdm:messageIds="inc:_JliXAMjsEd2lqYApHlJ9vw"/>
+            <bpel:variable name="resultCreateTaskRequestMsg" messageType="result:createTaskRequest" binding="result:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_NT6GNcjsEd2lqYApHlJ9vw" bpdm:messageIds="inc:_NTTpQMjsEd2lqYApHlJ9vw"/>
+            <bpel:variable name="resultCreateTaskResponseMsg" messageType="result:createTaskResponse" binding="result:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_OIMp4MjsEd2lqYApHlJ9vw" bpdm:messageIds=" out:_OHv98MjsEd2lqYApHlJ9vw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="result:createTaskResponse" bpdm:linkedPart="root" bpdm:binding="result:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="resultEscalateRequestMsg" messageType="result:escalateRequest" binding="result:WorkflowSoapBinding" operation="escalate" opMsgType="0" bpdm:id="_UM4wN8jsEd2lqYApHlJ9vw" bpdm:messageIds="inc:_UMJJUMjsEd2lqYApHlJ9vw"/>
+            <bpel:variable name="resultEscalateResponseMsg" messageType="result:escalateResponse" binding="result:WorkflowSoapBinding" operation="escalate" opMsgType="1" bpdm:id="_UfzsMMjsEd2lqYApHlJ9vw" bpdm:messageIds=" out:_UfXAQMjsEd2lqYApHlJ9vw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="result:escalateResponse" bpdm:linkedPart="root" bpdm:binding="result:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="escalate"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="resultNotifyTaskCompletionRequestMsg" messageType="result:notifyTaskCompletionRequest" bpdm:id="_Wt8XsMjsEd2lqYApHlJ9vw" bpdm:messageIds=" out:_WtfrwMjsEd2lqYApHlJ9vw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="result:notifyTaskCompletionRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="resultNotifyTaskCompletionResponseMsg" messageType="result:notifyTaskCompletionResponse" bpdm:id="_XCfrZ8jsEd2lqYApHlJ9vw" bpdm:messageIds="inc:_XBdJkMjsEd2lqYApHlJ9vw"/>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="escalate" partnerLink="escalateAndClientForXformPortPlkVar" portType="result:Workflow" isMyRole="true" bpdm:label="result-escalate" bpdm:ID="_Eke3-MjsEd2lqYApHlJ9vw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="resultEscalateRequestMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:escalateRequest" bpdm:binding="result:WorkflowSoapBinding" bpdm:ID="_UMJJUMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="resultEscalateResponseMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:escalateResponse" bpdm:binding="result:WorkflowSoapBinding" bpdm:ID="_UfXAQMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" portType="result:Workflow" isMyRole="true" bpdm:label="result-create" bpdm:ID="_8KqGSMjrEd2lqYApHlJ9vw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="resultCreateTaskRequestMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:createTaskRequest" bpdm:binding="result:WorkflowSoapBinding" bpdm:ID="_NTTpQMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="resultCreateTaskResponseMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:createTaskResponse" bpdm:binding="result:WorkflowSoapBinding" bpdm:ID="_OHv98MjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_8KqGSMjrEd2lqYApHlJ9vwPlkVar" portType="result:Process" isMyRole="false" bpdm:label="result-complete" bpdm:ID="_8KqGUsjrEd2lqYApHlJ9vw">
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="resultNotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:notifyTaskCompletionRequest" bpdm:ID="_WtfrwMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="resultNotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="result:notifyTaskCompletionResponse" bpdm:ID="_XBdJkMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="initProcess" partnerLink="escalateAndClientForPortTypeProcessPlkVar" portType="start:Process" isMyRole="false" bpdm:label="start-init" bpdm:ID="_7gM0CMjrEd2lqYApHlJ9vw">
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="startInitProcessRequestMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="start:initProcessRequest" bpdm:ID="_IYXZQMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="startInitProcessResponseMsg" bpdm:msgVarScopeId="_snxAIMjrEd2lqYApHlJ9vw" bpdm:variableIsManaged="true" bpdm:messageType="start:initProcessResponse" bpdm:ID="_JliXAMjsEd2lqYApHlJ9vw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>
