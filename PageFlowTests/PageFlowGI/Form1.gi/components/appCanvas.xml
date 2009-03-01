@@ -1,0 +1,36 @@
+<serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.6">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="1"/>
+    <strings jsxheight="100%" jsxwidth="100%" jsxname="root"/>
+    <object type="jsx3.gui.Block">
+      <variants/>
+      <strings jsxwidth="100%" jsxpadding="5 10 0 10" jsxname="header" jsxrelativeposition="1"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1"/>
+        <strings jsxwidth="100%" jsxname="title" jsxclassname="form-title" jsxtext="Form 1"/>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxrelativeposition="1"/>
+        <strings jsxwidth="100%" jsxname="required-note" jsxtext="&lt;strong&gt;Note:&lt;/strong&gt; Required fields are marked with an asterisk (&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;)."/>
+      </object>
+    </object>
+    <object type="com.intalio.ria.Section">
+      <variants/>
+      <strings riaTitleText="[Fields]" jsxname="fieldset"/>
+      <object type="com.intalio.ria.Field">
+        <variants/>
+        <strings jsxname="inName" riaLabelText="Your name ?" riaHelpImageSrc="images/help.gif" riaErrorImageSrc="images/error.gif" riaCssClass="field"/>
+        <object type="jsx3.gui.TextBox">
+          <variants/>
+          <strings jsxname="textbox" jsxmargin="0 4 0 0"/>
+          <events jsxfocus="com.intalio.ria.setCssValue(this, &quot;backgroundColor&quot;, &quot;#FFC&quot;);" jsxblur="com.intalio.ria.setCssValue(this, &quot;backgroundColor&quot;, &quot;&quot;);" jsxchange="this.getParent().validate(this, objEVENT);" jsxincchange="this.getParent().validate(this, objEVENT);"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:User="http://bproc.it/TestProcess/User" xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:Form21="http://bproc.it/Form2/xform" xmlns:diag="http://bproc.it/TestProcess" xmlns:Form1="http://bproc.it/Form1/xform/attachments" xmlns:Start="http://bproc.it/TestProcess/Start" xmlns:Form11="http://bproc.it/Form1/xform" xmlns:Form2="http://bproc.it/Form2/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://bproc.it/TestProcess/PageFlowProcess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:PageFlowProcess" fileName="TestProcess-PageFlowProcess.bpel">
+  <dd:property name="PATH">TestProcess</dd:property>
+  <dd:property name="SVG">TestProcess.svg</dd:property>
+  <dd:provide partnerLink="pageFlowProcessAndStartPlkVar">
+    <dd:service name="this:CanonicServiceForStart" port="canonicPort"></dd:service>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar">
+    <dd:service name="this:WFmagic_b38JoP6dEd2JT7-kaC3HUQService" port="PageFlowProcess_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar">
+    <dd:service name="Form11:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+  <dd:provide partnerLink="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar">
+    <dd:service name="this:WFmagic_hLqGAv6dEd2JT7-kaC3HUQService" port="PageFlowProcess_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar">
+    <dd:service name="Form21:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+</dd:process>

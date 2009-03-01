@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://bproc.it/TestProcess" xmlns:PageFlowProcess="http://bproc.it/TestProcess/PageFlowProcess" xmlns:Form21="http://www.intalio.com/gi/Form2.gi" xmlns:User="http://bproc.it/TestProcess/User" xmlns:pptypes="http://www.bproc.it/pptypes" xmlns:attachments="http://www.intalio.com/gi/Form1.gi/attachments" xmlns:Form1="http://www.intalio.com/gi/Form1.gi" xmlns:Form2="http://www.intalio.com/gi/Form2.gi/attachments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://bproc.it/TestProcess">
+    <wsdl:import namespace="http://bproc.it/TestProcess/PageFlowProcess" location="TestProcess-PageFlowProcess.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/Form1.gi" location="Form1.gi.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/Form2.gi" location="Form2.gi.wsdl"/>
+    <pnlk:partnerLinkType name="PageFlowProcessAndStart">
+        <pnlk:role name="PageFlowProcess_for_Start" portType="PageFlowProcess:ForStart"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_FJ9EoP8zEd2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForForm1Port" portType="Form1:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="Form1:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_MeGLMP80Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForForm2Port" portType="Form21:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="Form21:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

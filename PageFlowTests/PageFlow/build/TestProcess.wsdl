@@ -1,0 +1,32 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://bproc.it/TestProcess" xmlns:PageFlowProcess="http://bproc.it/TestProcess/PageFlowProcess" xmlns:DataReport="http://bproc.it/DataReport/xform/attachments" xmlns:User="http://bproc.it/TestProcess/User" xmlns:GI2GI="http://www.intalio.com/gi/GI2GI.gi/attachments" xmlns:GI2GI1="http://www.intalio.com/gi/GI2GI.gi" xmlns:DataReport1="http://bproc.it/DataReport/xform" xmlns:XForm2GI1="http://bproc.it/XForm2GI/xform" xmlns:XForm2XForm1="http://bproc.it/XForm2XForm/xform" xmlns:GI2XForm="http://www.intalio.com/gi/GI2XForm.gi" xmlns:attachments="http://www.intalio.com/gi/GI2XForm.gi/attachments" xmlns:XForm2GI="http://bproc.it/XForm2GI/xform/attachments" xmlns:XForm2XForm="http://bproc.it/XForm2XForm/xform/attachments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://bproc.it/TestProcess">
+    <wsdl:import namespace="http://bproc.it/DataReport/xform" location="DataReport.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/XForm2GI/xform" location="XForm2GI.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/XForm2XForm/xform" location="XForm2XForm.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/TestProcess/PageFlowProcess" location="TestProcess-PageFlowProcess.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/GI2GI.gi" location="GI2GI.gi.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/gi/GI2XForm.gi" location="GI2XForm.gi.wsdl"/>
+    <pnlk:partnerLinkType name="PageFlowProcessAndStart">
+        <pnlk:role name="PageFlowProcess_for_Start" portType="PageFlowProcess:ForStart"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_AStvQP87Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForGI2XFormPort" portType="GI2XForm:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="GI2XForm:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_qD7G8P88Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForXformPort" portType="DataReport1:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="DataReport1:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_v8iLAP86Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForGI2GIPort" portType="GI2GI1:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="GI2GI1:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_8UnXcv85Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForXformPort" portType="XForm2GI1:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="XForm2GI1:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_0gDkEP87Ed2-HaamsDD9_Q">
+        <pnlk:role name="User_for_PageFlowProcessForXformPort" portType="XForm2XForm1:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="XForm2XForm1:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

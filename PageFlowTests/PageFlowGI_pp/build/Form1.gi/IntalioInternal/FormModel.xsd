@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:us="http://www.intalio.com/UserSchema" xmlns:Form1="http://www.intalio.com/gi/Form1.gi" targetNamespace="http://www.intalio.com/gi/Form1.gi" elementFormDefault="unqualified">
+  <xs:element name="FormModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="inName">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="textbox" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

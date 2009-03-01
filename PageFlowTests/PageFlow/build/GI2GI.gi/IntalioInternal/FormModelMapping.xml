@@ -1,0 +1,52 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<data jsxid="jsxroot" jsxnamespace="jsx3.ide.mapper.Mapper" jsxversion="1.0">
+  <record jsxid="mi_1" jxstext="Operation (Transaction)" type="T" jsxopen="1" opname="jsxtransaction">
+    <headers jsxid="mi_2">
+      <record jsxid="mi_3" name="Content-Type" value="text/xml" />
+    </headers>
+    <record jsxid="mi_4" jsxtext="Input (request)" type="I" jsxopen="1" src="../../../../GI2GI.gi/IntalioInternal/FormModel.xsd">
+      <record jsxid="mi_5" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/GI2GI.gi">
+        <record jsxid="mi_6" jsxtext="helloMsg" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='helloMsg']">
+          <restrictions>
+            <record jsxid="mi_7" minoccur="0" />
+          </restrictions>
+          <mappings jsxid="mi_8">
+            <record jsxid="mi_9" name="DOM" value="helloMsg" />
+          </mappings>
+        </record>
+        <record jsxid="mi_10" jsxtext="inJob" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='inJob']">
+          <record jsxid="mi_11" jsxtext="textbox" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='textbox']">
+            <restrictions>
+              <record jsxid="mi_12" minoccur="0" />
+            </restrictions>
+            <mappings jsxid="mi_13">
+              <record jsxid="mi_14" name="DOM" value="textbox" />
+            </mappings>
+          </record>
+        </record>
+      </record>
+    </record>
+    <record jsxid="mi_15" jsxtext="Output (response)" type="O" jsxopen="1" src="../../../../GI2GI.gi/IntalioInternal/FormModel.xsd">
+      <record jsxid="mi_16" jsxtext="FormModel" type="C" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='FormModel']" datatype="" tns="http://www.intalio.com/gi/GI2GI.gi">
+        <record jsxid="mi_17" jsxtext="helloMsg" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='helloMsg']">
+          <restrictions>
+            <record jsxid="mi_18" minoccur="0" />
+          </restrictions>
+          <mappings jsxid="mi_19">
+            <record jsxid="mi_20" name="DOM" value="helloMsg" />
+          </mappings>
+        </record>
+        <record jsxid="mi_21" jsxtext="inJob" type="C" datatype="" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='inJob']">
+          <record jsxid="mi_22" jsxtext="textbox" type="E" datatype="string" tns="" path="//jsx1:schema[@targetNamespace='http://www.intalio.com/gi/GI2GI.gi']//jsx1:element[@name='textbox']">
+            <restrictions>
+              <record jsxid="mi_23" minoccur="0" />
+            </restrictions>
+            <mappings jsxid="mi_24">
+              <record jsxid="mi_25" name="DOM" value="textbox" />
+            </mappings>
+          </record>
+        </record>
+      </record>
+    </record>
+  </record>
+</data>

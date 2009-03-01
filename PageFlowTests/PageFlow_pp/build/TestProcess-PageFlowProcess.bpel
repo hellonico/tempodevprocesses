@@ -1,0 +1,1278 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:Start="http://bproc.it/TestProcess/Start" xmlns:DataReport="http://bproc.it/DataReport/xform/attachments" xmlns:User="http://bproc.it/TestProcess/User" xmlns:GI2GI="http://www.intalio.com/gi/GI2GI.gi/attachments" xmlns:GI2GI1="http://www.intalio.com/gi/GI2GI.gi" xmlns:DataReport1="http://bproc.it/DataReport/xform" xmlns:pptypes="http://www.bproc.it/pptypes" xmlns:diag="http://bproc.it/TestProcess" xmlns:XForm2GI1="http://bproc.it/XForm2GI/xform" xmlns:this="http://bproc.it/TestProcess/PageFlowProcess" xmlns:XForm2XForm1="http://bproc.it/XForm2XForm/xform" xmlns:GI2XForm="http://www.intalio.com/gi/GI2XForm.gi" xmlns:attachments="http://www.intalio.com/gi/GI2XForm.gi/attachments" xmlns:XForm2GI="http://bproc.it/XForm2GI/xform/attachments" xmlns:XForm2XForm="http://bproc.it/XForm2XForm/xform/attachments" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="PageFlowProcess" name="PageFlowProcess" bpmn:id="_b0fCcP6cEd2JT7-kaC3HUQ" targetNamespace="http://bproc.it/TestProcess/PageFlowProcess">
+  <bpel:import namespace="http://bproc.it/DataReport/xform" location="DataReport.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/XForm2GI/xform" location="XForm2GI.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/XForm2XForm/xform" location="XForm2XForm.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/TestProcess" location="TestProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/TestProcess/PageFlowProcess" location="TestProcess-PageFlowProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/GI2GI.gi" location="GI2GI.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.intalio.com/gi/GI2XForm.gi" location="GI2XForm.gi.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.bproc.it/pptypes" location="pptypes.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="pageFlowProcessAndStartPlkVar" partnerLinkType="diag:PageFlowProcessAndStart" myRole="PageFlowProcess_for_Start"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_8UnXcv85Ed2-HaamsDD9_QPlkVar" partnerLinkType="diag:WFmagic_8UnXcv85Ed2-HaamsDD9_Q" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForXformPort"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_v8iLAP86Ed2-HaamsDD9_QPlkVar" partnerLinkType="diag:WFmagic_v8iLAP86Ed2-HaamsDD9_Q" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForGI2GIPort"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_AStvQP87Ed2-HaamsDD9_QPlkVar" partnerLinkType="diag:WFmagic_AStvQP87Ed2-HaamsDD9_Q" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForGI2XFormPort"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_0gDkEP87Ed2-HaamsDD9_QPlkVar" partnerLinkType="diag:WFmagic_0gDkEP87Ed2-HaamsDD9_Q" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForXformPort"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_qD7G8P88Ed2-HaamsDD9_QPlkVar" partnerLinkType="diag:WFmagic_qD7G8P88Ed2-HaamsDD9_Q" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForXformPort"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest"></bpel:variable>
+    <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"></bpel:variable>
+    <bpel:variable name="xForm2GI1CreateTaskRequestMsg" messageType="XForm2GI1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="xForm2GI1CreateTaskResponseMsg" messageType="XForm2GI1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="xForm2GI1NotifyTaskCompletionRequestMsg" messageType="XForm2GI1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="xForm2GI1NotifyTaskCompletionResponseMsg" messageType="XForm2GI1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="gI2GI1CreateTaskRequestMsg" messageType="GI2GI1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="gI2GI1CreateTaskResponseMsg" messageType="GI2GI1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="gI2GI1NotifyTaskCompletionRequestMsg" messageType="GI2GI1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="gI2GI1NotifyTaskCompletionResponseMsg" messageType="GI2GI1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="gI2XFormCreateTaskRequestMsg" messageType="GI2XForm:createTaskRequest"></bpel:variable>
+    <bpel:variable name="gI2XFormCreateTaskResponseMsg" messageType="GI2XForm:createTaskResponse"></bpel:variable>
+    <bpel:variable name="gI2XFormNotifyTaskCompletionRequestMsg" messageType="GI2XForm:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="gI2XFormNotifyTaskCompletionResponseMsg" messageType="GI2XForm:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="xForm2XForm1CreateTaskRequestMsg" messageType="XForm2XForm1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="xForm2XForm1CreateTaskResponseMsg" messageType="XForm2XForm1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="xForm2XForm1NotifyTaskCompletionRequestMsg" messageType="XForm2XForm1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="xForm2XForm1NotifyTaskCompletionResponseMsg" messageType="XForm2XForm1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="dataReport1CreateTaskRequestMsg" messageType="DataReport1:createTaskRequest"></bpel:variable>
+    <bpel:variable name="dataReport1CreateTaskResponseMsg" messageType="DataReport1:createTaskResponse"></bpel:variable>
+    <bpel:variable name="dataReport1NotifyTaskCompletionRequestMsg" messageType="DataReport1:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="dataReport1NotifyTaskCompletionResponseMsg" messageType="DataReport1:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="pp_user_start" type="pptypes:ppUserType"></bpel:variable>
+    <bpel:variable name="pp_user_user" type="pptypes:ppUserType"></bpel:variable>
+    <bpel:variable name="pp_global_vars" type="pptypes:ppProcessType"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="pageFlowProcessAndStartPlkVar" portType="this:ForStart" operation="EventStartMessage" variable="thisEventStartMessageRequest" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_j-mkMP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:assign name="init-variables-PageFlowProcess">
+      <bpel:copy bpmn:label="$thisEventStartMessageResponse">
+        <bpel:from>
+          <bpel:literal>
+<this:EventStartMessageResponse></this:EventStartMessageResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xForm2GI1CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<XForm2GI1:createTaskRequest>
+  <XForm2GI1:taskMetaData>
+    <XForm2GI1:taskId>_8UnXcv85Ed2-HaamsDD9_Q</XForm2GI1:taskId>
+    <XForm2GI1:taskState></XForm2GI1:taskState>
+    <XForm2GI1:taskType></XForm2GI1:taskType>
+    <XForm2GI1:description>XForm to GI</XForm2GI1:description>
+    <XForm2GI1:processId></XForm2GI1:processId>
+    <XForm2GI1:business>
+      <XForm2GI1:processName></XForm2GI1:processName>
+      <XForm2GI1:instanceId></XForm2GI1:instanceId>
+      <XForm2GI1:customData></XForm2GI1:customData>
+    </XForm2GI1:business>
+    <XForm2GI1:creationDate></XForm2GI1:creationDate>
+    <XForm2GI1:userOwner />
+    <XForm2GI1:roleOwner>examples/manager</XForm2GI1:roleOwner>
+    <XForm2GI1:claimAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:claimAction>
+    <XForm2GI1:revokeAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:revokeAction>
+    <XForm2GI1:saveAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:saveAction>
+    <XForm2GI1:completeAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:completeAction>
+    <XForm2GI1:formUrl>oxf://PageFlow_pp/XForm2GI.xform</XForm2GI1:formUrl>
+    <XForm2GI1:failureCode></XForm2GI1:failureCode>
+    <XForm2GI1:failureReason></XForm2GI1:failureReason>
+    <XForm2GI1:priority></XForm2GI1:priority>
+    <XForm2GI1:scheduledActions>
+      <XForm2GI1:expiration>
+        <XForm2GI1:until></XForm2GI1:until>
+        <XForm2GI1:for></XForm2GI1:for>
+      </XForm2GI1:expiration>
+      <XForm2GI1:deferActivation>
+        <XForm2GI1:until></XForm2GI1:until>
+        <XForm2GI1:for></XForm2GI1:for>
+      </XForm2GI1:deferActivation>
+    </XForm2GI1:scheduledActions>
+    <XForm2GI1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>XForm to GI</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </XForm2GI1:attachments>
+    <XForm2GI1:userProcessCompleteSOAPAction>http://bproc.it/XForm2GI/xform/Process/notifyTaskCompletion</XForm2GI1:userProcessCompleteSOAPAction>
+    <XForm2GI1:isChainedBefore></XForm2GI1:isChainedBefore>
+    <XForm2GI1:previousTaskId></XForm2GI1:previousTaskId>
+    <XForm2GI1:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_8UnXcv85Ed2-HaamsDD9_Q</XForm2GI1:userProcessEndpoint>
+    <XForm2GI1:userProcessNamespaceURI>http://bproc.it/XForm2GI/xform</XForm2GI1:userProcessNamespaceURI>
+  </XForm2GI1:taskMetaData>
+  <XForm2GI1:participantToken></XForm2GI1:participantToken>
+  <XForm2GI1:taskInput>
+    <XForm2GI1:input></XForm2GI1:input>
+  </XForm2GI1:taskInput>
+</XForm2GI1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xForm2GI1NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<XForm2GI1:response>
+  <XForm2GI1:isChainedAfter></XForm2GI1:isChainedAfter>
+  <XForm2GI1:taskMetaData>
+    <XForm2GI1:taskId></XForm2GI1:taskId>
+    <XForm2GI1:taskState></XForm2GI1:taskState>
+    <XForm2GI1:taskType></XForm2GI1:taskType>
+    <XForm2GI1:description></XForm2GI1:description>
+    <XForm2GI1:processId></XForm2GI1:processId>
+    <XForm2GI1:business>
+      <XForm2GI1:processName></XForm2GI1:processName>
+      <XForm2GI1:instanceId></XForm2GI1:instanceId>
+      <XForm2GI1:customData></XForm2GI1:customData>
+    </XForm2GI1:business>
+    <XForm2GI1:creationDate></XForm2GI1:creationDate>
+    <XForm2GI1:userOwner></XForm2GI1:userOwner>
+    <XForm2GI1:roleOwner></XForm2GI1:roleOwner>
+    <XForm2GI1:claimAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:claimAction>
+    <XForm2GI1:revokeAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:revokeAction>
+    <XForm2GI1:saveAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:saveAction>
+    <XForm2GI1:completeAction>
+      <XForm2GI1:user></XForm2GI1:user>
+      <XForm2GI1:role></XForm2GI1:role>
+    </XForm2GI1:completeAction>
+    <XForm2GI1:formUrl></XForm2GI1:formUrl>
+    <XForm2GI1:failureCode></XForm2GI1:failureCode>
+    <XForm2GI1:failureReason></XForm2GI1:failureReason>
+    <XForm2GI1:priority></XForm2GI1:priority>
+    <XForm2GI1:scheduledActions>
+      <XForm2GI1:expiration>
+        <XForm2GI1:until></XForm2GI1:until>
+        <XForm2GI1:for></XForm2GI1:for>
+      </XForm2GI1:expiration>
+      <XForm2GI1:deferActivation>
+        <XForm2GI1:until></XForm2GI1:until>
+        <XForm2GI1:for></XForm2GI1:for>
+      </XForm2GI1:deferActivation>
+    </XForm2GI1:scheduledActions>
+    <XForm2GI1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </XForm2GI1:attachments>
+    <XForm2GI1:userProcessCompleteSOAPAction></XForm2GI1:userProcessCompleteSOAPAction>
+    <XForm2GI1:isChainedBefore></XForm2GI1:isChainedBefore>
+    <XForm2GI1:previousTaskId></XForm2GI1:previousTaskId>
+    <XForm2GI1:userProcessEndpoint></XForm2GI1:userProcessEndpoint>
+    <XForm2GI1:userProcessNamespaceURI></XForm2GI1:userProcessNamespaceURI>
+  </XForm2GI1:taskMetaData>
+  <XForm2GI1:status>OK</XForm2GI1:status>
+  <XForm2GI1:errorCode></XForm2GI1:errorCode>
+  <XForm2GI1:errorReason></XForm2GI1:errorReason>
+</XForm2GI1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xForm2GI1NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$gI2GI1CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<GI2GI1:createTaskRequest>
+  <GI2GI1:taskMetaData>
+    <GI2GI1:taskId>_v8iLAP86Ed2-HaamsDD9_Q</GI2GI1:taskId>
+    <GI2GI1:taskState></GI2GI1:taskState>
+    <GI2GI1:taskType></GI2GI1:taskType>
+    <GI2GI1:description>GI to GI</GI2GI1:description>
+    <GI2GI1:processId></GI2GI1:processId>
+    <GI2GI1:business>
+      <GI2GI1:processName></GI2GI1:processName>
+      <GI2GI1:instanceId></GI2GI1:instanceId>
+      <GI2GI1:customData></GI2GI1:customData>
+    </GI2GI1:business>
+    <GI2GI1:creationDate></GI2GI1:creationDate>
+    <GI2GI1:userOwner />
+    <GI2GI1:roleOwner>examples/manager</GI2GI1:roleOwner>
+    <GI2GI1:claimAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:claimAction>
+    <GI2GI1:revokeAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:revokeAction>
+    <GI2GI1:saveAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:saveAction>
+    <GI2GI1:completeAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:completeAction>
+    <GI2GI1:formUrl>http://newwia.wsc.test:8080/gi/apppath/PageFlow_pp/GI2GI.gi/IntalioInternal/ServerLaunch.html</GI2GI1:formUrl>
+    <GI2GI1:failureCode></GI2GI1:failureCode>
+    <GI2GI1:failureReason></GI2GI1:failureReason>
+    <GI2GI1:priority></GI2GI1:priority>
+    <GI2GI1:scheduledActions>
+      <GI2GI1:expiration>
+        <GI2GI1:until></GI2GI1:until>
+        <GI2GI1:for></GI2GI1:for>
+      </GI2GI1:expiration>
+      <GI2GI1:deferActivation>
+        <GI2GI1:until></GI2GI1:until>
+        <GI2GI1:for></GI2GI1:for>
+      </GI2GI1:deferActivation>
+    </GI2GI1:scheduledActions>
+    <GI2GI1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>GI to GI</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </GI2GI1:attachments>
+    <GI2GI1:userProcessCompleteSOAPAction>http://www.intalio.com/gi/GI2GI.gi/Process/notifyTaskCompletion</GI2GI1:userProcessCompleteSOAPAction>
+    <GI2GI1:isChainedBefore></GI2GI1:isChainedBefore>
+    <GI2GI1:previousTaskId></GI2GI1:previousTaskId>
+    <GI2GI1:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_v8iLAP86Ed2-HaamsDD9_Q</GI2GI1:userProcessEndpoint>
+    <GI2GI1:userProcessNamespaceURI>http://www.intalio.com/gi/GI2GI.gi</GI2GI1:userProcessNamespaceURI>
+  </GI2GI1:taskMetaData>
+  <GI2GI1:participantToken></GI2GI1:participantToken>
+  <GI2GI1:taskInput>
+    <GI2GI1:FormModel>
+      <helloMsg></helloMsg>
+      <inJob>
+        <textbox></textbox>
+      </inJob>
+    </GI2GI1:FormModel>
+  </GI2GI1:taskInput>
+</GI2GI1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$gI2GI1NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<GI2GI1:response>
+  <GI2GI1:isChainedAfter></GI2GI1:isChainedAfter>
+  <GI2GI1:taskMetaData>
+    <GI2GI1:taskId></GI2GI1:taskId>
+    <GI2GI1:taskState></GI2GI1:taskState>
+    <GI2GI1:taskType></GI2GI1:taskType>
+    <GI2GI1:description></GI2GI1:description>
+    <GI2GI1:processId></GI2GI1:processId>
+    <GI2GI1:business>
+      <GI2GI1:processName></GI2GI1:processName>
+      <GI2GI1:instanceId></GI2GI1:instanceId>
+      <GI2GI1:customData></GI2GI1:customData>
+    </GI2GI1:business>
+    <GI2GI1:creationDate></GI2GI1:creationDate>
+    <GI2GI1:userOwner></GI2GI1:userOwner>
+    <GI2GI1:roleOwner></GI2GI1:roleOwner>
+    <GI2GI1:claimAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:claimAction>
+    <GI2GI1:revokeAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:revokeAction>
+    <GI2GI1:saveAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:saveAction>
+    <GI2GI1:completeAction>
+      <GI2GI1:user></GI2GI1:user>
+      <GI2GI1:role></GI2GI1:role>
+    </GI2GI1:completeAction>
+    <GI2GI1:formUrl></GI2GI1:formUrl>
+    <GI2GI1:failureCode></GI2GI1:failureCode>
+    <GI2GI1:failureReason></GI2GI1:failureReason>
+    <GI2GI1:priority></GI2GI1:priority>
+    <GI2GI1:scheduledActions>
+      <GI2GI1:expiration>
+        <GI2GI1:until></GI2GI1:until>
+        <GI2GI1:for></GI2GI1:for>
+      </GI2GI1:expiration>
+      <GI2GI1:deferActivation>
+        <GI2GI1:until></GI2GI1:until>
+        <GI2GI1:for></GI2GI1:for>
+      </GI2GI1:deferActivation>
+    </GI2GI1:scheduledActions>
+    <GI2GI1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </GI2GI1:attachments>
+    <GI2GI1:userProcessCompleteSOAPAction></GI2GI1:userProcessCompleteSOAPAction>
+    <GI2GI1:isChainedBefore></GI2GI1:isChainedBefore>
+    <GI2GI1:previousTaskId></GI2GI1:previousTaskId>
+    <GI2GI1:userProcessEndpoint></GI2GI1:userProcessEndpoint>
+    <GI2GI1:userProcessNamespaceURI></GI2GI1:userProcessNamespaceURI>
+  </GI2GI1:taskMetaData>
+  <GI2GI1:status>OK</GI2GI1:status>
+  <GI2GI1:errorCode></GI2GI1:errorCode>
+  <GI2GI1:errorReason></GI2GI1:errorReason>
+</GI2GI1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$gI2GI1NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$gI2XFormCreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<GI2XForm:createTaskRequest>
+  <GI2XForm:taskMetaData>
+    <GI2XForm:taskId>_AStvQP87Ed2-HaamsDD9_Q</GI2XForm:taskId>
+    <GI2XForm:taskState></GI2XForm:taskState>
+    <GI2XForm:taskType></GI2XForm:taskType>
+    <GI2XForm:description>GI to XForm</GI2XForm:description>
+    <GI2XForm:processId></GI2XForm:processId>
+    <GI2XForm:business>
+      <GI2XForm:processName></GI2XForm:processName>
+      <GI2XForm:instanceId></GI2XForm:instanceId>
+      <GI2XForm:customData></GI2XForm:customData>
+    </GI2XForm:business>
+    <GI2XForm:creationDate></GI2XForm:creationDate>
+    <GI2XForm:userOwner />
+    <GI2XForm:roleOwner>examples/manager</GI2XForm:roleOwner>
+    <GI2XForm:claimAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:claimAction>
+    <GI2XForm:revokeAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:revokeAction>
+    <GI2XForm:saveAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:saveAction>
+    <GI2XForm:completeAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:completeAction>
+    <GI2XForm:formUrl>http://newwia.wsc.test:8080/gi/apppath/PageFlow_pp/GI2XForm.gi/IntalioInternal/ServerLaunch.html</GI2XForm:formUrl>
+    <GI2XForm:failureCode></GI2XForm:failureCode>
+    <GI2XForm:failureReason></GI2XForm:failureReason>
+    <GI2XForm:priority></GI2XForm:priority>
+    <GI2XForm:scheduledActions>
+      <GI2XForm:expiration>
+        <GI2XForm:until></GI2XForm:until>
+        <GI2XForm:for></GI2XForm:for>
+      </GI2XForm:expiration>
+      <GI2XForm:deferActivation>
+        <GI2XForm:until></GI2XForm:until>
+        <GI2XForm:for></GI2XForm:for>
+      </GI2XForm:deferActivation>
+    </GI2XForm:scheduledActions>
+    <GI2XForm:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>GI to XForm</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </GI2XForm:attachments>
+    <GI2XForm:userProcessCompleteSOAPAction>http://www.intalio.com/gi/GI2XForm.gi/Process/notifyTaskCompletion</GI2XForm:userProcessCompleteSOAPAction>
+    <GI2XForm:isChainedBefore></GI2XForm:isChainedBefore>
+    <GI2XForm:previousTaskId></GI2XForm:previousTaskId>
+    <GI2XForm:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_AStvQP87Ed2-HaamsDD9_Q</GI2XForm:userProcessEndpoint>
+    <GI2XForm:userProcessNamespaceURI>http://www.intalio.com/gi/GI2XForm.gi</GI2XForm:userProcessNamespaceURI>
+  </GI2XForm:taskMetaData>
+  <GI2XForm:participantToken></GI2XForm:participantToken>
+  <GI2XForm:taskInput>
+    <GI2XForm:FormModel>
+      <helloMsg></helloMsg>
+      <inAge>
+        <textbox></textbox>
+      </inAge>
+    </GI2XForm:FormModel>
+  </GI2XForm:taskInput>
+</GI2XForm:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$gI2XFormNotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<GI2XForm:response>
+  <GI2XForm:isChainedAfter></GI2XForm:isChainedAfter>
+  <GI2XForm:taskMetaData>
+    <GI2XForm:taskId></GI2XForm:taskId>
+    <GI2XForm:taskState></GI2XForm:taskState>
+    <GI2XForm:taskType></GI2XForm:taskType>
+    <GI2XForm:description></GI2XForm:description>
+    <GI2XForm:processId></GI2XForm:processId>
+    <GI2XForm:business>
+      <GI2XForm:processName></GI2XForm:processName>
+      <GI2XForm:instanceId></GI2XForm:instanceId>
+      <GI2XForm:customData></GI2XForm:customData>
+    </GI2XForm:business>
+    <GI2XForm:creationDate></GI2XForm:creationDate>
+    <GI2XForm:userOwner></GI2XForm:userOwner>
+    <GI2XForm:roleOwner></GI2XForm:roleOwner>
+    <GI2XForm:claimAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:claimAction>
+    <GI2XForm:revokeAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:revokeAction>
+    <GI2XForm:saveAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:saveAction>
+    <GI2XForm:completeAction>
+      <GI2XForm:user></GI2XForm:user>
+      <GI2XForm:role></GI2XForm:role>
+    </GI2XForm:completeAction>
+    <GI2XForm:formUrl></GI2XForm:formUrl>
+    <GI2XForm:failureCode></GI2XForm:failureCode>
+    <GI2XForm:failureReason></GI2XForm:failureReason>
+    <GI2XForm:priority></GI2XForm:priority>
+    <GI2XForm:scheduledActions>
+      <GI2XForm:expiration>
+        <GI2XForm:until></GI2XForm:until>
+        <GI2XForm:for></GI2XForm:for>
+      </GI2XForm:expiration>
+      <GI2XForm:deferActivation>
+        <GI2XForm:until></GI2XForm:until>
+        <GI2XForm:for></GI2XForm:for>
+      </GI2XForm:deferActivation>
+    </GI2XForm:scheduledActions>
+    <GI2XForm:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </GI2XForm:attachments>
+    <GI2XForm:userProcessCompleteSOAPAction></GI2XForm:userProcessCompleteSOAPAction>
+    <GI2XForm:isChainedBefore></GI2XForm:isChainedBefore>
+    <GI2XForm:previousTaskId></GI2XForm:previousTaskId>
+    <GI2XForm:userProcessEndpoint></GI2XForm:userProcessEndpoint>
+    <GI2XForm:userProcessNamespaceURI></GI2XForm:userProcessNamespaceURI>
+  </GI2XForm:taskMetaData>
+  <GI2XForm:status>OK</GI2XForm:status>
+  <GI2XForm:errorCode></GI2XForm:errorCode>
+  <GI2XForm:errorReason></GI2XForm:errorReason>
+</GI2XForm:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$gI2XFormNotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xForm2XForm1CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<XForm2XForm1:createTaskRequest>
+  <XForm2XForm1:taskMetaData>
+    <XForm2XForm1:taskId>_0gDkEP87Ed2-HaamsDD9_Q</XForm2XForm1:taskId>
+    <XForm2XForm1:taskState></XForm2XForm1:taskState>
+    <XForm2XForm1:taskType></XForm2XForm1:taskType>
+    <XForm2XForm1:description>XForm to XForm</XForm2XForm1:description>
+    <XForm2XForm1:processId></XForm2XForm1:processId>
+    <XForm2XForm1:business>
+      <XForm2XForm1:processName></XForm2XForm1:processName>
+      <XForm2XForm1:instanceId></XForm2XForm1:instanceId>
+      <XForm2XForm1:customData></XForm2XForm1:customData>
+    </XForm2XForm1:business>
+    <XForm2XForm1:creationDate></XForm2XForm1:creationDate>
+    <XForm2XForm1:userOwner />
+    <XForm2XForm1:roleOwner>examples/manager</XForm2XForm1:roleOwner>
+    <XForm2XForm1:claimAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:claimAction>
+    <XForm2XForm1:revokeAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:revokeAction>
+    <XForm2XForm1:saveAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:saveAction>
+    <XForm2XForm1:completeAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:completeAction>
+    <XForm2XForm1:formUrl>oxf://PageFlow_pp/XForm2XForm.xform</XForm2XForm1:formUrl>
+    <XForm2XForm1:failureCode></XForm2XForm1:failureCode>
+    <XForm2XForm1:failureReason></XForm2XForm1:failureReason>
+    <XForm2XForm1:priority></XForm2XForm1:priority>
+    <XForm2XForm1:scheduledActions>
+      <XForm2XForm1:expiration>
+        <XForm2XForm1:until></XForm2XForm1:until>
+        <XForm2XForm1:for></XForm2XForm1:for>
+      </XForm2XForm1:expiration>
+      <XForm2XForm1:deferActivation>
+        <XForm2XForm1:until></XForm2XForm1:until>
+        <XForm2XForm1:for></XForm2XForm1:for>
+      </XForm2XForm1:deferActivation>
+    </XForm2XForm1:scheduledActions>
+    <XForm2XForm1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>XForm to XForm</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </XForm2XForm1:attachments>
+    <XForm2XForm1:userProcessCompleteSOAPAction>http://bproc.it/XForm2XForm/xform/Process/notifyTaskCompletion</XForm2XForm1:userProcessCompleteSOAPAction>
+    <XForm2XForm1:isChainedBefore></XForm2XForm1:isChainedBefore>
+    <XForm2XForm1:previousTaskId></XForm2XForm1:previousTaskId>
+    <XForm2XForm1:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_0gDkEP87Ed2-HaamsDD9_Q</XForm2XForm1:userProcessEndpoint>
+    <XForm2XForm1:userProcessNamespaceURI>http://bproc.it/XForm2XForm/xform</XForm2XForm1:userProcessNamespaceURI>
+  </XForm2XForm1:taskMetaData>
+  <XForm2XForm1:participantToken></XForm2XForm1:participantToken>
+  <XForm2XForm1:taskInput>
+    <XForm2XForm1:input>
+      <XForm2XForm1:helloMsg></XForm2XForm1:helloMsg>
+    </XForm2XForm1:input>
+  </XForm2XForm1:taskInput>
+</XForm2XForm1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xForm2XForm1NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<XForm2XForm1:response>
+  <XForm2XForm1:isChainedAfter></XForm2XForm1:isChainedAfter>
+  <XForm2XForm1:taskMetaData>
+    <XForm2XForm1:taskId></XForm2XForm1:taskId>
+    <XForm2XForm1:taskState></XForm2XForm1:taskState>
+    <XForm2XForm1:taskType></XForm2XForm1:taskType>
+    <XForm2XForm1:description></XForm2XForm1:description>
+    <XForm2XForm1:processId></XForm2XForm1:processId>
+    <XForm2XForm1:business>
+      <XForm2XForm1:processName></XForm2XForm1:processName>
+      <XForm2XForm1:instanceId></XForm2XForm1:instanceId>
+      <XForm2XForm1:customData></XForm2XForm1:customData>
+    </XForm2XForm1:business>
+    <XForm2XForm1:creationDate></XForm2XForm1:creationDate>
+    <XForm2XForm1:userOwner></XForm2XForm1:userOwner>
+    <XForm2XForm1:roleOwner></XForm2XForm1:roleOwner>
+    <XForm2XForm1:claimAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:claimAction>
+    <XForm2XForm1:revokeAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:revokeAction>
+    <XForm2XForm1:saveAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:saveAction>
+    <XForm2XForm1:completeAction>
+      <XForm2XForm1:user></XForm2XForm1:user>
+      <XForm2XForm1:role></XForm2XForm1:role>
+    </XForm2XForm1:completeAction>
+    <XForm2XForm1:formUrl></XForm2XForm1:formUrl>
+    <XForm2XForm1:failureCode></XForm2XForm1:failureCode>
+    <XForm2XForm1:failureReason></XForm2XForm1:failureReason>
+    <XForm2XForm1:priority></XForm2XForm1:priority>
+    <XForm2XForm1:scheduledActions>
+      <XForm2XForm1:expiration>
+        <XForm2XForm1:until></XForm2XForm1:until>
+        <XForm2XForm1:for></XForm2XForm1:for>
+      </XForm2XForm1:expiration>
+      <XForm2XForm1:deferActivation>
+        <XForm2XForm1:until></XForm2XForm1:until>
+        <XForm2XForm1:for></XForm2XForm1:for>
+      </XForm2XForm1:deferActivation>
+    </XForm2XForm1:scheduledActions>
+    <XForm2XForm1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </XForm2XForm1:attachments>
+    <XForm2XForm1:userProcessCompleteSOAPAction></XForm2XForm1:userProcessCompleteSOAPAction>
+    <XForm2XForm1:isChainedBefore></XForm2XForm1:isChainedBefore>
+    <XForm2XForm1:previousTaskId></XForm2XForm1:previousTaskId>
+    <XForm2XForm1:userProcessEndpoint></XForm2XForm1:userProcessEndpoint>
+    <XForm2XForm1:userProcessNamespaceURI></XForm2XForm1:userProcessNamespaceURI>
+  </XForm2XForm1:taskMetaData>
+  <XForm2XForm1:status>OK</XForm2XForm1:status>
+  <XForm2XForm1:errorCode></XForm2XForm1:errorCode>
+  <XForm2XForm1:errorReason></XForm2XForm1:errorReason>
+</XForm2XForm1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xForm2XForm1NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$dataReport1CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<DataReport1:createTaskRequest>
+  <DataReport1:taskMetaData>
+    <DataReport1:taskId>_qD7G8P88Ed2-HaamsDD9_Q</DataReport1:taskId>
+    <DataReport1:taskState></DataReport1:taskState>
+    <DataReport1:taskType></DataReport1:taskType>
+    <DataReport1:description>Final Step</DataReport1:description>
+    <DataReport1:processId></DataReport1:processId>
+    <DataReport1:business>
+      <DataReport1:processName></DataReport1:processName>
+      <DataReport1:instanceId></DataReport1:instanceId>
+      <DataReport1:customData></DataReport1:customData>
+    </DataReport1:business>
+    <DataReport1:creationDate></DataReport1:creationDate>
+    <DataReport1:userOwner />
+    <DataReport1:roleOwner>examples/manager</DataReport1:roleOwner>
+    <DataReport1:claimAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:claimAction>
+    <DataReport1:revokeAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:revokeAction>
+    <DataReport1:saveAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:saveAction>
+    <DataReport1:completeAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:completeAction>
+    <DataReport1:formUrl>oxf://PageFlow_pp/DataReport.xform</DataReport1:formUrl>
+    <DataReport1:failureCode></DataReport1:failureCode>
+    <DataReport1:failureReason></DataReport1:failureReason>
+    <DataReport1:priority></DataReport1:priority>
+    <DataReport1:scheduledActions>
+      <DataReport1:expiration>
+        <DataReport1:until></DataReport1:until>
+        <DataReport1:for></DataReport1:for>
+      </DataReport1:expiration>
+      <DataReport1:deferActivation>
+        <DataReport1:until></DataReport1:until>
+        <DataReport1:for></DataReport1:for>
+      </DataReport1:deferActivation>
+    </DataReport1:scheduledActions>
+    <DataReport1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>Final Step</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </DataReport1:attachments>
+    <DataReport1:userProcessCompleteSOAPAction>http://bproc.it/DataReport/xform/Process/notifyTaskCompletion</DataReport1:userProcessCompleteSOAPAction>
+    <DataReport1:isChainedBefore></DataReport1:isChainedBefore>
+    <DataReport1:previousTaskId></DataReport1:previousTaskId>
+    <DataReport1:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_qD7G8P88Ed2-HaamsDD9_Q</DataReport1:userProcessEndpoint>
+    <DataReport1:userProcessNamespaceURI>http://bproc.it/DataReport/xform</DataReport1:userProcessNamespaceURI>
+  </DataReport1:taskMetaData>
+  <DataReport1:participantToken></DataReport1:participantToken>
+  <DataReport1:taskInput>
+    <DataReport1:input>
+      <DataReport1:city></DataReport1:city>
+      <DataReport1:job></DataReport1:job>
+      <DataReport1:age></DataReport1:age>
+      <DataReport1:name></DataReport1:name>
+    </DataReport1:input>
+  </DataReport1:taskInput>
+</DataReport1:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$dataReport1NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<DataReport1:response>
+  <DataReport1:isChainedAfter></DataReport1:isChainedAfter>
+  <DataReport1:taskMetaData>
+    <DataReport1:taskId></DataReport1:taskId>
+    <DataReport1:taskState></DataReport1:taskState>
+    <DataReport1:taskType></DataReport1:taskType>
+    <DataReport1:description></DataReport1:description>
+    <DataReport1:processId></DataReport1:processId>
+    <DataReport1:business>
+      <DataReport1:processName></DataReport1:processName>
+      <DataReport1:instanceId></DataReport1:instanceId>
+      <DataReport1:customData></DataReport1:customData>
+    </DataReport1:business>
+    <DataReport1:creationDate></DataReport1:creationDate>
+    <DataReport1:userOwner></DataReport1:userOwner>
+    <DataReport1:roleOwner></DataReport1:roleOwner>
+    <DataReport1:claimAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:claimAction>
+    <DataReport1:revokeAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:revokeAction>
+    <DataReport1:saveAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:saveAction>
+    <DataReport1:completeAction>
+      <DataReport1:user></DataReport1:user>
+      <DataReport1:role></DataReport1:role>
+    </DataReport1:completeAction>
+    <DataReport1:formUrl></DataReport1:formUrl>
+    <DataReport1:failureCode></DataReport1:failureCode>
+    <DataReport1:failureReason></DataReport1:failureReason>
+    <DataReport1:priority></DataReport1:priority>
+    <DataReport1:scheduledActions>
+      <DataReport1:expiration>
+        <DataReport1:until></DataReport1:until>
+        <DataReport1:for></DataReport1:for>
+      </DataReport1:expiration>
+      <DataReport1:deferActivation>
+        <DataReport1:until></DataReport1:until>
+        <DataReport1:for></DataReport1:for>
+      </DataReport1:deferActivation>
+    </DataReport1:scheduledActions>
+    <DataReport1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </DataReport1:attachments>
+    <DataReport1:userProcessCompleteSOAPAction></DataReport1:userProcessCompleteSOAPAction>
+    <DataReport1:isChainedBefore></DataReport1:isChainedBefore>
+    <DataReport1:previousTaskId></DataReport1:previousTaskId>
+    <DataReport1:userProcessEndpoint></DataReport1:userProcessEndpoint>
+    <DataReport1:userProcessNamespaceURI></DataReport1:userProcessNamespaceURI>
+  </DataReport1:taskMetaData>
+  <DataReport1:status>OK</DataReport1:status>
+  <DataReport1:errorCode></DataReport1:errorCode>
+  <DataReport1:errorReason></DataReport1:errorReason>
+</DataReport1:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$dataReport1NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_user_start">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:savedUser></pptypes:savedUser>
+  <pptypes:realUserOwner></pptypes:realUserOwner>
+  <pptypes:realRoleOwner></pptypes:realRoleOwner>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_user_start</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_user_user">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:savedUser></pptypes:savedUser>
+  <pptypes:realUserOwner></pptypes:realUserOwner>
+  <pptypes:realRoleOwner></pptypes:realRoleOwner>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_user_user</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_global_vars">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:pid></pptypes:pid>
+  <pptypes:pageflow></pptypes:pageflow>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_global_vars</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="pageFlowProcessAndStartPlkVar" portType="this:ForStart" operation="EventStartMessage" variable="thisEventStartMessageResponse" bpmn:label="Reply" name="Reply" bpmn:id="_kpuk0P6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata" bpmn:id="HGBloQE11EyvKc0H8T1s15q">
+      <bpel:copy>
+        <bpel:from>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2" bpmn:id="Z0B2dIno3H6jtM48I18nJ8t">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form1 Create" name="Form1_Create" bpmn:id="_q9b-kP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_8UnXcv85Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://bproc.it/XForm2GI/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_8UpMo_85Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"XForm to GI"</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_8UnXcv85Ed2-HaamsDD9_QPlkVar" portType="XForm2GI1:Workflow" operation="createTask" inputVariable="xForm2GI1CreateTaskRequestMsg" outputVariable="xForm2GI1CreateTaskResponseMsg" bpmn:label="Form1 Create" name="Form1_Create-1" bpmn:id="_q9b-kP6cEd2JT7-kaC3HUQ"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_8UnXcv85Ed2-HaamsDD9_QPlkVar" portType="XForm2GI1:Process" operation="notifyTaskCompletion" variable="xForm2GI1NotifyTaskCompletionRequestMsg" bpmn:label="Form1 Wait" name="Form1_Wait" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:assign bpmn:label="Form1 Wait" name="Form1_Wait-1" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$xForm2GI1NotifyTaskCompletionResponseMsg.root/XForm2GI1:isChainedAfter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="wFmagic_8UnXcv85Ed2-HaamsDD9_QPlkVar" portType="XForm2GI1:Process" operation="notifyTaskCompletion" variable="xForm2GI1NotifyTaskCompletionResponseMsg" bpmn:label="Form1 Wait" name="Form1_Wait-2" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User" bpmn:id="Kd9FMBAF2PT5J8JfTevsQ70">
+      <bpel:copy>
+        <bpel:from>$xForm2GI1NotifyTaskCompletionRequestMsg.root/XForm2GI1:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$xForm2GI1CreateTaskRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata-1" bpmn:id="awmPhL2Mb6Cl89285xm13Ms">
+      <bpel:copy>
+        <bpel:from>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2-1" bpmn:id="Fq23tsL4J7340059RdnjlX0">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form2 Create" name="Form2_Create" bpmn:id="_r91EkP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>concat("Hello, ", $xForm2GI1NotifyTaskCompletionRequestMsg.root/XForm2GI1:taskOutput/XForm2GI1:output/XForm2GI1:inName)</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskInput/GI2GI1:FormModel/helloMsg</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:isChainedBefore</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xForm2GI1NotifyTaskCompletionRequestMsg.root/XForm2GI1:taskMetaData/XForm2GI1:taskId</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:previousTaskId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_v8iLAP86Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/GI2GI.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_v8kAMP86Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"GI to GI"</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_v8iLAP86Ed2-HaamsDD9_QPlkVar" portType="GI2GI1:Workflow" operation="createTask" inputVariable="gI2GI1CreateTaskRequestMsg" outputVariable="gI2GI1CreateTaskResponseMsg" bpmn:label="Form2 Create" name="Form2_Create-1" bpmn:id="_r91EkP6cEd2JT7-kaC3HUQ"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_v8iLAP86Ed2-HaamsDD9_QPlkVar" portType="GI2GI1:Process" operation="notifyTaskCompletion" variable="gI2GI1NotifyTaskCompletionRequestMsg" bpmn:label="Form2 Wait" name="Form2_Wait" bpmn:id="_s1EOkP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:assign bpmn:label="Form2 Wait" name="Form2_Wait-1" bpmn:id="_s1EOkP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$gI2GI1NotifyTaskCompletionResponseMsg.root/GI2GI1:isChainedAfter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="wFmagic_v8iLAP86Ed2-HaamsDD9_QPlkVar" portType="GI2GI1:Process" operation="notifyTaskCompletion" variable="gI2GI1NotifyTaskCompletionResponseMsg" bpmn:label="Form2 Wait" name="Form2_Wait-2" bpmn:id="_s1EOkP6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User-1" bpmn:id="HF57DgxT9X6Pum4UUCe6u3L">
+      <bpel:copy>
+        <bpel:from>$gI2GI1NotifyTaskCompletionRequestMsg.root/GI2GI1:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$gI2GI1CreateTaskRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata-2" bpmn:id="ULPc3FM8Z8673h348B59tBF">
+      <bpel:copy>
+        <bpel:from>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2-2" bpmn:id="YnN4dC2tICfeM102mI7755O">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form3 Create" name="Form3_Create" bpmn:id="_zTf8QP85Ed2-HaamsDD9_Q">
+      <bpel:copy>
+        <bpel:from>$gI2GI1NotifyTaskCompletionRequestMsg.root/GI2GI1:taskOutput/GI2GI1:FormModel/helloMsg</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskInput/GI2XForm:FormModel/helloMsg</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:isChainedBefore</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2GI1NotifyTaskCompletionRequestMsg.root/GI2GI1:taskMetaData/GI2GI1:taskId</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:previousTaskId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_AStvQP87Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://www.intalio.com/gi/GI2XForm.gi/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_ASwLg_87Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"GI to XForm"</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_AStvQP87Ed2-HaamsDD9_QPlkVar" portType="GI2XForm:Workflow" operation="createTask" inputVariable="gI2XFormCreateTaskRequestMsg" outputVariable="gI2XFormCreateTaskResponseMsg" bpmn:label="Form3 Create" name="Form3_Create-1" bpmn:id="_zTf8QP85Ed2-HaamsDD9_Q"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_AStvQP87Ed2-HaamsDD9_QPlkVar" portType="GI2XForm:Process" operation="notifyTaskCompletion" variable="gI2XFormNotifyTaskCompletionRequestMsg" bpmn:label="Form3 Wait" name="Form3_Wait" bpmn:id="_z3HmsP85Ed2-HaamsDD9_Q"></bpel:receive>
+    <bpel:assign bpmn:label="Form3 Wait" name="Form3_Wait-1" bpmn:id="_z3HmsP85Ed2-HaamsDD9_Q">
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$gI2XFormNotifyTaskCompletionResponseMsg.root/GI2XForm:isChainedAfter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="wFmagic_AStvQP87Ed2-HaamsDD9_QPlkVar" portType="GI2XForm:Process" operation="notifyTaskCompletion" variable="gI2XFormNotifyTaskCompletionResponseMsg" bpmn:label="Form3 Wait" name="Form3_Wait-2" bpmn:id="_z3HmsP85Ed2-HaamsDD9_Q"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User-2" bpmn:id="X1sccsoBEzelNCv6V3Jg6M0">
+      <bpel:copy>
+        <bpel:from>$gI2XFormNotifyTaskCompletionRequestMsg.root/GI2XForm:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$gI2XFormCreateTaskRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata-3" bpmn:id="UldT4PaoYl2GFTy0F3W1jZj">
+      <bpel:copy>
+        <bpel:from>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2-3" bpmn:id="m5s7IH12470Jh02Y5gOcgw9">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form4 Create" name="Form4_Create" bpmn:id="_Ek_cwP87Ed2-HaamsDD9_Q">
+      <bpel:copy>
+        <bpel:from>$gI2XFormNotifyTaskCompletionRequestMsg.root/GI2XForm:taskOutput/GI2XForm:FormModel/helloMsg</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskInput/XForm2XForm1:input/XForm2XForm1:helloMsg</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:isChainedBefore</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2XFormNotifyTaskCompletionRequestMsg.root/GI2XForm:taskMetaData/GI2XForm:taskId</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:previousTaskId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_0gDkEP87Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://bproc.it/XForm2XForm/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_0gFZQP87Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"XForm to XForm"</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_0gDkEP87Ed2-HaamsDD9_QPlkVar" portType="XForm2XForm1:Workflow" operation="createTask" inputVariable="xForm2XForm1CreateTaskRequestMsg" outputVariable="xForm2XForm1CreateTaskResponseMsg" bpmn:label="Form4 Create" name="Form4_Create-1" bpmn:id="_Ek_cwP87Ed2-HaamsDD9_Q"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_0gDkEP87Ed2-HaamsDD9_QPlkVar" portType="XForm2XForm1:Process" operation="notifyTaskCompletion" variable="xForm2XForm1NotifyTaskCompletionRequestMsg" bpmn:label="Form4 Wait" name="Form4_Wait" bpmn:id="_HKzBYP87Ed2-HaamsDD9_Q"></bpel:receive>
+    <bpel:assign bpmn:label="Form4 Wait" name="Form4_Wait-1" bpmn:id="_HKzBYP87Ed2-HaamsDD9_Q">
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$xForm2XForm1NotifyTaskCompletionResponseMsg.root/XForm2XForm1:isChainedAfter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="wFmagic_0gDkEP87Ed2-HaamsDD9_QPlkVar" portType="XForm2XForm1:Process" operation="notifyTaskCompletion" variable="xForm2XForm1NotifyTaskCompletionResponseMsg" bpmn:label="Form4 Wait" name="Form4_Wait-2" bpmn:id="_HKzBYP87Ed2-HaamsDD9_Q"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User-3" bpmn:id="yWmvzPO14poAo4zWduk2944">
+      <bpel:copy>
+        <bpel:from>$xForm2XForm1NotifyTaskCompletionRequestMsg.root/XForm2XForm1:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$xForm2XForm1CreateTaskRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata-4" bpmn:id="GpNVUIP071NO7fQcM3kytxm">
+      <bpel:copy>
+        <bpel:from>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2-4" bpmn:id="F73ib4ca47991D569j6b53W">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form5 Create" name="Form5_Create" bpmn:id="_5sTmgP87Ed2-HaamsDD9_Q">
+      <bpel:copy>
+        <bpel:from>$xForm2GI1NotifyTaskCompletionRequestMsg.root/XForm2GI1:taskOutput/XForm2GI1:output/XForm2GI1:inName</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskInput/DataReport1:input/DataReport1:name</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2GI1NotifyTaskCompletionRequestMsg.root/GI2GI1:taskOutput/GI2GI1:FormModel/inJob/textbox</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskInput/DataReport1:input/DataReport1:job</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$gI2XFormNotifyTaskCompletionRequestMsg.root/GI2XForm:taskOutput/GI2XForm:FormModel/inAge/textbox</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskInput/DataReport1:input/DataReport1:age</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xForm2XForm1NotifyTaskCompletionRequestMsg.root/XForm2XForm1:taskOutput/XForm2XForm1:output/XForm2XForm1:inCity</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskInput/DataReport1:input/DataReport1:city</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:isChainedBefore</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xForm2XForm1NotifyTaskCompletionRequestMsg.root/XForm2XForm1:taskMetaData/XForm2XForm1:taskId</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:previousTaskId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlow_pp/TestProcess/PageFlowProcess/User/WFmagic_qD7G8P88Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://bproc.it/DataReport/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_qD9jMP88Ed2-HaamsDD9_Q"</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"Final Step"</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_qD7G8P88Ed2-HaamsDD9_QPlkVar" portType="DataReport1:Workflow" operation="createTask" inputVariable="dataReport1CreateTaskRequestMsg" outputVariable="dataReport1CreateTaskResponseMsg" bpmn:label="Form5 Create" name="Form5_Create-1" bpmn:id="_5sTmgP87Ed2-HaamsDD9_Q"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_qD7G8P88Ed2-HaamsDD9_QPlkVar" portType="DataReport1:Process" operation="notifyTaskCompletion" variable="dataReport1NotifyTaskCompletionRequestMsg" bpmn:label="Form5 Wait" name="Form5_Wait" bpmn:id="_6NluoP87Ed2-HaamsDD9_Q"></bpel:receive>
+    <bpel:reply partnerLink="wFmagic_qD7G8P88Ed2-HaamsDD9_QPlkVar" portType="DataReport1:Process" operation="notifyTaskCompletion" variable="dataReport1NotifyTaskCompletionResponseMsg" bpmn:label="Form5 Wait" name="Form5_Wait-1" bpmn:id="_6NluoP87Ed2-HaamsDD9_Q"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User-4" bpmn:id="T6L04xXnsk74zVq5nxQ80Yu">
+      <bpel:copy>
+        <bpel:from>$dataReport1NotifyTaskCompletionRequestMsg.root/DataReport1:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$dataReport1CreateTaskRequestMsg.root/DataReport1:taskMetaData/DataReport1:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:empty bpmn:label="End" name="End" bpmn:id="_xg0MAP6cEd2JT7-kaC3HUQ"></bpel:empty>
+  </bpel:sequence>
+</bpel:process>

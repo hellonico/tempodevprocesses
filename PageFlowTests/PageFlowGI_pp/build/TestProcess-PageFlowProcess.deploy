@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:User="http://bproc.it/TestProcess/User" xmlns:pptypes="http://www.bproc.it/pptypes" xmlns:Form21="http://www.intalio.com/gi/Form2.gi" xmlns:Start="http://bproc.it/TestProcess/Start" xmlns:Form1="http://www.intalio.com/gi/Form1.gi" xmlns:Form2="http://www.intalio.com/gi/Form2.gi/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:diag="http://bproc.it/TestProcess" xmlns:attachments="http://www.intalio.com/gi/Form1.gi/attachments" xmlns:this="http://bproc.it/TestProcess/PageFlowProcess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:PageFlowProcess" fileName="TestProcess-PageFlowProcess.bpel">
+  <dd:property name="PATH">TestProcess</dd:property>
+  <dd:property name="SVG">TestProcess.svg</dd:property>
+  <dd:provide partnerLink="pageFlowProcessAndStartPlkVar">
+    <dd:service name="this:CanonicServiceForStart" port="canonicPort"></dd:service>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_FJ9EoP8zEd2-HaamsDD9_QPlkVar">
+    <dd:service name="this:WFmagic_FJ9EoP8zEd2-HaamsDD9_QService" port="PageFlowProcess_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_FJ9EoP8zEd2-HaamsDD9_QPlkVar">
+    <dd:service name="Form1:WorkflowSoapService" port="Form1Port"/>
+  </dd:invoke>
+  <dd:provide partnerLink="wFmagic_MeGLMP80Ed2-HaamsDD9_QPlkVar">
+    <dd:service name="this:WFmagic_MeGLMP80Ed2-HaamsDD9_QService" port="PageFlowProcess_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_MeGLMP80Ed2-HaamsDD9_QPlkVar">
+    <dd:service name="Form21:WorkflowSoapService" port="Form2Port"/>
+  </dd:invoke>
+</dd:process>

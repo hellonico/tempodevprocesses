@@ -1,0 +1,92 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:User="http://bproc.it/TestProcess/User" xmlns:Form21="http://bproc.it/Form2/xform" xmlns:Form1="http://bproc.it/Form1/xform/attachments" xmlns:Start="http://bproc.it/TestProcess/Start" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:Form11="http://bproc.it/Form1/xform" xmlns:Form2="http://bproc.it/Form2/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://bproc.it/TestProcess" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://bproc.it/TestProcess/PageFlowProcess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://bproc.it/TestProcess/PageFlowProcess">
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://bproc.it/TestProcess/PageFlowProcess">
+            <xs:element name="EventStartMessageRequest" type="xs:string"/>
+            <xs:element name="EventStartMessageResponse" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:import namespace="http://bproc.it/Form1/xform" location="Form1.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/Form2/xform" location="Form2.xform.all.wsdl"/>
+    <wsdl:message name="EventStartMessageRequest">
+        <wsdl:part name="body" element="this:EventStartMessageRequest"/>
+    </wsdl:message>
+    <wsdl:message name="EventStartMessageResponse">
+        <wsdl:part name="body" element="this:EventStartMessageResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ForStart">
+        <wsdl:operation name="EventStartMessage">
+            <wsdl:input message="this:EventStartMessageRequest" name="EventStartMessage"/>
+            <wsdl:output message="this:EventStartMessageResponse" name="EventStartMessageResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CanonicBindingForStart" type="this:ForStart">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="EventStartMessage">
+            <soap:operation style="document" soapAction="http://bproc.it/TestProcess/PageFlowProcess/ForStart/EventStartMessage"/>
+            <wsdl:input name="EventStartMessage">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="EventStartMessageResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WFmagic_hLqGAv6dEd2JT7-kaC3HUQServiceBinding" type="Form21:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://bproc.it/Form2/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://bproc.it/Form2/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WFmagic_b38JoP6dEd2JT7-kaC3HUQServiceBinding" type="Form11:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://bproc.it/Form1/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://bproc.it/Form1/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CanonicServiceForStart">
+        <wsdl:port name="canonicPort" binding="this:CanonicBindingForStart">
+            <soap:address location="http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/Start"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="WFmagic_hLqGAv6dEd2JT7-kaC3HUQService">
+        <wsdl:port name="PageFlowProcess_for_UserForThePortTypeProcessPort" binding="this:WFmagic_hLqGAv6dEd2JT7-kaC3HUQServiceBinding">
+            <soap:address location="http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_hLqGAv6dEd2JT7-kaC3HUQ"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="WFmagic_b38JoP6dEd2JT7-kaC3HUQService">
+        <wsdl:port name="PageFlowProcess_for_UserForThePortTypeProcessPort" binding="this:WFmagic_b38JoP6dEd2JT7-kaC3HUQServiceBinding">
+            <soap:address location="http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_b38JoP6dEd2JT7-kaC3HUQ"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

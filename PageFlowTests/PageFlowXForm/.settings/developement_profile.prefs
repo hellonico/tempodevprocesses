@@ -1,0 +1,9 @@
+
+bundleExportPath=C\:/Users/d.belletti/workspace6beta/PageFlowXForm
+deploy_bundleNcName=PageFlowXForm
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://newwia.wsc.test\:8080/gi
+deploy_serverUrl=http\://newwia.wsc.test\:8080/ode
+diagram_baseUri=http\://bproc.it
+eclipse.preferences.version=1

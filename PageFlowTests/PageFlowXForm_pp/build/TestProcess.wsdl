@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://bproc.it/TestProcess" xmlns:PageFlowProcess="http://bproc.it/TestProcess/PageFlowProcess" xmlns:Form21="http://bproc.it/Form2/xform" xmlns:Form2="http://bproc.it/Form2/xform/attachments" xmlns:User="http://bproc.it/TestProcess/User" xmlns:pptypes="http://www.bproc.it/pptypes" xmlns:Form1="http://bproc.it/Form1/xform/attachments" xmlns:Form11="http://bproc.it/Form1/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://bproc.it/TestProcess">
+    <wsdl:import namespace="http://bproc.it/Form1/xform" location="Form1.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/Form2/xform" location="Form2.xform.all.wsdl"/>
+    <wsdl:import namespace="http://bproc.it/TestProcess/PageFlowProcess" location="TestProcess-PageFlowProcess.wsdl"/>
+    <pnlk:partnerLinkType name="PageFlowProcessAndStart">
+        <pnlk:role name="PageFlowProcess_for_Start" portType="PageFlowProcess:ForStart"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_hLqGAv6dEd2JT7-kaC3HUQ">
+        <pnlk:role name="User_for_PageFlowProcessForXformPort" portType="Form21:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="Form21:Process"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="WFmagic_b38JoP6dEd2JT7-kaC3HUQ">
+        <pnlk:role name="User_for_PageFlowProcessForXformPort" portType="Form11:Workflow"/>
+        <pnlk:role name="PageFlowProcess_for_UserForThePortTypeProcess" portType="Form11:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

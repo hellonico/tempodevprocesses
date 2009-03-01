@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:us="http://www.intalio.com/UserSchema" xmlns:GI2XForm="http://www.intalio.com/gi/GI2XForm.gi" targetNamespace="http://www.intalio.com/gi/GI2XForm.gi" elementFormDefault="unqualified">
+  <xs:element name="FormModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="helloMsg" minOccurs="0" />
+        <xs:element name="inAge">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="textbox" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

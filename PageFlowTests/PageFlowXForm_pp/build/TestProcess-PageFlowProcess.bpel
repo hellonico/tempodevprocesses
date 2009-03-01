@@ -1,0 +1,528 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:Start="http://bproc.it/TestProcess/Start" xmlns:Form21="http://bproc.it/Form2/xform" xmlns:Form2="http://bproc.it/Form2/xform/attachments" xmlns:User="http://bproc.it/TestProcess/User" xmlns:pptypes="http://www.bproc.it/pptypes" xmlns:diag="http://bproc.it/TestProcess" xmlns:Form1="http://bproc.it/Form1/xform/attachments" xmlns:this="http://bproc.it/TestProcess/PageFlowProcess" xmlns:Form11="http://bproc.it/Form1/xform" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="PageFlowProcess" name="PageFlowProcess" bpmn:id="_b0fCcP6cEd2JT7-kaC3HUQ" targetNamespace="http://bproc.it/TestProcess/PageFlowProcess">
+  <bpel:import namespace="http://bproc.it/Form1/xform" location="Form1.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/Form2/xform" location="Form2.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/TestProcess" location="TestProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://bproc.it/TestProcess/PageFlowProcess" location="TestProcess-PageFlowProcess.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://www.bproc.it/pptypes" location="pptypes.xsd" importType="http://www.w3.org/2001/XMLSchema"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="pageFlowProcessAndStartPlkVar" partnerLinkType="diag:PageFlowProcessAndStart" myRole="PageFlowProcess_for_Start"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar" partnerLinkType="diag:WFmagic_b38JoP6dEd2JT7-kaC3HUQ" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForXformPort"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar" partnerLinkType="diag:WFmagic_hLqGAv6dEd2JT7-kaC3HUQ" initializePartnerRole="no" myRole="PageFlowProcess_for_UserForThePortTypeProcess" partnerRole="User_for_PageFlowProcessForXformPort"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest"></bpel:variable>
+    <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse"></bpel:variable>
+    <bpel:variable name="form11CreateTaskRequestMsg" messageType="Form11:createTaskRequest"></bpel:variable>
+    <bpel:variable name="form11CreateTaskResponseMsg" messageType="Form11:createTaskResponse"></bpel:variable>
+    <bpel:variable name="form11NotifyTaskCompletionRequestMsg" messageType="Form11:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="form11NotifyTaskCompletionResponseMsg" messageType="Form11:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="form21CreateTaskRequestMsg" messageType="Form21:createTaskRequest"></bpel:variable>
+    <bpel:variable name="form21CreateTaskResponseMsg" messageType="Form21:createTaskResponse"></bpel:variable>
+    <bpel:variable name="form21NotifyTaskCompletionRequestMsg" messageType="Form21:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="form21NotifyTaskCompletionResponseMsg" messageType="Form21:notifyTaskCompletionResponse"></bpel:variable>
+    <bpel:variable name="pp_user_start" type="pptypes:ppUserType"></bpel:variable>
+    <bpel:variable name="pp_user_user" type="pptypes:ppUserType"></bpel:variable>
+    <bpel:variable name="pp_global_vars" type="pptypes:ppProcessType"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="pageFlowProcessAndStartPlkVar" portType="this:ForStart" operation="EventStartMessage" variable="thisEventStartMessageRequest" createInstance="yes" bpmn:label="Message_Start_Event" name="Message_Start_Event" bpmn:id="_j-mkMP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:assign name="init-variables-PageFlowProcess">
+      <bpel:copy bpmn:label="$thisEventStartMessageResponse">
+        <bpel:from>
+          <bpel:literal>
+<this:EventStartMessageResponse></this:EventStartMessageResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisEventStartMessageResponse.body</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$form11CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<Form11:createTaskRequest>
+  <Form11:taskMetaData>
+    <Form11:taskId>_b38JoP6dEd2JT7-kaC3HUQ</Form11:taskId>
+    <Form11:taskState></Form11:taskState>
+    <Form11:taskType></Form11:taskType>
+    <Form11:description>Form 1 - name</Form11:description>
+    <Form11:processId></Form11:processId>
+    <Form11:business>
+      <Form11:processName></Form11:processName>
+      <Form11:instanceId></Form11:instanceId>
+      <Form11:customData></Form11:customData>
+    </Form11:business>
+    <Form11:creationDate></Form11:creationDate>
+    <Form11:userOwner />
+    <Form11:roleOwner>examples/manager</Form11:roleOwner>
+    <Form11:claimAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:claimAction>
+    <Form11:revokeAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:revokeAction>
+    <Form11:saveAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:saveAction>
+    <Form11:completeAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:completeAction>
+    <Form11:formUrl>oxf://PageFlowXForm/Form1.xform</Form11:formUrl>
+    <Form11:failureCode></Form11:failureCode>
+    <Form11:failureReason></Form11:failureReason>
+    <Form11:priority></Form11:priority>
+    <Form11:scheduledActions>
+      <Form11:expiration>
+        <Form11:until></Form11:until>
+        <Form11:for></Form11:for>
+      </Form11:expiration>
+      <Form11:deferActivation>
+        <Form11:until></Form11:until>
+        <Form11:for></Form11:for>
+      </Form11:deferActivation>
+    </Form11:scheduledActions>
+    <Form11:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>Form 1 - name</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Form11:attachments>
+    <Form11:userProcessCompleteSOAPAction>http://bproc.it/Form1/xform/Process/notifyTaskCompletion</Form11:userProcessCompleteSOAPAction>
+    <Form11:isChainedBefore></Form11:isChainedBefore>
+    <Form11:previousTaskId></Form11:previousTaskId>
+    <Form11:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_b38JoP6dEd2JT7-kaC3HUQ</Form11:userProcessEndpoint>
+    <Form11:userProcessNamespaceURI>http://bproc.it/Form1/xform</Form11:userProcessNamespaceURI>
+  </Form11:taskMetaData>
+  <Form11:participantToken></Form11:participantToken>
+  <Form11:taskInput>
+    <Form11:input></Form11:input>
+  </Form11:taskInput>
+</Form11:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$form11NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<Form11:response>
+  <Form11:isChainedAfter></Form11:isChainedAfter>
+  <Form11:taskMetaData>
+    <Form11:taskId></Form11:taskId>
+    <Form11:taskState></Form11:taskState>
+    <Form11:taskType></Form11:taskType>
+    <Form11:description></Form11:description>
+    <Form11:processId></Form11:processId>
+    <Form11:business>
+      <Form11:processName></Form11:processName>
+      <Form11:instanceId></Form11:instanceId>
+      <Form11:customData></Form11:customData>
+    </Form11:business>
+    <Form11:creationDate></Form11:creationDate>
+    <Form11:userOwner></Form11:userOwner>
+    <Form11:roleOwner></Form11:roleOwner>
+    <Form11:claimAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:claimAction>
+    <Form11:revokeAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:revokeAction>
+    <Form11:saveAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:saveAction>
+    <Form11:completeAction>
+      <Form11:user></Form11:user>
+      <Form11:role></Form11:role>
+    </Form11:completeAction>
+    <Form11:formUrl></Form11:formUrl>
+    <Form11:failureCode></Form11:failureCode>
+    <Form11:failureReason></Form11:failureReason>
+    <Form11:priority></Form11:priority>
+    <Form11:scheduledActions>
+      <Form11:expiration>
+        <Form11:until></Form11:until>
+        <Form11:for></Form11:for>
+      </Form11:expiration>
+      <Form11:deferActivation>
+        <Form11:until></Form11:until>
+        <Form11:for></Form11:for>
+      </Form11:deferActivation>
+    </Form11:scheduledActions>
+    <Form11:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Form11:attachments>
+    <Form11:userProcessCompleteSOAPAction></Form11:userProcessCompleteSOAPAction>
+    <Form11:isChainedBefore></Form11:isChainedBefore>
+    <Form11:previousTaskId></Form11:previousTaskId>
+    <Form11:userProcessEndpoint></Form11:userProcessEndpoint>
+    <Form11:userProcessNamespaceURI></Form11:userProcessNamespaceURI>
+  </Form11:taskMetaData>
+  <Form11:status>OK</Form11:status>
+  <Form11:errorCode></Form11:errorCode>
+  <Form11:errorReason></Form11:errorReason>
+</Form11:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form11NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$form21CreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<Form21:createTaskRequest>
+  <Form21:taskMetaData>
+    <Form21:taskId>_hLqGAv6dEd2JT7-kaC3HUQ</Form21:taskId>
+    <Form21:taskState></Form21:taskState>
+    <Form21:taskType></Form21:taskType>
+    <Form21:description>Form 2 - age</Form21:description>
+    <Form21:processId></Form21:processId>
+    <Form21:business>
+      <Form21:processName></Form21:processName>
+      <Form21:instanceId></Form21:instanceId>
+      <Form21:customData></Form21:customData>
+    </Form21:business>
+    <Form21:creationDate></Form21:creationDate>
+    <Form21:userOwner />
+    <Form21:roleOwner>examples/manager</Form21:roleOwner>
+    <Form21:claimAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:claimAction>
+    <Form21:revokeAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:revokeAction>
+    <Form21:saveAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:saveAction>
+    <Form21:completeAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:completeAction>
+    <Form21:formUrl>oxf://PageFlowXForm/Form2.xform</Form21:formUrl>
+    <Form21:failureCode></Form21:failureCode>
+    <Form21:failureReason></Form21:failureReason>
+    <Form21:priority></Form21:priority>
+    <Form21:scheduledActions>
+      <Form21:expiration>
+        <Form21:until></Form21:until>
+        <Form21:for></Form21:for>
+      </Form21:expiration>
+      <Form21:deferActivation>
+        <Form21:until></Form21:until>
+        <Form21:for></Form21:for>
+      </Form21:deferActivation>
+    </Form21:scheduledActions>
+    <Form21:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description>Form 2 - age</description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Form21:attachments>
+    <Form21:userProcessCompleteSOAPAction>http://bproc.it/Form2/xform/Process/notifyTaskCompletion</Form21:userProcessCompleteSOAPAction>
+    <Form21:isChainedBefore></Form21:isChainedBefore>
+    <Form21:previousTaskId></Form21:previousTaskId>
+    <Form21:userProcessEndpoint>http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_hLqGAv6dEd2JT7-kaC3HUQ</Form21:userProcessEndpoint>
+    <Form21:userProcessNamespaceURI>http://bproc.it/Form2/xform</Form21:userProcessNamespaceURI>
+  </Form21:taskMetaData>
+  <Form21:participantToken></Form21:participantToken>
+  <Form21:taskInput>
+    <Form21:input>
+      <Form21:helloMsg></Form21:helloMsg>
+    </Form21:input>
+  </Form21:taskInput>
+</Form21:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$form21NotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<Form21:response>
+  <Form21:isChainedAfter></Form21:isChainedAfter>
+  <Form21:taskMetaData>
+    <Form21:taskId></Form21:taskId>
+    <Form21:taskState></Form21:taskState>
+    <Form21:taskType></Form21:taskType>
+    <Form21:description></Form21:description>
+    <Form21:processId></Form21:processId>
+    <Form21:business>
+      <Form21:processName></Form21:processName>
+      <Form21:instanceId></Form21:instanceId>
+      <Form21:customData></Form21:customData>
+    </Form21:business>
+    <Form21:creationDate></Form21:creationDate>
+    <Form21:userOwner></Form21:userOwner>
+    <Form21:roleOwner></Form21:roleOwner>
+    <Form21:claimAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:claimAction>
+    <Form21:revokeAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:revokeAction>
+    <Form21:saveAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:saveAction>
+    <Form21:completeAction>
+      <Form21:user></Form21:user>
+      <Form21:role></Form21:role>
+    </Form21:completeAction>
+    <Form21:formUrl></Form21:formUrl>
+    <Form21:failureCode></Form21:failureCode>
+    <Form21:failureReason></Form21:failureReason>
+    <Form21:priority></Form21:priority>
+    <Form21:scheduledActions>
+      <Form21:expiration>
+        <Form21:until></Form21:until>
+        <Form21:for></Form21:for>
+      </Form21:expiration>
+      <Form21:deferActivation>
+        <Form21:until></Form21:until>
+        <Form21:for></Form21:for>
+      </Form21:deferActivation>
+    </Form21:scheduledActions>
+    <Form21:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </Form21:attachments>
+    <Form21:userProcessCompleteSOAPAction></Form21:userProcessCompleteSOAPAction>
+    <Form21:isChainedBefore></Form21:isChainedBefore>
+    <Form21:previousTaskId></Form21:previousTaskId>
+    <Form21:userProcessEndpoint></Form21:userProcessEndpoint>
+    <Form21:userProcessNamespaceURI></Form21:userProcessNamespaceURI>
+  </Form21:taskMetaData>
+  <Form21:status>OK</Form21:status>
+  <Form21:errorCode></Form21:errorCode>
+  <Form21:errorReason></Form21:errorReason>
+</Form21:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form21NotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_user_start">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:savedUser></pptypes:savedUser>
+  <pptypes:realUserOwner></pptypes:realUserOwner>
+  <pptypes:realRoleOwner></pptypes:realRoleOwner>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_user_start</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_user_user">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:savedUser></pptypes:savedUser>
+  <pptypes:realUserOwner></pptypes:realUserOwner>
+  <pptypes:realRoleOwner></pptypes:realRoleOwner>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_user_user</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$pp_global_vars">
+        <bpel:from>
+          <bpel:literal>
+<typeWrapper>
+  <pptypes:pid></pptypes:pid>
+  <pptypes:pageflow></pptypes:pageflow>
+</typeWrapper></bpel:literal>
+        </bpel:from>
+        <bpel:to>$pp_global_vars</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="pageFlowProcessAndStartPlkVar" portType="this:ForStart" operation="EventStartMessage" variable="thisEventStartMessageResponse" bpmn:label="Reply" name="Reply" bpmn:id="_kpuk0P6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata" bpmn:id="C47dqxy2CiHYzzNXm20A1F8">
+      <bpel:copy>
+        <bpel:from>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2" bpmn:id="jP0UxY4ybTZ9644A4JWL35m">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form1 Create" name="Form1_Create" bpmn:id="_q9b-kP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_b38JoP6dEd2JT7-kaC3HUQ"</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://bproc.it/Form1/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_b3_0AP6dEd2JT7-kaC3HUQ"</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"Form 1 - name"</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar" portType="Form11:Workflow" operation="createTask" inputVariable="form11CreateTaskRequestMsg" outputVariable="form11CreateTaskResponseMsg" bpmn:label="Form1 Create" name="Form1_Create-1" bpmn:id="_q9b-kP6cEd2JT7-kaC3HUQ"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar" portType="Form11:Process" operation="notifyTaskCompletion" variable="form11NotifyTaskCompletionRequestMsg" bpmn:label="Form1 Wait" name="Form1_Wait" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:assign bpmn:label="Form1 Wait" name="Form1_Wait-1" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$form11NotifyTaskCompletionResponseMsg.root/Form11:isChainedAfter</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="wFmagic_b38JoP6dEd2JT7-kaC3HUQPlkVar" portType="Form11:Process" operation="notifyTaskCompletion" variable="form11NotifyTaskCompletionResponseMsg" bpmn:label="Form1 Wait" name="Form1_Wait-2" bpmn:id="_rYEFEP6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User" bpmn:id="Jlk6t90KSd61vsmiMwx43Uc">
+      <bpel:copy>
+        <bpel:from>$form11NotifyTaskCompletionRequestMsg.root/Form11:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$form11CreateTaskRequestMsg.root/Form11:taskMetaData/Form11:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign bpmn:label="Save Metadata" name="Save_Metadata-1" bpmn:id="AY8IUnRp9a1012La9djTR8z">
+      <bpel:copy>
+        <bpel:from>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:userOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realUserOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:roleOwner</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:realRoleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:if>
+      <bpel:condition>$pp_user_user/pptypes:savedUser = ""</bpel:condition>
+      <bpel:empty></bpel:empty>
+      <bpel:else>
+        <bpel:sequence>
+          <bpel:assign bpmn:label="Mapping Task 2" name="Mapping_Task_2-1" bpmn:id="nvRN5iR4K80Tedq6nqMF51d">
+            <bpel:copy>
+              <bpel:from>$pp_user_user/pptypes:savedUser</bpel:from>
+              <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:userOwner</bpel:to>
+            </bpel:copy>
+            <bpel:copy>
+              <bpel:from>""</bpel:from>
+              <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:roleOwner</bpel:to>
+            </bpel:copy>
+          </bpel:assign>
+        </bpel:sequence>
+      </bpel:else>
+    </bpel:if>
+    <bpel:assign bpmn:label="Form2 Create" name="Form2_Create" bpmn:id="_r91EkP6cEd2JT7-kaC3HUQ">
+      <bpel:copy>
+        <bpel:from>concat("Hello, ", $form11NotifyTaskCompletionRequestMsg.root/Form11:taskOutput/Form11:output/Form11:inName)</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskInput/Form21:input/Form21:helloMsg</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>true()</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:isChainedBefore</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$form11NotifyTaskCompletionRequestMsg.root/Form11:taskMetaData/Form11:taskId</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:previousTaskId</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:processId</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://newwia.wsc.test:8080/ode/processes/PageFlowXForm/TestProcess/PageFlowProcess/User/WFmagic_hLqGAv6dEd2JT7-kaC3HUQ"</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://bproc.it/Form2/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_hLsiQP6dEd2JT7-kaC3HUQ"</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:taskId</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"Form 2 - age"</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar" portType="Form21:Workflow" operation="createTask" inputVariable="form21CreateTaskRequestMsg" outputVariable="form21CreateTaskResponseMsg" bpmn:label="Form2 Create" name="Form2_Create-1" bpmn:id="_r91EkP6cEd2JT7-kaC3HUQ"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar" portType="Form21:Process" operation="notifyTaskCompletion" variable="form21NotifyTaskCompletionRequestMsg" bpmn:label="Form2 Wait" name="Form2_Wait" bpmn:id="_s1EOkP6cEd2JT7-kaC3HUQ"></bpel:receive>
+    <bpel:reply partnerLink="wFmagic_hLqGAv6dEd2JT7-kaC3HUQPlkVar" portType="Form21:Process" operation="notifyTaskCompletion" variable="form21NotifyTaskCompletionResponseMsg" bpmn:label="Form2 Wait" name="Form2_Wait-1" bpmn:id="_s1EOkP6cEd2JT7-kaC3HUQ"></bpel:reply>
+    <bpel:assign bpmn:label="Saving User" name="Saving_User-1" bpmn:id="xuvIWPj6PZf3Y6Fyrxz2nNe">
+      <bpel:copy>
+        <bpel:from>$form21NotifyTaskCompletionRequestMsg.root/Form21:user</bpel:from>
+        <bpel:to>$pp_user_user/pptypes:savedUser</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realUserOwner</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:userOwner</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$pp_user_user/pptypes:realRoleOwner</bpel:from>
+        <bpel:to>$form21CreateTaskRequestMsg.root/Form21:taskMetaData/Form21:roleOwner</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:empty bpmn:label="End" name="End" bpmn:id="_xg0MAP6cEd2JT7-kaC3HUQ"></bpel:empty>
+  </bpel:sequence>
+</bpel:process>

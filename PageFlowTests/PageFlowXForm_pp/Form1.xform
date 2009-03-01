@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://bproc.it/Form1/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_inName {position : absolute; top : 30px; left : 45px; width : 315px; height : 29px; margin : 0px; padding : 0px;}
+#xforms_cntrl_inName input {width : 238px; height : 21px}
+</xhtml:style>
+    <xforms:model schema="Form1.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input/>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <inName xmlns="http://bproc.it/Form1/xform"/>
+        </fe:output>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_inName">
+        <xforms:input ref="instance('taskoutput')/fe:inName">
+          <xforms:label>Your name ? </xforms:label>
+        </xforms:input>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>
