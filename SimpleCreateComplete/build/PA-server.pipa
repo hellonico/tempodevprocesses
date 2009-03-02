@@ -1,0 +1,9 @@
+﻿#
+#Mon Mar 02 14:14:08 JST 2009
+formURI=oxf\://SimpleCreateComplete/PA.xform
+userProcessInitSOAPAction=http\://example.com/PA/xform/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/SimpleCreateComplete/PA/server/User/UserAndServer
+task-description=Start Process
+task-role-owners=
+task-user-owners=intalio\\admin
+formNamespace=http\://example.com/PA/xform

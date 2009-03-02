@@ -1,0 +1,218 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:PA="http://example.com/PA/xform/attachments" xmlns:this="http://example.com/PA/server" xmlns:xform="http://example.com/PA/xform" xmlns:diag="http://example.com/PA" xmlns:User="http://example.com/PA/User" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="server" name="server" bpmn:id="_--6LoAoyEd2P5owc4hg5-Q" targetNamespace="http://example.com/PA/server">
+  <bpel:import namespace="http://example.com/PA/xform" location="PA.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/PA" location="PA.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="userAndServerPlkVar" partnerLinkType="diag:UserAndServer" myRole="server_for_User"></bpel:partnerLink>
+    <bpel:partnerLink name="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar" partnerLinkType="diag:WFmagic_DK1ZiAozEd2P5owc4hg5-Q" initializePartnerRole="no" myRole="server_for_UserForThePortTypeProcess" partnerRole="User_for_serverForXformPort"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="xformInitProcessRequestMsg" messageType="xform:initProcessRequest"></bpel:variable>
+    <bpel:variable name="xformInitProcessResponseMsg" messageType="xform:initProcessResponse"></bpel:variable>
+    <bpel:variable name="xformCreateTaskRequestMsg" messageType="xform:createTaskRequest"></bpel:variable>
+    <bpel:variable name="xformCreateTaskResponseMsg" messageType="xform:createTaskResponse"></bpel:variable>
+    <bpel:variable name="xformNotifyTaskCompletionRequestMsg" messageType="xform:notifyTaskCompletionRequest"></bpel:variable>
+    <bpel:variable name="xformNotifyTaskCompletionResponseMsg" messageType="xform:notifyTaskCompletionResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="userAndServerPlkVar" portType="xform:Process" operation="initProcess" variable="xformInitProcessRequestMsg" createInstance="yes" bpmn:label="init" name="init" bpmn:id="_AI-LAAozEd2P5owc4hg5-Q"></bpel:receive>
+    <bpel:assign name="init-variables-server">
+      <bpel:copy bpmn:label="$xformInitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<xform:initProcessResponse>
+  <xform:status>OK</xform:status>
+  <xform:errorCode></xform:errorCode>
+  <xform:errorReason></xform:errorReason>
+  <xform:taskMetaData>
+    <xform:nextTaskId></xform:nextTaskId>
+    <xform:nextTaskURL></xform:nextTaskURL>
+  </xform:taskMetaData>
+</xform:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xformInitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xformCreateTaskRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<xform:createTaskRequest>
+  <xform:taskMetaData>
+    <xform:taskId>_DK1ZiAozEd2P5owc4hg5-Q</xform:taskId>
+    <xform:taskState></xform:taskState>
+    <xform:taskType></xform:taskType>
+    <xform:description />
+    <xform:processId></xform:processId>
+    <xform:business>
+      <xform:processName></xform:processName>
+      <xform:instanceId></xform:instanceId>
+      <xform:customData></xform:customData>
+    </xform:business>
+    <xform:creationDate></xform:creationDate>
+    <xform:userOwner>intalio\admin</xform:userOwner>
+    <xform:roleOwner />
+    <xform:claimAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:claimAction>
+    <xform:revokeAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:revokeAction>
+    <xform:saveAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:saveAction>
+    <xform:completeAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:completeAction>
+    <xform:formUrl>oxf://SimpleCreateComplete/PA.xform</xform:formUrl>
+    <xform:failureCode></xform:failureCode>
+    <xform:failureReason></xform:failureReason>
+    <xform:priority></xform:priority>
+    <xform:scheduledActions>
+      <xform:expiration>
+        <xform:until></xform:until>
+        <xform:for></xform:for>
+      </xform:expiration>
+      <xform:deferActivation>
+        <xform:until></xform:until>
+        <xform:for></xform:for>
+      </xform:deferActivation>
+    </xform:scheduledActions>
+    <xform:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description />
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </xform:attachments>
+    <xform:userProcessCompleteSOAPAction>http://example.com/PA/xform/Process/notifyTaskCompletion</xform:userProcessCompleteSOAPAction>
+    <xform:isChainedBefore></xform:isChainedBefore>
+    <xform:previousTaskId></xform:previousTaskId>
+    <xform:userProcessEndpoint>http://localhost:8080/ode/processes/SimpleCreateComplete/PA/server/User/WFmagic_DK1ZiAozEd2P5owc4hg5-Q</xform:userProcessEndpoint>
+    <xform:userProcessNamespaceURI>http://example.com/PA/xform</xform:userProcessNamespaceURI>
+  </xform:taskMetaData>
+  <xform:participantToken></xform:participantToken>
+  <xform:taskInput>
+    <xform:input>
+      <xform:group>
+        <xform:Name></xform:Name>
+        <xform:Email></xform:Email>
+      </xform:group>
+    </xform:input>
+  </xform:taskInput>
+</xform:createTaskRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$xformNotifyTaskCompletionResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<xform:response>
+  <xform:isChainedAfter></xform:isChainedAfter>
+  <xform:taskMetaData>
+    <xform:taskId></xform:taskId>
+    <xform:taskState></xform:taskState>
+    <xform:taskType></xform:taskType>
+    <xform:description></xform:description>
+    <xform:processId></xform:processId>
+    <xform:business>
+      <xform:processName></xform:processName>
+      <xform:instanceId></xform:instanceId>
+      <xform:customData></xform:customData>
+    </xform:business>
+    <xform:creationDate></xform:creationDate>
+    <xform:userOwner></xform:userOwner>
+    <xform:roleOwner></xform:roleOwner>
+    <xform:claimAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:claimAction>
+    <xform:revokeAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:revokeAction>
+    <xform:saveAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:saveAction>
+    <xform:completeAction>
+      <xform:user></xform:user>
+      <xform:role></xform:role>
+    </xform:completeAction>
+    <xform:formUrl></xform:formUrl>
+    <xform:failureCode></xform:failureCode>
+    <xform:failureReason></xform:failureReason>
+    <xform:priority></xform:priority>
+    <xform:scheduledActions>
+      <xform:expiration>
+        <xform:until></xform:until>
+        <xform:for></xform:for>
+      </xform:expiration>
+      <xform:deferActivation>
+        <xform:until></xform:until>
+        <xform:for></xform:for>
+      </xform:deferActivation>
+    </xform:scheduledActions>
+    <xform:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </xform:attachments>
+    <xform:userProcessCompleteSOAPAction></xform:userProcessCompleteSOAPAction>
+    <xform:isChainedBefore></xform:isChainedBefore>
+    <xform:previousTaskId></xform:previousTaskId>
+    <xform:userProcessEndpoint></xform:userProcessEndpoint>
+    <xform:userProcessNamespaceURI></xform:userProcessNamespaceURI>
+  </xform:taskMetaData>
+  <xform:status>OK</xform:status>
+  <xform:errorCode></xform:errorCode>
+  <xform:errorReason></xform:errorReason>
+</xform:response></bpel:literal>
+        </bpel:from>
+        <bpel:to>$xformNotifyTaskCompletionResponseMsg.root</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="userAndServerPlkVar" portType="xform:Process" operation="initProcess" variable="xformInitProcessResponseMsg" bpmn:label="init" name="init-1" bpmn:id="_AI-LAAozEd2P5owc4hg5-Q"></bpel:reply>
+    <bpel:assign bpmn:label="create" name="create" bpmn:id="_BRsGkAozEd2P5owc4hg5-Q">
+      <bpel:copy>
+        <bpel:from>$xformInitProcessRequestMsg.root/xform:taskOutput/xform:output/xform:group/xform:Name</bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root/xform:taskInput/xform:input/xform:group/xform:Name</bpel:to>
+      </bpel:copy>
+      <bpel:copy>
+        <bpel:from>$xformInitProcessRequestMsg.root/xform:taskOutput/xform:output/xform:group/xform:Email</bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root/xform:taskInput/xform:input/xform:group/xform:Email</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"http://localhost:8080/ode/processes/SimpleCreateComplete/PA/server/User/WFmagic_DK1ZiAozEd2P5owc4hg5-Q"</bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root/xform:taskMetaData/xform:userProcessEndpoint</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"http://example.com/PA/xform/Process/notifyTaskCompletion"</bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root/xform:taskMetaData/xform:userProcessCompleteSOAPAction</bpel:to>
+    </bpel:copy>
+    <bpel:copy>
+        <bpel:from>"_DK1ZjwozEd2P5owc4hg5-Q"</bpel:from>
+        <bpel:to>$xformCreateTaskRequestMsg.root/xform:taskMetaData/xform:taskId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar" portType="xform:Workflow" operation="createTask" inputVariable="xformCreateTaskRequestMsg" outputVariable="xformCreateTaskResponseMsg" bpmn:label="create" name="create-1" bpmn:id="_BRsGkAozEd2P5owc4hg5-Q"></bpel:invoke>
+    <bpel:receive partnerLink="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar" portType="xform:Process" operation="notifyTaskCompletion" variable="xformNotifyTaskCompletionRequestMsg" bpmn:label="complete" name="complete" bpmn:id="_CDmrsAozEd2P5owc4hg5-Q"></bpel:receive>
+    <bpel:reply partnerLink="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar" portType="xform:Process" operation="notifyTaskCompletion" variable="xformNotifyTaskCompletionResponseMsg" bpmn:label="complete" name="complete-1" bpmn:id="_CDmrsAozEd2P5owc4hg5-Q"></bpel:reply>
+  </bpel:sequence>
+</bpel:process>

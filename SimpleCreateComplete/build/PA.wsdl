@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:User="http://example.com/PA/User" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PA="http://example.com/PA/xform/attachments" xmlns:xform="http://example.com/PA/xform" xmlns:diag="http://example.com/PA" xmlns:server="http://example.com/PA/server" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://example.com/PA">
+    <wsdl:import namespace="http://example.com/PA/xform" location="PA.xform.all.wsdl"/>
+    <pnlk:partnerLinkType name="WFmagic_DK1ZiAozEd2P5owc4hg5-Q">
+        <pnlk:role name="server_for_UserForThePortTypeProcess" portType="xform:Process"/>
+        <pnlk:role name="User_for_serverForXformPort" portType="xform:Workflow"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="UserAndServer">
+        <pnlk:role name="server_for_User" portType="xform:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

@@ -1,0 +1,14 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:xform="http://example.com/PA/xform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://example.com/PA" xmlns:PA="http://example.com/PA/xform/attachments" xmlns:User="http://example.com/PA/User" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://example.com/PA/server" name="this:server" fileName="PA-server.bpel">
+  <dd:property name="PATH">PA</dd:property>
+  <dd:property name="SVG">PA.svg</dd:property>
+  <dd:provide partnerLink="userAndServerPlkVar">
+    <dd:service name="this:UserAndServerService" port="server_for_UserPort"></dd:service>
+  </dd:provide>
+  <dd:provide partnerLink="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar">
+    <dd:service name="this:WFmagic_DK1ZiAozEd2P5owc4hg5-QService" port="server_for_UserForThePortTypeProcessPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="wFmagic_DK1ZiAozEd2P5owc4hg5-QPlkVar">
+    <dd:service name="xform:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+</dd:process>

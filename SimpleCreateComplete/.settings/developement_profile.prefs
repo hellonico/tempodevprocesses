@@ -1,0 +1,11 @@
+#Mon Apr 14 22:03:04 IST 2008
+deploy.fileRuntimeSelection=PA.bpm\:PA.xform\:PA.xform.xsd\:
+deploy_bundleArchiveName=/PA/PA.zip
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_serverUrl=http\://localhost\:8080/ode
+deploy_workflow_serverUrl=http\://localhost\:8080/wds
+deploy_workflowbundleShouldBeArchived=false
+deploy_workflowbundleShouldBeDeployed=true
+diagram_baseUri=http\://example.com
+eclipse.preferences.version=1

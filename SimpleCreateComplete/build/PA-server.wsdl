@@ -1,0 +1,56 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:PA="http://example.com/PA/xform/attachments" xmlns:User="http://example.com/PA/User" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xform="http://example.com/PA/xform" xmlns:diag="http://example.com/PA" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:this="http://example.com/PA/server" targetNamespace="http://example.com/PA/server">
+    <wsdl:import namespace="http://example.com/PA/xform" location="PA.xform.all.wsdl"/>
+    <wsdl:binding name="WFmagic_DK1ZiAozEd2P5owc4hg5-QServiceBinding" type="xform:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/PA/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/PA/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="UserAndServerServiceBinding" type="xform:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/PA/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/PA/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="WFmagic_DK1ZiAozEd2P5owc4hg5-QService">
+        <wsdl:port name="server_for_UserForThePortTypeProcessPort" binding="this:WFmagic_DK1ZiAozEd2P5owc4hg5-QServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/SimpleCreateComplete/PA/server/User/WFmagic_DK1ZiAozEd2P5owc4hg5-Q"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="UserAndServerService">
+        <wsdl:port name="server_for_UserPort" binding="this:UserAndServerServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/SimpleCreateComplete/PA/server/User/UserAndServer"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

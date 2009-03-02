@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:User="http://thisdiagram/User" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PA="http://example.com/PA/xform/attachments" xmlns:xform="http://example.com/PA/xform" xmlns:diag="http://thisdiagram" xmlns:server="http://thisdiagram/server" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000031" bpdm:canid="_yEotkAoyEd2P5owc4hg5-Q" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="UserAndServer" bpdm:poolOneId="_--6LoAoyEd2P5owc4hg5-Q" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="server" bpdm:poolTwoId="_yEotlgoyEd2P5owc4hg5-Q" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="User">
+    <pnlk:role name="server_for_User" portType="server:ForUser" bpdm:thisPoolId="_--6LoAoyEd2P5owc4hg5-Q">
+      <wsdl:portType name="ForUser">
+        <wsdl:operation name="complete" bpdm:canid="_CDmrsAozEd2P5owc4hg5-Q._DK1ZjwozEd2P5owc4hg5-Q." bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?wsdloperation={http://example.com/PA/xform}Process/notifyTaskCompletion">
+          <wsdl:input message="xform:notifyTaskCompletionRequest" name="complete" bpdm:canid="_EWO1oAozEd2P5owc4hg5-Q" bpdm:senderId="_DK1ZjwozEd2P5owc4hg5-Q" bpdm:receiverId="_CDmrsAozEd2P5owc4hg5-Q" bpdm:senderName="PA-complete" bpdm:receiverName="complete" bpdm:receiverPoolId="_--6LoAoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForOperation={http://example.com/PA/xform}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest" bpdm:plnkTypeKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q" bpdm:plnkVarKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q"></wsdl:input>
+          <wsdl:output message="xform:notifyTaskCompletionResponse" name="completeResponse" bpdm:canid="_EnXo8AozEd2P5owc4hg5-Q" bpdm:senderId="_CDmrsAozEd2P5owc4hg5-Q" bpdm:receiverId="_DK1ZjwozEd2P5owc4hg5-Q" bpdm:senderName="complete" bpdm:receiverName="PA-complete" bpdm:receiverPoolId="_yEotlgoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForOperation={http://example.com/PA/xform}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse" bpdm:plnkTypeKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q" bpdm:plnkVarKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="init" bpdm:canid="_AI-LAAozEd2P5owc4hg5-Q.__oyPGAoyEd2P5owc4hg5-Q." bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?wsdloperation={http://example.com/PA/xform}Process/initProcess">
+          <wsdl:input message="xform:initProcessRequest" name="init" bpdm:canid="_AI-LCQozEd2P5owc4hg5-Q" bpdm:senderId="__oyPGAoyEd2P5owc4hg5-Q" bpdm:receiverId="_AI-LAAozEd2P5owc4hg5-Q" bpdm:senderName="PA-init" bpdm:receiverName="init" bpdm:receiverPoolId="_--6LoAoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForOperation={http://example.com/PA/xform}Process/initProcess/input/initProcessRequest"></wsdl:input>
+          <wsdl:output message="xform:initProcessResponse" name="initResponse" bpdm:canid="_A4gKgAozEd2P5owc4hg5-Q" bpdm:senderId="_AI-LAAozEd2P5owc4hg5-Q" bpdm:receiverId="__oyPGAoyEd2P5owc4hg5-Q" bpdm:senderName="init" bpdm:receiverName="PA-init" bpdm:receiverPoolId="_yEotlgoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForOperation={http://example.com/PA/xform}Process/initProcess/output/initProcessResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+    <pnlk:role name="User_for_server" portType="User:Forserver" bpdm:thisPoolId="_yEotlgoyEd2P5owc4hg5-Q">
+      <wsdl:portType name="Forserver">
+        <wsdl:operation name="PA-create" bpdm:canid="_BRsGkAozEd2P5owc4hg5-Q._DK1ZiAozEd2P5owc4hg5-Q." bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?wsdloperationbound={http://example.com/PA/xform}WorkflowSoapService/xformPort/createTask">
+          <wsdl:input message="xform:createTaskRequest" name="PA-create" bpdm:canid="_DtQKEAozEd2P5owc4hg5-Q" bpdm:senderId="_BRsGkAozEd2P5owc4hg5-Q" bpdm:receiverId="_DK1ZiAozEd2P5owc4hg5-Q" bpdm:senderName="create" bpdm:receiverName="PA-create" bpdm:receiverPoolId="_yEotlgoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForBoundOperation={http://example.com/PA/xform}WorkflowSoapService/xformPort/createTask/input/createTaskRequest" bpdm:plnkTypeKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q" bpdm:plnkVarKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q"></wsdl:input>
+          <wsdl:output message="xform:createTaskResponse" name="PA-createResponse" bpdm:canid="_D4bfUAozEd2P5owc4hg5-Q" bpdm:senderId="_DK1ZiAozEd2P5owc4hg5-Q" bpdm:receiverId="_BRsGkAozEd2P5owc4hg5-Q" bpdm:senderName="PA-create" bpdm:receiverName="create" bpdm:receiverPoolId="_--6LoAoyEd2P5owc4hg5-Q" bpdm:dataobjectPointer="project:///PA.xform.all.wsdl?messageForBoundOperation={http://example.com/PA/xform}WorkflowSoapService/xformPort/createTask/output/createTaskResponse" bpdm:plnkTypeKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q" bpdm:plnkVarKey="WFmagic_DK1ZiAozEd2P5owc4hg5-Q"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="WFmagic_DK1ZiAozEd2P5owc4hg5-Q" bpdm:canPlkId="_yEotlgoyEd2P5owc4hg5-Q-_--6LoAoyEd2P5owc4hg5-Q">
+    <pnlk:role name="server_for_UserForThePortTypeProcess" portType="xform:Process"></pnlk:role>
+    <pnlk:role name="User_for_serverForXformPort" portType="xform:Workflow"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

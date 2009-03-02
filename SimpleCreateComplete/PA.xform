@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/PA/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_group {position : absolute; top : 30; left : 30; width : 300; height : 102; margin : 0; padding : 0;}
+#xforms_cntrl_Name {position : absolute; top : 15; left : 15; width : 270; height : 27; margin : 0; padding : 0;}
+#xforms_cntrl_Name input {width : 258; height : 19}
+#xforms_cntrl_Email {position : absolute; top : 60; left : 15; width : 270; height : 27; margin : 0; padding : 0;}
+#xforms_cntrl_Email input {width : 258; height : 19}
+</xhtml:style>
+    <xforms:model schema="PA.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <group xmlns="http://example.com/PA/xform">
+            <Name/>
+            <Email/>
+          </group>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <group xmlns="http://example.com/PA/xform">
+            <Name/>
+            <Email/>
+          </group>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:group/fe:Name" value="instance('taskinput')/fe:group/fe:Name"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:group/fe:Email" value="instance('taskinput')/fe:group/fe:Email"/>
+        </xforms:action>
+      </xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_group">
+        <xforms:group style="width : 300; height : 102" ref="instance('taskoutput')/fe:group">
+          <xhtml:div id="xforms_cntrl_Name">
+            <xforms:input ref="instance('taskoutput')/fe:group/fe:Name">
+              <xforms:label>Name:</xforms:label>
+            </xforms:input>
+          </xhtml:div>
+          <xhtml:div id="xforms_cntrl_Email">
+            <xforms:input ref="instance('taskoutput')/fe:group/fe:Email">
+              <xforms:label>Email:</xforms:label>
+            </xforms:input>
+          </xhtml:div>
+        </xforms:group>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>
