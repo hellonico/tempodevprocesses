@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:tns="http://www.example.org/loop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:Aform1="http://example.com/Aform/xform" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Teacher="http://example.com/MyLoop/Teacher" xmlns:Cform1="http://example.com/Cform/xform" xmlns:Cform="http://example.com/Cform/xform/attachments" xmlns:diag="http://example.com/MyLoop" xmlns:Aform="http://example.com/Aform/xform/attachments" xmlns:Bform="http://example.com/Bform/xform/attachments" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:Bform1="http://example.com/Bform/xform" xmlns:President="http://example.com/MyLoop/President" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:this="http://example.com/MyLoop/System" targetNamespace="http://example.com/MyLoop/System">
+    <wsdl:import namespace="http://example.com/Aform/xform" location="Aform.xform.all.wsdl"/>
+    <wsdl:import namespace="http://example.com/Bform/xform" location="Bform.xform.all.wsdl"/>
+    <wsdl:binding name="PresidentAndSystemServiceBinding" type="Aform1:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/Aform/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/Aform/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WFmagic_7kWLSAWTEd6ileXxQdrd4wServiceBinding" type="Bform1:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/Bform/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/Bform/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PresidentAndSystemService">
+        <wsdl:port name="System_for_PresidentPort" binding="this:PresidentAndSystemServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/LoopProject/MyLoop/System/President/PresidentAndSystem"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="WFmagic_7kWLSAWTEd6ileXxQdrd4wService">
+        <wsdl:port name="System_for_TeacherForThePortTypeProcessPort" binding="this:WFmagic_7kWLSAWTEd6ileXxQdrd4wServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/LoopProject/MyLoop/System/Teacher/WFmagic_7kWLSAWTEd6ileXxQdrd4w"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

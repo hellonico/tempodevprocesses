@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fe="http://example.com/Aform/xform"
+    xmlns:xform="http://example.com/Aform/xform"
+    targetNamespace="http://example.com/Aform/xform" elementFormDefault="qualified">
+    <xs:element name="output">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Fee" type="xs:string"/>
+                <xs:element name="Seminar" type="xs:string"/>
+                <xs:element name="txt_Fee" type="xs:integer"/>
+                <xs:element name="txt_Seminar" type="xs:string"/>
+                <xs:element name="Wo" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="taskId" type="xs:string"/>
+            <xs:attribute name="participantToken" type="xs:string"/>
+            <xs:attribute name="user" type="xs:string"/>
+            <xs:attribute name="formUrl" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="input">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Fee" type="xs:string"/>
+                <xs:element name="Seminar" type="xs:string"/>
+                <xs:element name="txt_Fee" type="xs:integer"/>
+                <xs:element name="txt_Seminar" type="xs:string"/>
+                <xs:element name="Wo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

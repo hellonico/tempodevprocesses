@@ -1,0 +1,9 @@
+﻿#
+#Mon Mar 02 13:48:06 JST 2009
+formURI=oxf\://LoopProject/Aform.xform
+userProcessInitSOAPAction=http\://example.com/Aform/xform/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/LoopProject/MyLoop/System/President/PresidentAndSystem
+task-description=Aform-init request process LoopProject/MyLoop with form Aform.xform
+task-role-owners=
+task-user-owners=intalio\\admin
+formNamespace=http\://example.com/Aform/xform

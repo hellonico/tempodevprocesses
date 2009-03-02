@@ -1,0 +1,148 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Aform="http://example.com/Aform/xform/attachments" xmlns:Teacher="http://thisdiagram/Teacher" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/loop" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/System" xmlns:Bform1="http://example.com/Bform/xform" xmlns:Aform1="http://example.com/Aform/xform" xmlns:Cform="http://example.com/Cform/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Cform1="http://example.com/Cform/xform" xmlns:Bform="http://example.com/Bform/xform/attachments" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/System">
+    <bpdm:dependencies version="6000031">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Aform/xform/attachments" bpdm:prefix="Aform" bpdm:comment="contrib=&apos;project:///Aform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Teacher" bpdm:prefix="Teacher" bpdm:comment="contrib=&apos;partner-pool:///_xjegEAWPEd6ileXxQdrd4w"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.example.org/loop" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///loop.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_xFhYwAWPEd6ileXxQdrd4w"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/System" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Bform/xform" bpdm:prefix="Bform1" bpdm:comment="contrib=&apos;project:///Bform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Aform/xform" bpdm:prefix="Aform1" bpdm:comment="contrib=&apos;project:///Aform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Cform/xform/attachments" bpdm:prefix="Cform" bpdm:comment="contrib=&apos;project:///Cform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Cform/xform" bpdm:prefix="Cform1" bpdm:comment="contrib=&apos;project:///Cform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Bform/xform/attachments" bpdm:prefix="Bform" bpdm:comment="contrib=&apos;project:///Bform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="PresidentAndSystemService">
+                <wsdl:port name="System_for_PresidentPort" binding="this:PresidentAndSystemServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/System/President/PresidentAndSystem"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="PresidentAndSystemServiceBinding" type="Aform1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_7kWLSAWTEd6ileXxQdrd4wService">
+                <wsdl:port name="System_for_TeacherForThePortTypeProcessPort" binding="this:WFmagic_7kWLSAWTEd6ileXxQdrd4wServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/System/Teacher/WFmagic_7kWLSAWTEd6ileXxQdrd4w"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_7kWLSAWTEd6ileXxQdrd4wServiceBinding" type="Bform1:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_xFhYwAWPEd6ileXxQdrd4w" bpdm:label="President"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Aform.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Aform.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Bform.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Bform.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Cform.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Cform.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_xjegEAWPEd6ileXxQdrd4w" bpdm:label="Teacher"/>
+        <bpdm:namespaceContributor bpdm:url="project:///loop.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="System" bpdm:ID="_wkS7AAWPEd6ileXxQdrd4w">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="presidentAndSystemPlkVar" partnerLinkType="diag:PresidentAndSystem" initializePartnerRole="yes" myRole="System_for_President" bpdm:enableSharing="false" bpdm:providedService="this:PresidentAndSystemService" bpdm:providedPort="System_for_PresidentPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/System/President/PresidentAndSystem" bpdm:providedIsDefault="true" partnerRole="President_for_System" bpdm:invokedService="Cform1:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_wkS7AAWPEd6ileXxQdrd4w:_R9kM0AWQEd6ileXxQdrd4w, _wkS7AAWPEd6ileXxQdrd4w:_JEcbwAWrEd6ileXxQdrd4w" bpdm:isManaged="true" bpdm:otherPoolId="_xFhYwAWPEd6ileXxQdrd4w"/>
+            <bpel:partnerLink name="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" partnerLinkType="diag:WFmagic_7kWLSAWTEd6ileXxQdrd4w" initializePartnerRole="no" myRole="System_for_TeacherForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_7kWLSAWTEd6ileXxQdrd4wService" bpdm:providedPort="System_for_TeacherForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/System/Teacher/WFmagic_7kWLSAWTEd6ileXxQdrd4w" bpdm:providedIsDefault="true" partnerRole="Teacher_for_SystemForXformPort" bpdm:invokedService="Bform1:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_LA0p4AWgEd6ileXxQdrd4w:_lU2kEAWwEd6-P7Vm2deqBQ, _LA0p4AWgEd6ileXxQdrd4w:_mXnBkAWwEd6-P7Vm2deqBQ" bpdm:isManaged="true" bpdm:otherPoolId="_xjegEAWPEd6ileXxQdrd4w"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="aform1InitProcessRequestMsg" messageType="Aform1:initProcessRequest" bpdm:id="_UQMWxgWQEd6ileXxQdrd4w" bpdm:messageIds="inc:_UP5b0AWQEd6ileXxQdrd4w"/>
+            <bpel:variable name="aform1InitProcessResponseMsg" messageType="Aform1:initProcessResponse" bpdm:id="_VLNNgAWQEd6ileXxQdrd4w" bpdm:messageIds=" out:_VK6SkAWQEd6ileXxQdrd4w">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Aform1:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="cform1NotifyRequestMsg" messageType="Cform1:notifyRequest" binding="Cform1:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:id="_FBRAkAWzEd6yx7u8htUulg" bpdm:messageIds=" out:_PWBukAWrEd6ileXxQdrd4w">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Cform1:notifyRequest" bpdm:linkedPart="root" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="cform1NotifyResponseMsg" messageType="Cform1:notifyResponse" binding="Cform1:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:id="_F2TyNwWzEd6yx7u8htUulg" bpdm:messageIds="inc:_P2glcAWrEd6ileXxQdrd4w"/>
+            <bpel:variable name="loop" type="xs:int" bpdm:id="_rPTUUAbkEd6gSdccwb8AWg">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedType="xs:int" bpdm:linkedFile="int-_wkS7AAWPEd6ileXxQdrd4w-0-literal.xml"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="presidentAndSystemPlkVar" portType="Aform1:Process" isMyRole="true" enableSharing="false" bpdm:label="Start" bpdm:ID="_R9kM0AWQEd6ileXxQdrd4w">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="aform1InitProcessRequestMsg" bpdm:msgVarScopeId="_wkS7AAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Aform1:initProcessRequest" bpdm:ID="_UP5b0AWQEd6ileXxQdrd4w"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="aform1InitProcessResponseMsg" bpdm:msgVarScopeId="_wkS7AAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Aform1:initProcessResponse" bpdm:ID="_VK6SkAWQEd6ileXxQdrd4w"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpel:scope bpdm:label="LoopTeacher" bpdm:ID="_LA0p4AWgEd6ileXxQdrd4w">
+                <bpdm:linkset bpdm:type="loop" bpdm:loopType="while">
+                    <bpel:condition bpdm:loopType="while">$loop&lt; 5
+<mapper:mapperLink>
+  <mapper:vertice id="14346354" targetPath="$while" targetedBy="16076307-arg2"></mapper:vertice>
+  <mapper:vertice id="16076307" dimension="78x24" location="252,48">
+    <mapper:value>&lt;</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="15747587" sourcePath="$loop" targetedBy="16076307-arg0"></mapper:vertice>
+  <mapper:vertice id="14130448" dimension="78x24" location="132,108" targetedBy="16076307-arg1">
+    <mapper:value>5</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:variables>
+                    <bpel:variable name="bform1CreateTaskRequestMsg" messageType="Bform1:createTaskRequest" binding="Bform1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_nh974AWwEd6-P7Vm2deqBQ" bpdm:messageIds=" out:_nhrA8AWwEd6-P7Vm2deqBQ">
+                        <bpel:from bpdm:toPart="root">
+                            <bpel:literal bpdm:linkedMessageType="Bform1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="Bform1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                        </bpel:from>
+                    </bpel:variable>
+                    <bpel:variable name="bform1CreateTaskResponseMsg" messageType="Bform1:createTaskResponse" binding="Bform1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_oIaQ2QWwEd6-P7Vm2deqBQ" bpdm:messageIds="inc:_oH9k4AWwEd6-P7Vm2deqBQ"/>
+                    <bpel:variable name="bform1NotifyTaskCompletionRequestMsg" messageType="Bform1:notifyTaskCompletionRequest" bpdm:id="_rDRfdgWwEd6-P7Vm2deqBQ" bpdm:messageIds="inc:_rC0zgAWwEd6-P7Vm2deqBQ"/>
+                    <bpel:variable name="bform1NotifyTaskCompletionResponseMsg" messageType="Bform1:notifyTaskCompletionResponse" bpdm:id="_t5EA0AWwEd6-P7Vm2deqBQ" bpdm:messageIds=" out:_t4eK8AWwEd6-P7Vm2deqBQ">
+                        <bpel:from bpdm:toPart="root">
+                            <bpel:literal bpdm:linkedMessageType="Bform1:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                        </bpel:from>
+                    </bpel:variable>
+                </bpel:variables>
+                <bpel:sequence>
+                    <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" portType="Bform1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Task" bpdm:ID="_lU2kEAWwEd6-P7Vm2deqBQ">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Fee</bpel:from>
+                                <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskInput/Bform1:input/Bform1:txt_Fee</bpel:to><mapper:mapperLink><mapper:vertice id="12853393" targetPath="$bform1CreateTaskRequestMsg.root/Bform1:taskInput/Bform1:input/Bform1:txt_Fee" targetedBy="32927169-arg0"></mapper:vertice><mapper:vertice id="32927169" sourcePath="$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Fee"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Seminar</bpel:from>
+                                <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskInput/Bform1:input/Bform1:txt_Seminar</bpel:to><mapper:mapperLink><mapper:vertice id="10368983" targetPath="$bform1CreateTaskRequestMsg.root/Bform1:taskInput/Bform1:input/Bform1:txt_Seminar" targetedBy="20774129-arg0"></mapper:vertice><mapper:vertice id="20774129" sourcePath="$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Seminar"></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>$loop</bpel:from>
+                                <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:description/text()</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="970486" targetPath="$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:description/text()" targetedBy="6515879-arg0"></mapper:vertice>
+  <mapper:vertice id="6515879" sourcePath="$loop"></mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="bform1CreateTaskRequestMsg" bpdm:msgVarScopeId="_LA0p4AWgEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Bform1:createTaskRequest" bpdm:binding="Bform1:WorkflowSoapBinding" bpdm:ID="_nhrA8AWwEd6-P7Vm2deqBQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="bform1CreateTaskResponseMsg" bpdm:msgVarScopeId="_LA0p4AWgEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Bform1:createTaskResponse" bpdm:binding="Bform1:WorkflowSoapBinding" bpdm:ID="_oH9k4AWwEd6-P7Vm2deqBQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                    <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" portType="Bform1:Process" isMyRole="true" enableSharing="false" bpdm:label="Task" bpdm:ID="_mXnBkAWwEd6-P7Vm2deqBQ">
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="bform1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_LA0p4AWgEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Bform1:notifyTaskCompletionRequest" bpdm:ID="_rC0zgAWwEd6-P7Vm2deqBQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>$loop + 1</bpel:from>
+                                <bpel:to>$loop</bpel:to><mapper:mapperLink><mapper:vertice id="15448183" targetPath="$loop" targetedBy="10196862-arg0"></mapper:vertice><mapper:vertice id="10196862" dimension="78x24" location="132,60"><mapper:value>+</mapper:value></mapper:vertice><mapper:vertice id="14647712" sourcePath="$loop" targetedBy="10196862-arg1"></mapper:vertice><mapper:vertice id="11218046" dimension="78x24" location="48,120" targetedBy="10196862-arg2"><mapper:value>1</mapper:value></mapper:vertice></mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="bform1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_LA0p4AWgEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Bform1:notifyTaskCompletionResponse" bpdm:ID="_t4eK8AWwEd6-P7Vm2deqBQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpel:scope>
+            <bpdm:messagingtask operation="notify" partnerLink="presidentAndSystemPlkVar" portType="Cform1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Check" bpdm:ID="_JEcbwAWrEd6ileXxQdrd4w">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Fee</bpel:from>
+                        <bpel:to>$cform1NotifyRequestMsg.root/Cform1:input/Cform1:input/Cform1:txt_Fee</bpel:to><mapper:mapperLink><mapper:vertice id="23568982" targetPath="$cform1NotifyRequestMsg.root/Cform1:input/Cform1:input/Cform1:txt_Fee" targetedBy="2528978-arg0"></mapper:vertice><mapper:vertice id="2528978" sourcePath="$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Fee"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Seminar</bpel:from>
+                        <bpel:to>$cform1NotifyRequestMsg.root/Cform1:input/Cform1:input/Cform1:txt_Seminar</bpel:to><mapper:mapperLink><mapper:vertice id="16019520" targetPath="$cform1NotifyRequestMsg.root/Cform1:input/Cform1:input/Cform1:txt_Seminar" targetedBy="8287886-arg0"></mapper:vertice><mapper:vertice id="8287886" sourcePath="$aform1InitProcessRequestMsg.root/Aform1:taskOutput/Aform1:output/Aform1:txt_Seminar"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="cform1NotifyRequestMsg" bpdm:msgVarScopeId="_wkS7AAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Cform1:notifyRequest" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:ID="_PWBukAWrEd6ileXxQdrd4w"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="cform1NotifyResponseMsg" bpdm:msgVarScopeId="_wkS7AAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Cform1:notifyResponse" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:ID="_P2glcAWrEd6ileXxQdrd4w"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

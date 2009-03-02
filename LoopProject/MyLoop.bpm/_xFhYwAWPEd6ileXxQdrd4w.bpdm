@@ -1,0 +1,54 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:Aform1="http://example.com/Aform/xform" xmlns:Cform1="http://example.com/Cform/xform" xmlns:System="http://thisdiagram/System" xmlns:Aform="http://example.com/Aform/xform/attachments" xmlns:Cform="http://example.com/Cform/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/President" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/President">
+    <bpdm:dependencies version="6000031">
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Aform/xform" bpdm:prefix="Aform1" bpdm:comment="contrib=&apos;project:///Aform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Cform/xform" bpdm:prefix="Cform1" bpdm:comment="contrib=&apos;project:///Cform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/System" bpdm:prefix="System" bpdm:comment="contrib=&apos;partner-pool:///_wkS7AAWPEd6ileXxQdrd4w"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Aform/xform/attachments" bpdm:prefix="Aform" bpdm:comment="contrib=&apos;project:///Aform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/Cform/xform/attachments" bpdm:prefix="Cform" bpdm:comment="contrib=&apos;project:///Cform.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_wkS7AAWPEd6ileXxQdrd4w"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/President" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_wkS7AAWPEd6ileXxQdrd4w" bpdm:label="System"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Aform.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Aform.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Cform.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Cform.xform.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="President" bpdm:ID="_xFhYwAWPEd6ileXxQdrd4w">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="presidentAndSystemPlkVar" partnerLinkType="diag:PresidentAndSystem" initializePartnerRole="yes" myRole="President_for_System" bpdm:enableSharing="false" bpdm:providedService="Cform1:WorkflowSoapService" bpdm:providedPort="xformPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:providedIsDefault="true" partnerRole="System_for_President" bpdm:invokedService="System:PresidentAndSystemService" bpdm:invokedPort="System_for_PresidentPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/System/President/PresidentAndSystem" bpdm:invokedIsDefault="true" bpdm:clientTasks="_xFhYwAWPEd6ileXxQdrd4w:_DXwsJgWzEd6yx7u8htUulg, _xFhYwAWPEd6ileXxQdrd4w:_L2aoaAWQEd6ileXxQdrd4w" bpdm:isManaged="true" bpdm:otherPoolId="_wkS7AAWPEd6ileXxQdrd4w"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="aform1InitProcessRequestMsg" messageType="Aform1:initProcessRequest" bpdm:id="_UQDM0AWQEd6ileXxQdrd4w" bpdm:messageIds=" out:_UP5b0AWQEd6ileXxQdrd4w">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Aform1:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="aform1InitProcessResponseMsg" messageType="Aform1:initProcessResponse" bpdm:id="_VLNNlgWQEd6ileXxQdrd4w" bpdm:messageIds="inc:_VK6SkAWQEd6ileXxQdrd4w"/>
+            <bpel:variable name="cform1NotifyRequestMsg" messageType="Cform1:notifyRequest" binding="Cform1:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:id="_FBtFcAWzEd6yx7u8htUulg" bpdm:messageIds="inc:_FA9ekAWzEd6yx7u8htUulg"/>
+            <bpel:variable name="cform1NotifyResponseMsg" messageType="Cform1:notifyResponse" binding="Cform1:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:id="_F2A3QAWzEd6yx7u8htUulg" bpdm:messageIds=" out:_F1t8UAWzEd6yx7u8htUulg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="Cform1:notifyResponse" bpdm:linkedPart="root" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="notify" partnerLink="presidentAndSystemPlkVar" portType="Cform1:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Cform-notify" bpdm:ID="_DXwsJgWzEd6yx7u8htUulg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="cform1NotifyRequestMsg" bpdm:msgVarScopeId="_xFhYwAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Cform1:notifyRequest" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:ID="_FA9ekAWzEd6yx7u8htUulg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="cform1NotifyResponseMsg" bpdm:msgVarScopeId="_xFhYwAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Cform1:notifyResponse" bpdm:binding="Cform1:WorkflowSoapBinding" bpdm:ID="_F1t8UAWzEd6yx7u8htUulg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask eventType="start: empty" bpdm:label="Empty_Start_Event" bpdm:ID="_KGDeAAWQEd6ileXxQdrd4w"></bpdm:messagingtask>
+                <bpdm:messagingtask operation="initProcess" partnerLink="presidentAndSystemPlkVar" portType="Aform1:Process" isMyRole="false" enableSharing="false" bpdm:label="Aform-init request" bpdm:ID="_L2aoaAWQEd6ileXxQdrd4w">
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="aform1InitProcessRequestMsg" bpdm:msgVarScopeId="_xFhYwAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Aform1:initProcessRequest" bpdm:ID="_UP5b0AWQEd6ileXxQdrd4w"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="aform1InitProcessResponseMsg" bpdm:msgVarScopeId="_xFhYwAWPEd6ileXxQdrd4w" bpdm:variableIsManaged="true" bpdm:messageType="Aform1:initProcessResponse" bpdm:ID="_VK6SkAWQEd6ileXxQdrd4w"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

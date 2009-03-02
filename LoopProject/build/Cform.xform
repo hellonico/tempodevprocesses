@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/Cform/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_Teacher_Screen {position : absolute; top : 60px; left : 75px; width : 435px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_Seminar {position : absolute; top : 120px; left : 75px; width : 100px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_Fee {position : absolute; top : 180px; left : 75px; width : 100px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_txt_Seminar {position : absolute; top : 120px; left : 180px; width : 330px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_txt_Seminar input {width : 318px; height : 22px}
+#xforms_cntrl_txt_Fee {position : absolute; top : 180px; left : 180px; width : 330px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_txt_Fee input {width : 318px; height : 22px}
+#xforms_cntrl_Your_Name {position : absolute; top : 240px; left : 75px; width : 100px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_txt_yourname {position : absolute; top : 240px; left : 180px; width : 330px; height : 30px; margin : 0px; padding : 0px;}
+#xforms_cntrl_txt_yourname input {width : 318px; height : 22px}
+#xforms_cntrl_rdo_accept {position : absolute; top : 300px; left : 180px; width : 105px; height : 70px; margin : 0px; padding : 0px;}
+#xforms_cntrl_rdo_accept span.xforms-control {width : 93px; height : 62px}
+#xforms_cntrl_rdo_accept span.xforms-control span {display : block}
+#xforms_cntrl_rdo_accept label.xforms-label {vertical-align : top}
+#xforms_cntrl_How {position : absolute; top : 300px; left : 75px; width : 100px; height : 30px; margin : 0px; padding : 0px;}
+</xhtml:style>
+    <xforms:model schema="Cform.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <Teacher_Screen xmlns="http://example.com/Cform/xform"/>
+          <Seminar xmlns="http://example.com/Cform/xform"/>
+          <Fee xmlns="http://example.com/Cform/xform"/>
+          <txt_Seminar xmlns="http://example.com/Cform/xform"/>
+          <txt_Fee xmlns="http://example.com/Cform/xform"/>
+          <Your_Name xmlns="http://example.com/Cform/xform"/>
+          <txt_yourname xmlns="http://example.com/Cform/xform"/>
+          <rdo_accept xmlns="http://example.com/Cform/xform"/>
+          <How xmlns="http://example.com/Cform/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <Teacher_Screen xmlns="http://example.com/Cform/xform"/>
+          <Seminar xmlns="http://example.com/Cform/xform"/>
+          <Fee xmlns="http://example.com/Cform/xform"/>
+          <txt_Seminar xmlns="http://example.com/Cform/xform"/>
+          <txt_Fee xmlns="http://example.com/Cform/xform"/>
+          <Your_Name xmlns="http://example.com/Cform/xform"/>
+          <txt_yourname xmlns="http://example.com/Cform/xform"/>
+          <rdo_accept xmlns="http://example.com/Cform/xform"/>
+          <How xmlns="http://example.com/Cform/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:Teacher_Screen" value="instance('taskinput')/fe:Teacher_Screen"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:Seminar" value="instance('taskinput')/fe:Seminar"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:Fee" value="instance('taskinput')/fe:Fee"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:txt_Seminar" value="instance('taskinput')/fe:txt_Seminar"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:txt_Fee" value="instance('taskinput')/fe:txt_Fee"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:Your_Name" value="instance('taskinput')/fe:Your_Name"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:txt_yourname" value="instance('taskinput')/fe:txt_yourname"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:rdo_accept" value="instance('taskinput')/fe:rdo_accept"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:How" value="instance('taskinput')/fe:How"/>
+        </xforms:action>
+      </xforms:action>
+      <xforms:bind nodeset="instance('taskoutput')/fe:txt_Fee" type="xs:integer"/>
+      <xforms:bind nodeset="instance('taskinput')/fe:txt_Fee" type="xs:integer"/>
+      <xforms:bind nodeset="instance('taskoutput')/fe:txt_yourname" required="true()"/>
+      <xforms:bind nodeset="instance('taskinput')/fe:txt_yourname" required="true()"/>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_Teacher_Screen">
+        <xforms:output ref="instance('taskoutput')/fe:Teacher_Screen">
+          <xforms:label>Teacher Result</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_Seminar">
+        <xforms:output ref="instance('taskoutput')/fe:Seminar">
+          <xforms:label>Seminar</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_Fee">
+        <xforms:output ref="instance('taskoutput')/fe:Fee">
+          <xforms:label>Fee</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_txt_Seminar">
+        <xforms:input ref="instance('taskoutput')/fe:txt_Seminar"/>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_txt_Fee">
+        <xforms:input ref="instance('taskoutput')/fe:txt_Fee"/>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_Your_Name">
+        <xforms:output ref="instance('taskoutput')/fe:Your_Name">
+          <xforms:label>Your Name</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_txt_yourname">
+        <xforms:input ref="instance('taskoutput')/fe:txt_yourname"/>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_rdo_accept">
+        <xforms:select1 appearance="full" ref="instance('taskoutput')/fe:rdo_accept">
+          <xforms:item>
+            <xforms:label>accept</xforms:label>
+            <xforms:value>0</xforms:value>
+          </xforms:item>
+          <xforms:item>
+            <xforms:label>refuse</xforms:label>
+            <xforms:value>1</xforms:value>
+          </xforms:item>
+        </xforms:select1>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_How">
+        <xforms:output ref="instance('taskoutput')/fe:How">
+          <xforms:label>How?</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,16 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:Aform="http://example.com/Aform/xform/attachments"
+    xmlns:Teacher="http://thisdiagram/Teacher"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://www.example.org/loop"
+    xmlns:diag="http://thisdiagram"
+    xmlns:this="http://thisdiagram/System"
+    xmlns:Bform1="http://example.com/Bform/xform"
+    xmlns:Aform1="http://example.com/Aform/xform"
+    xmlns:Cform="http://example.com/Cform/xform/attachments"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Cform1="http://example.com/Cform/xform"
+    xmlns:Bform="http://example.com/Bform/xform/attachments">
+0
+</bpel:literal>
