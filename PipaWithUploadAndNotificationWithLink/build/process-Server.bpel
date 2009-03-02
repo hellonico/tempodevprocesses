@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:Client="http://example.com/process/Client" xmlns:form11="http://example.com/form1%2Fxform/attachments" xmlns:this="http://example.com/process/Server" xmlns:form="http://example.com/form%2Fxform/attachments" xmlns:diag="http://example.com/process" xmlns:form1="http://example.com/form%2Fxform" xmlns:form12="http://example.com/form1%2Fxform" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Server" name="Server" bpmn:id="_Bo2V5pxNEd2UzPk7m1hadA" targetNamespace="http://example.com/process/Server">
+  <bpel:import namespace="http://example.com/form%2Fxform" location="form.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/form1%2Fxform" location="form1.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/process" location="process.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="clientAndServerPlkVar" partnerLinkType="diag:ClientAndServer" initializePartnerRole="yes" myRole="Server_for_Client" partnerRole="Client_for_Server"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="form1InitProcessRequestMsg" messageType="form1:initProcessRequest"></bpel:variable>
+    <bpel:variable name="form1InitProcessResponseMsg" messageType="form1:initProcessResponse"></bpel:variable>
+    <bpel:variable name="form12NotifyRequestMsg" messageType="form12:notifyRequest"></bpel:variable>
+    <bpel:variable name="form12NotifyResponseMsg" messageType="form12:notifyResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="clientAndServerPlkVar" portType="form1:Process" operation="initProcess" variable="form1InitProcessRequestMsg" createInstance="yes" bpmn:label="receive" name="receive" bpmn:id="_Bo2V6JxNEd2UzPk7m1hadA"></bpel:receive>
+    <bpel:assign name="init-variables-Server">
+      <bpel:copy bpmn:label="$form1InitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<form1:initProcessResponse>
+  <form1:status>OK</form1:status>
+  <form1:errorCode></form1:errorCode>
+  <form1:errorReason></form1:errorReason>
+  <form1:taskMetaData>
+    <form1:nextTaskId></form1:nextTaskId>
+    <form1:nextTaskURL></form1:nextTaskURL>
+  </form1:taskMetaData>
+</form1:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form1InitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$form12NotifyRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<form12:notifyRequest>
+  <form12:metadata>
+    <form12:description />
+    <form12:creationDate></form12:creationDate>
+    <form12:userOwner>intalio\admin</form12:userOwner>
+    <form12:roleOwner />
+    <form12:formUrl>oxf://PipaWithUploadAndNotificationWithLink/form1.xform</form12:formUrl>
+  </form12:metadata>
+  <form12:input>
+    <form12:input>
+      <form12:linkURL></form12:linkURL>
+    </form12:input>
+  </form12:input>
+</form12:notifyRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$form12NotifyRequestMsg.root</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="clientAndServerPlkVar" portType="form1:Process" operation="initProcess" variable="form1InitProcessResponseMsg" bpmn:label="receive" name="receive-1" bpmn:id="_Bo2V6JxNEd2UzPk7m1hadA"></bpel:reply>
+    <bpel:assign bpmn:label="notify" name="notify" bpmn:id="_VjMkcJxNEd2UzPk7m1hadA">
+      <bpel:copy>
+        <bpel:from>$form1InitProcessRequestMsg.root/form1:taskOutput/form1:output/form1:Upload</bpel:from>
+        <bpel:to>$form12NotifyRequestMsg.root/form12:input/form12:input/form12:linkURL</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:invoke partnerLink="clientAndServerPlkVar" portType="form12:Workflow" operation="notify" inputVariable="form12NotifyRequestMsg" outputVariable="form12NotifyResponseMsg" bpmn:label="notify" name="notify-1" bpmn:id="_VjMkcJxNEd2UzPk7m1hadA"></bpel:invoke>
+  </bpel:sequence>
+</bpel:process>

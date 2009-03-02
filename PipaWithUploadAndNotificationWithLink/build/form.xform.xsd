@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fe="http://example.com/form%2Fxform"
+    xmlns:form2Fxform="http://example.com/form%2Fxform"
+    targetNamespace="http://example.com/form%2Fxform" elementFormDefault="qualified">
+    <xs:element name="output">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Upload">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:anyURI">
+                                <xs:attribute name="filename" type="xs:string"/>
+                                <xs:attribute name="mediatype" type="xs:string"/>
+                                <xs:attribute name="upload-id"
+                                    type="xs:string" fixed="Upload"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Start_the_process" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="taskId" type="xs:string"/>
+            <xs:attribute name="participantToken" type="xs:string"/>
+            <xs:attribute name="user" type="xs:string"/>
+            <xs:attribute name="formUrl" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="input">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Start_the_process" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

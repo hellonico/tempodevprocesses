@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:form11="http://example.com/form1%2Fxform/attachments" xmlns:Client="http://example.com/process/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://example.com/form%2Fxform/attachments" xmlns:diag="http://example.com/process" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://example.com/process/Server" xmlns:form12="http://example.com/form1%2Fxform" xmlns:form1="http://example.com/form%2Fxform" name="this:Server" fileName="process-Server.bpel">
+  <dd:property name="PATH">process</dd:property>
+  <dd:property name="SVG">process.svg</dd:property>
+  <dd:provide partnerLink="clientAndServerPlkVar">
+    <dd:service name="this:ClientAndServerService" port="Server_for_ClientPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="clientAndServerPlkVar">
+    <dd:service name="form12:WorkflowSoapService" port="form12FxformPort"/>
+  </dd:invoke>
+</dd:process>

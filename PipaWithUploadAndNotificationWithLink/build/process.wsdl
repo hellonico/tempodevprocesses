@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:Client="http://example.com/process/Client" xmlns:form11="http://example.com/form1%2Fxform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://example.com/form%2Fxform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://example.com/process" xmlns:form1="http://example.com/form%2Fxform" xmlns:form12="http://example.com/form1%2Fxform" xmlns:Server="http://example.com/process/Server" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://example.com/process">
+    <wsdl:import namespace="http://example.com/form%2Fxform" location="form.xform.all.wsdl"/>
+    <wsdl:import namespace="http://example.com/form1%2Fxform" location="form1.xform.all.wsdl"/>
+    <pnlk:partnerLinkType name="ClientAndServer">
+        <pnlk:role name="Client_for_Server" portType="form12:Workflow"/>
+        <pnlk:role name="Server_for_Client" portType="form1:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

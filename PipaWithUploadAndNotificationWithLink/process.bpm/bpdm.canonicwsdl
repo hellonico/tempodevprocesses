@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:Client="http://thisdiagram/Client" xmlns:form11="http://example.com/form1%2Fxform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://example.com/form%2Fxform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form1="http://example.com/form%2Fxform" xmlns:form12="http://example.com/form1%2Fxform" xmlns:Server="http://thisdiagram/Server" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000031" bpdm:canid="_Bo2V4JxNEd2UzPk7m1hadA" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="ClientAndServer" bpdm:poolOneId="_Bo2V5pxNEd2UzPk7m1hadA" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Server" bpdm:poolTwoId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="Server_for_Client" portType="Server:ForClient" bpdm:thisPoolId="_Bo2V5pxNEd2UzPk7m1hadA">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="receive" bpdm:canid="_Bo2V6JxNEd2UzPk7m1hadA._FCiokJzcEd2XlNeNnNJfPw." bpdm:dataobjectPointer="project:///form.xform.all.wsdl?wsdloperation={http://example.com/form%2Fxform}Process/initProcess">
+          <wsdl:input message="form1:initProcessRequest" name="receive" bpdm:canid="_F6Rh0JzcEd2XlNeNnNJfPw" bpdm:senderId="_FCiokJzcEd2XlNeNnNJfPw" bpdm:receiverId="_Bo2V6JxNEd2UzPk7m1hadA" bpdm:senderName="form-init" bpdm:receiverName="receive" bpdm:receiverPoolId="_Bo2V5pxNEd2UzPk7m1hadA" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form%2Fxform}Process/initProcess/input/initProcessRequest"></wsdl:input>
+          <wsdl:output message="form1:initProcessResponse" name="receiveResponse" bpdm:canid="_GH1csJzcEd2XlNeNnNJfPw" bpdm:senderId="_Bo2V6JxNEd2UzPk7m1hadA" bpdm:receiverId="_FCiokJzcEd2XlNeNnNJfPw" bpdm:senderName="receive" bpdm:receiverName="form-init" bpdm:receiverPoolId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form%2Fxform}Process/initProcess/output/initProcessResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+    <pnlk:role name="Client_for_Server" portType="Client:ForServer" bpdm:thisPoolId="_Suvf0JxNEd2UzPk7m1hadA">
+      <wsdl:portType name="ForServer">
+        <wsdl:operation name="form1-notify" bpdm:canid="_FnpgyJzcEd2XlNeNnNJfPw._VjMkcJxNEd2UzPk7m1hadA." bpdm:dataobjectPointer="project:///form1.xform.all.wsdl?wsdloperationbound={http://example.com/form1%2Fxform}WorkflowSoapService/form12FxformPort/notify">
+          <wsdl:input message="form12:notifyRequest" name="form1-notify" bpdm:canid="_GY0fAJzcEd2XlNeNnNJfPw" bpdm:senderId="_VjMkcJxNEd2UzPk7m1hadA" bpdm:receiverId="_FnpgyJzcEd2XlNeNnNJfPw" bpdm:senderName="notify" bpdm:receiverName="form1-notify" bpdm:receiverPoolId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:dataobjectPointer="project:///form1.xform.all.wsdl?messageForBoundOperation={http://example.com/form1%2Fxform}WorkflowSoapService/form12FxformPort/notify/input/notifyRequest"></wsdl:input>
+          <wsdl:output message="form12:notifyResponse" name="form1-notifyResponse" bpdm:canid="_Gl7t8JzcEd2XlNeNnNJfPw" bpdm:senderId="_FnpgyJzcEd2XlNeNnNJfPw" bpdm:receiverId="_VjMkcJxNEd2UzPk7m1hadA" bpdm:senderName="form1-notify" bpdm:receiverName="notify" bpdm:receiverPoolId="_Bo2V5pxNEd2UzPk7m1hadA" bpdm:dataobjectPointer="project:///form1.xform.all.wsdl?messageForBoundOperation={http://example.com/form1%2Fxform}WorkflowSoapService/form12FxformPort/notify/output/notifyResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

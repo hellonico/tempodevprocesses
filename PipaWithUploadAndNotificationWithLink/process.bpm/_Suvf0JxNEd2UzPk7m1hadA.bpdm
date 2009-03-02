@@ -1,0 +1,53 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://thisdiagram/Client" xmlns:form11="http://example.com/form1%2Fxform/attachments" xmlns:Server="http://thisdiagram/Server" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://example.com/form%2Fxform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form12="http://example.com/form1%2Fxform" xmlns:form1="http://example.com/form%2Fxform" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Client">
+    <bpdm:dependencies version="6000031">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form1%2Fxform/attachments" bpdm:prefix="form11" bpdm:comment="contrib=&apos;project:///form1.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Server" bpdm:prefix="Server" bpdm:comment="contrib=&apos;partner-pool:///_Bo2V5pxNEd2UzPk7m1hadA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form%2Fxform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_Bo2V5pxNEd2UzPk7m1hadA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form1%2Fxform" bpdm:prefix="form12" bpdm:comment="contrib=&apos;project:///form1.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form%2Fxform" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form1.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form1.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Bo2V5pxNEd2UzPk7m1hadA" bpdm:label="Server"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Client" bpdm:ID="_Suvf0JxNEd2UzPk7m1hadA">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="clientAndServerPlkVar" partnerLinkType="diag:ClientAndServer" initializePartnerRole="yes" myRole="Client_for_Server" bpdm:enableSharing="false" bpdm:providedService="form12:WorkflowSoapService" bpdm:providedPort="form12FxformPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/form12Fxform" bpdm:providedIsDefault="true" partnerRole="Server_for_Client" bpdm:invokedService="Server:ClientAndServerService" bpdm:invokedPort="Server_for_ClientPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Server/Client/ClientAndServer" bpdm:invokedIsDefault="true" bpdm:clientTasks="_Suvf0JxNEd2UzPk7m1hadA:_FCiokJzcEd2XlNeNnNJfPw, _Suvf0JxNEd2UzPk7m1hadA:_FnpgyJzcEd2XlNeNnNJfPw" bpdm:isManaged="true" bpdm:otherPoolId="_Bo2V5pxNEd2UzPk7m1hadA"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="form1InitProcessRequestMsg" messageType="form1:initProcessRequest" bpdm:id="_F6uNwJzcEd2XlNeNnNJfPw" bpdm:messageIds=" out:_F6Rh0JzcEd2XlNeNnNJfPw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form1:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form1InitProcessResponseMsg" messageType="form1:initProcessResponse" bpdm:id="_GIlDmJzcEd2XlNeNnNJfPw" bpdm:messageIds="inc:_GH1csJzcEd2XlNeNnNJfPw"/>
+            <bpel:variable name="form12NotifyRequestMsg" messageType="form12:notifyRequest" binding="form12:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:id="_GZkF5ZzcEd2XlNeNnNJfPw" bpdm:messageIds="inc:_GY0fAJzcEd2XlNeNnNJfPw"/>
+            <bpel:variable name="form12NotifyResponseMsg" messageType="form12:notifyResponse" binding="form12:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:id="_GmYZ4JzcEd2XlNeNnNJfPw" bpdm:messageIds=" out:_Gl7t8JzcEd2XlNeNnNJfPw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form12:notifyResponse" bpdm:linkedPart="root" bpdm:binding="form12:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="initProcess" partnerLink="clientAndServerPlkVar" portType="form1:Process" isMyRole="false" enableSharing="false" bpdm:label="form-init" bpdm:ID="_FCiokJzcEd2XlNeNnNJfPw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form1InitProcessResponseMsg" bpdm:msgVarScopeId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:variableIsManaged="true" bpdm:messageType="form1:initProcessResponse" bpdm:ID="_GH1csJzcEd2XlNeNnNJfPw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form1InitProcessRequestMsg" bpdm:msgVarScopeId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:variableIsManaged="true" bpdm:messageType="form1:initProcessRequest" bpdm:ID="_F6Rh0JzcEd2XlNeNnNJfPw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="notify" partnerLink="clientAndServerPlkVar" portType="form12:Workflow" isMyRole="true" enableSharing="false" bpdm:label="form1-notify" bpdm:ID="_FnpgyJzcEd2XlNeNnNJfPw">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="form12NotifyRequestMsg" bpdm:msgVarScopeId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:variableIsManaged="true" bpdm:messageType="form12:notifyRequest" bpdm:binding="form12:WorkflowSoapBinding" bpdm:ID="_GY0fAJzcEd2XlNeNnNJfPw"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="form12NotifyResponseMsg" bpdm:msgVarScopeId="_Suvf0JxNEd2UzPk7m1hadA" bpdm:variableIsManaged="true" bpdm:messageType="form12:notifyResponse" bpdm:binding="form12:WorkflowSoapBinding" bpdm:ID="_Gl7t8JzcEd2XlNeNnNJfPw"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>
