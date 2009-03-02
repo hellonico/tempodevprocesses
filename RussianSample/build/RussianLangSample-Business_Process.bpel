@@ -1,0 +1,70 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://example.com/RussianLangSample/Business_Process" xmlns:RussTextView="http://example.com/RussTextView/xform" xmlns:diag="http://example.com/RussianLangSample" xmlns:RussTextView1="http://example.com/RussTextView/xform/attachments" xmlns:RussianTestForm1="http://example.com/RussianTestForm/xform/attachments" xmlns:RussianTestForm="http://example.com/RussianTestForm/xform" xmlns:Пользователь="http://example.com/RussianLangSample/Пользователь" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Business Process" name="Business_Process" bpmn:id="_TJWWtqdaEd2uN4Sa3mFxYg" targetNamespace="http://example.com/RussianLangSample/Business_Process">
+  <bpel:import namespace="http://example.com/RussTextView/xform" location="RussTextView.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/RussianTestForm/xform" location="RussianTestForm.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/RussianLangSample" location="RussianLangSample.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="пользовательAndBusiness_ProcessPlkVar" partnerLinkType="diag:ПользовательAndBusiness_Process" initializePartnerRole="yes" myRole="Business_Process_for_Пользователь" partnerRole="Пользователь_for_Business_Process"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="russianTestFormInitProcessRequestMsg" messageType="RussianTestForm:initProcessRequest"></bpel:variable>
+    <bpel:variable name="russianTestFormInitProcessResponseMsg" messageType="RussianTestForm:initProcessResponse"></bpel:variable>
+    <bpel:variable name="russTextViewNotifyRequestMsg" messageType="RussTextView:notifyRequest"></bpel:variable>
+    <bpel:variable name="russTextViewNotifyResponseMsg" messageType="RussTextView:notifyResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="пользовательAndBusiness_ProcessPlkVar" portType="RussianTestForm:Process" operation="initProcess" variable="russianTestFormInitProcessRequestMsg" createInstance="yes" bpmn:label="Задача номер 1" name="Задача_номер_1" bpmn:id="_TJWWuKdaEd2uN4Sa3mFxYg"></bpel:receive>
+    <bpel:assign name="init-variables-Business_Process">
+      <bpel:copy bpmn:label="$russianTestFormInitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<RussianTestForm:initProcessResponse>
+  <RussianTestForm:status>OK</RussianTestForm:status>
+  <RussianTestForm:errorCode></RussianTestForm:errorCode>
+  <RussianTestForm:errorReason></RussianTestForm:errorReason>
+  <RussianTestForm:taskMetaData>
+    <RussianTestForm:nextTaskId></RussianTestForm:nextTaskId>
+    <RussianTestForm:nextTaskURL></RussianTestForm:nextTaskURL>
+  </RussianTestForm:taskMetaData>
+</RussianTestForm:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$russianTestFormInitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$russTextViewNotifyRequestMsg">
+        <bpel:from>
+          <bpel:literal>
+<RussTextView:notifyRequest>
+  <RussTextView:metadata>
+    <RussTextView:description>уведомление</RussTextView:description>
+    <RussTextView:creationDate></RussTextView:creationDate>
+    <RussTextView:userOwner>intalio\admin</RussTextView:userOwner>
+    <RussTextView:roleOwner />
+    <RussTextView:formUrl>oxf://RussianSample/RussTextView.xform</RussTextView:formUrl>
+  </RussTextView:metadata>
+  <RussTextView:input>
+    <RussTextView:input>
+      <RussTextView:russTextLabel></RussTextView:russTextLabel>
+    </RussTextView:input>
+  </RussTextView:input>
+</RussTextView:notifyRequest></bpel:literal>
+        </bpel:from>
+        <bpel:to>$russTextViewNotifyRequestMsg.root</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="пользовательAndBusiness_ProcessPlkVar" portType="RussianTestForm:Process" operation="initProcess" variable="russianTestFormInitProcessResponseMsg" bpmn:label="Задача номер 1" name="Задача_номер_1-1" bpmn:id="_TJWWuKdaEd2uN4Sa3mFxYg"></bpel:reply>
+    <bpel:assign bpmn:label="Задача номер 2" name="Задача_номер_2" bpmn:id="_qxj-IKdaEd2uN4Sa3mFxYg">
+      <bpel:copy>
+        <bpel:from>$russianTestFormInitProcessRequestMsg.root/RussianTestForm:taskOutput/RussianTestForm:output/RussianTestForm:russTextInput</bpel:from>
+        <bpel:to>$russTextViewNotifyRequestMsg.root/RussTextView:input/RussTextView:input/RussTextView:russTextLabel</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>"уведомление"</bpel:from>
+        <bpel:to>$russTextViewNotifyRequestMsg.root/RussTextView:metadata/RussTextView:description</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:invoke partnerLink="пользовательAndBusiness_ProcessPlkVar" portType="RussTextView:Workflow" operation="notify" inputVariable="russTextViewNotifyRequestMsg" outputVariable="russTextViewNotifyResponseMsg" bpmn:label="Задача номер 2" name="Задача_номер_2-1" bpmn:id="_qxj-IKdaEd2uN4Sa3mFxYg"></bpel:invoke>
+    <bpel:empty bpmn:label="EventEndEmpty" name="EventEndEmpty" bpmn:id="_s6MekKdaEd2uN4Sa3mFxYg"></bpel:empty>
+  </bpel:sequence>
+</bpel:process>

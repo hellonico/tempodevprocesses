@@ -1,0 +1,12 @@
+
+deploy.fileRuntimeSelection=RussianTestForm.xform.xsd\:RussTextView.xform.xsd\:RussianLangSample.bpm\:RussianTestForm.xform\:RussTextView.xform\:
+deploy_bundleArchiveName=/RussianSample/RussianSample.zip
+deploy_bundleShouldBeArchived=false
+deploy_bundleShouldBeDeployed=true
+deploy_gi_serverUrl=http\://localhost\:8080/gi
+deploy_serverUrl=http\://localhost\:8080/ode
+deploy_workflow_serverUrl=http\://localhost\:8080/wds
+deploy_workflowbundleShouldBeArchived=false
+deploy_workflowbundleShouldBeDeployed=true
+diagram_baseUri=http\://example.com
+eclipse.preferences.version=1

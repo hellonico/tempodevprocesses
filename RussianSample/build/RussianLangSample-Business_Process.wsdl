@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:RussianTestForm1="http://example.com/RussianTestForm/xform/attachments" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:RussTextView="http://example.com/RussTextView/xform" xmlns:RussTextView1="http://example.com/RussTextView/xform/attachments" xmlns:diag="http://example.com/RussianLangSample" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Пользователь="http://example.com/RussianLangSample/Пользователь" xmlns:RussianTestForm="http://example.com/RussianTestForm/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:this="http://example.com/RussianLangSample/Business_Process" targetNamespace="http://example.com/RussianLangSample/Business_Process">
+    <wsdl:import namespace="http://example.com/RussianTestForm/xform" location="RussianTestForm.xform.all.wsdl"/>
+    <wsdl:binding name="ПользовательAndBusiness_ProcessServiceBinding" type="RussianTestForm:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/RussianTestForm/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/RussianTestForm/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ПользовательAndBusiness_ProcessService">
+        <wsdl:port name="Business_Process_for_ПользовательPort" binding="this:ПользовательAndBusiness_ProcessServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/RussianSample/RussianLangSample/Business_Process/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8CAndBusiness_Process"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

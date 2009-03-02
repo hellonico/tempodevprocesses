@@ -1,0 +1,53 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:Business_Process="http://thisdiagram/Business_Process" xmlns:RussTextView="http://example.com/RussTextView/xform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:RussTextView1="http://example.com/RussTextView/xform/attachments" xmlns:diag="http://thisdiagram" xmlns:RussianTestForm1="http://example.com/RussianTestForm/xform/attachments" xmlns:RussianTestForm="http://example.com/RussianTestForm/xform" xmlns:this="http://thisdiagram/Пользователь" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Пользователь">
+    <bpdm:dependencies version="6000031">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Business_Process" bpdm:prefix="Business_Process" bpdm:comment="contrib=&apos;partner-pool:///_TJWWtqdaEd2uN4Sa3mFxYg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/RussTextView/xform" bpdm:prefix="RussTextView" bpdm:comment="contrib=&apos;project:///RussTextView.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/RussTextView/xform/attachments" bpdm:prefix="RussTextView1" bpdm:comment="contrib=&apos;project:///RussTextView.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_TJWWtqdaEd2uN4Sa3mFxYg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/RussianTestForm/xform/attachments" bpdm:prefix="RussianTestForm1" bpdm:comment="contrib=&apos;project:///RussianTestForm.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/RussianTestForm/xform" bpdm:prefix="RussianTestForm" bpdm:comment="contrib=&apos;project:///RussianTestForm.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Пользователь" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_TJWWtqdaEd2uN4Sa3mFxYg" bpdm:label="Business Process"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RussianTestForm.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RussianTestForm.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RussTextView.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RussTextView.xform.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Пользователь" bpdm:ID="_UmLhEKdaEd2uN4Sa3mFxYg">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="пользовательAndBusiness_ProcessPlkVar" partnerLinkType="diag:ПользовательAndBusiness_Process" initializePartnerRole="yes" myRole="Пользователь_for_Business_Process" bpdm:enableSharing="false" bpdm:providedService="RussTextView:WorkflowSoapService" bpdm:providedPort="xformPort" bpdm:provideSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:providedIsDefault="true" partnerRole="Business_Process_for_Пользователь" bpdm:invokedService="Business_Process:ПользовательAndBusiness_ProcessService" bpdm:invokedPort="Business_Process_for_ПользовательPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Business_Process/Пользователь/ПользовательAndBusiness_Process" bpdm:invokedIsDefault="true" bpdm:clientTasks="_UmLhEKdaEd2uN4Sa3mFxYg:_odAhmKdaEd2uN4Sa3mFxYg, _UmLhEKdaEd2uN4Sa3mFxYg:_gkMLOKdaEd2uN4Sa3mFxYg" bpdm:isManaged="true" bpdm:otherPoolId="_TJWWtqdaEd2uN4Sa3mFxYg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="russianTestFormInitProcessRequestMsg" messageType="RussianTestForm:initProcessRequest" bpdm:id="_hDCqZKdaEd2uN4Sa3mFxYg" bpdm:messageIds=" out:_hDCqYKdaEd2uN4Sa3mFxYg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="RussianTestForm:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="russianTestFormInitProcessResponseMsg" messageType="RussianTestForm:initProcessResponse" bpdm:id="_hmDQ5qdaEd2uN4Sa3mFxYg" bpdm:messageIds="inc:_hl6G4KdaEd2uN4Sa3mFxYg"/>
+            <bpel:variable name="russTextViewNotifyRequestMsg" messageType="RussTextView:notifyRequest" binding="RussTextView:WorkflowSoapBinding" operation="notify" opMsgType="0" bpdm:id="_r_fw6KdaEd2uN4Sa3mFxYg" bpdm:messageIds="inc:_r_V_4KdaEd2uN4Sa3mFxYg"/>
+            <bpel:variable name="russTextViewNotifyResponseMsg" messageType="RussTextView:notifyResponse" binding="RussTextView:WorkflowSoapBinding" operation="notify" opMsgType="1" bpdm:id="_siDrYKdaEd2uN4Sa3mFxYg" bpdm:messageIds=" out:_sh6hcKdaEd2uN4Sa3mFxYg">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="RussTextView:notifyResponse" bpdm:linkedPart="root" bpdm:binding="RussTextView:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="notify"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="initProcess" partnerLink="пользовательAndBusiness_ProcessPlkVar" portType="RussianTestForm:Process" isMyRole="false" enableSharing="false" bpdm:label="Task" bpdm:ID="_gkMLOKdaEd2uN4Sa3mFxYg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="russianTestFormInitProcessResponseMsg" bpdm:msgVarScopeId="_UmLhEKdaEd2uN4Sa3mFxYg" bpdm:variableIsManaged="true" bpdm:messageType="RussianTestForm:initProcessResponse" bpdm:ID="_hl6G4KdaEd2uN4Sa3mFxYg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="russianTestFormInitProcessRequestMsg" bpdm:msgVarScopeId="_UmLhEKdaEd2uN4Sa3mFxYg" bpdm:variableIsManaged="true" bpdm:messageType="RussianTestForm:initProcessRequest" bpdm:ID="_hDCqYKdaEd2uN4Sa3mFxYg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="notify" partnerLink="пользовательAndBusiness_ProcessPlkVar" portType="RussTextView:Workflow" isMyRole="true" enableSharing="false" bpdm:label="Русский Текст Просмотр-notify" bpdm:ID="_odAhmKdaEd2uN4Sa3mFxYg">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="russTextViewNotifyRequestMsg" bpdm:msgVarScopeId="_UmLhEKdaEd2uN4Sa3mFxYg" bpdm:variableIsManaged="true" bpdm:messageType="RussTextView:notifyRequest" bpdm:binding="RussTextView:WorkflowSoapBinding" bpdm:ID="_r_V_4KdaEd2uN4Sa3mFxYg"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="russTextViewNotifyResponseMsg" bpdm:msgVarScopeId="_UmLhEKdaEd2uN4Sa3mFxYg" bpdm:variableIsManaged="true" bpdm:messageType="RussTextView:notifyResponse" bpdm:binding="RussTextView:WorkflowSoapBinding" bpdm:ID="_sh6hcKdaEd2uN4Sa3mFxYg"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

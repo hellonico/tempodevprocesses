@@ -1,0 +1,11 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://ode.fivesight.com/schemas/2006/06/27/dd" xmlns:RussTextView1="http://example.com/RussTextView/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://example.com/RussianLangSample" xmlns:RussianTestForm1="http://example.com/RussianTestForm/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Пользователь="http://example.com/RussianLangSample/Пользователь" xmlns:RussianTestForm="http://example.com/RussianTestForm/xform" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://example.com/RussianLangSample/Business_Process" xmlns:RussTextView="http://example.com/RussTextView/xform" name="this:Business_Process" fileName="RussianLangSample-Business_Process.bpel">
+  <dd:property name="PATH">RussianLangSample</dd:property>
+  <dd:property name="SVG">RussianLangSample.svg</dd:property>
+  <dd:provide partnerLink="пользовательAndBusiness_ProcessPlkVar">
+    <dd:service name="this:ПользовательAndBusiness_ProcessService" port="Business_Process_for_ПользовательPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="пользовательAndBusiness_ProcessPlkVar">
+    <dd:service name="RussTextView:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+</dd:process>

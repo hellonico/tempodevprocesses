@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_TJWWsadaEd2uN4Sa3mFxYg" iD="_TJWWsKdaEd2uN4Sa3mFxYg">
+  <pools xmi:type="bpmn:Pool" xmi:id="_TJWWt6daEd2uN4Sa3mFxYg" iD="_TJWWtqdaEd2uN4Sa3mFxYg" name="Business Process">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hDL0VqdaEd2uN4Sa3mFxYg" iD="_hDL0VadaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDL0V6daEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDL0WKdaEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDL0YadaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russianTestFormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDL0ZadaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussianTestForm/xform}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hDL0YqdaEd2uN4Sa3mFxYg" direction="From" target="_TJWWuadaEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDL0Y6daEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDL0ZKdaEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hmDQ0adaEd2uN4Sa3mFxYg" iD="_hmDQ0KdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hmDQ0qdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ06daEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ3KdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russianTestFormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ4KdaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussianTestForm/xform}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hmDQ3adaEd2uN4Sa3mFxYg" direction="To" target="_TJWWuadaEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hmDQ3qdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ36daEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_r_V_5adaEd2uN4Sa3mFxYg" iD="_r_V_5KdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r_V_5qdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_V_56daEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_V_8KdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russTextViewNotifyRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_fw4qdaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussTextView/xform}notifyRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_r_V_8adaEd2uN4Sa3mFxYg" direction="To" target="_qxj-IadaEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r_fw4KdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_fw4adaEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_siDrd6daEd2uN4Sa3mFxYg" iD="_siDrdqdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_siDreKdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siDreadaEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siNcaKdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russTextViewNotifyResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siNcbKdaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussTextView/xform}notifyResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_siNcaadaEd2uN4Sa3mFxYg" direction="From" target="_qxj-IadaEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_siNcaqdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siNca6daEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_TJWWuadaEd2uN4Sa3mFxYg" iD="_TJWWuKdaEd2uN4Sa3mFxYg" associations="_hDL0YqdaEd2uN4Sa3mFxYg _hmDQ3adaEd2uN4Sa3mFxYg" outgoingEdges="_rAUL0adaEd2uN4Sa3mFxYg" name="Задача номер 1" activityType="Task">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_hDCqYadaEd2uN4Sa3mFxYg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_hl6G4adaEd2uN4Sa3mFxYg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_qxj-IadaEd2uN4Sa3mFxYg" iD="_qxj-IKdaEd2uN4Sa3mFxYg" associations="_r_V_8adaEd2uN4Sa3mFxYg _siNcaadaEd2uN4Sa3mFxYg" outgoingEdges="_tPziMadaEd2uN4Sa3mFxYg" incomingEdges="_rAUL0adaEd2uN4Sa3mFxYg" name="Задача номер 2">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_r_V_4adaEd2uN4Sa3mFxYg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_sh6hcadaEd2uN4Sa3mFxYg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_s6MekadaEd2uN4Sa3mFxYg" iD="_s6MekKdaEd2uN4Sa3mFxYg" incomingEdges="_tPziMadaEd2uN4Sa3mFxYg" activityType="EventEndEmpty"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_rAUL0adaEd2uN4Sa3mFxYg" iD="_rAUL0KdaEd2uN4Sa3mFxYg" source="_TJWWuadaEd2uN4Sa3mFxYg" target="_qxj-IadaEd2uN4Sa3mFxYg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_tPziMadaEd2uN4Sa3mFxYg" iD="_tPziMKdaEd2uN4Sa3mFxYg" source="_qxj-IadaEd2uN4Sa3mFxYg" target="_s6MekadaEd2uN4Sa3mFxYg"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_UmLhEadaEd2uN4Sa3mFxYg" iD="_UmLhEKdaEd2uN4Sa3mFxYg" name="Пользователь">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VlqBEKdaEd2uN4Sa3mFxYg" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VlqBEadaEd2uN4Sa3mFxYg" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_v8pi8KdaEd2uN4Sa3mFxYg" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_v8pi8adaEd2uN4Sa3mFxYg" key="users" value="intalio\admin"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_v8pi8qdaEd2uN4Sa3mFxYg" key="roles" value=""/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hDCqZadaEd2uN4Sa3mFxYg" iD="_hDCqZKdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDCqZqdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDCqZ6daEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDCqcKdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russianTestFormInitProcessRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDCqdKdaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussianTestForm/xform}initProcessRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hDCqcadaEd2uN4Sa3mFxYg" direction="To" target="_gkMLW6daEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDCqcqdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDCqc6daEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hmDQ56daEd2uN4Sa3mFxYg" iD="_hmDQ5qdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hmDQ6KdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ6adaEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmDQ8qdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russianTestFormInitProcessResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmNB0adaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussianTestForm/xform}initProcessResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hmDQ86daEd2uN4Sa3mFxYg" direction="From" target="_gkMLW6daEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hmDQ9KdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hmNB0KdaEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_r_fw6adaEd2uN4Sa3mFxYg" iD="_r_fw6KdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r_fw6qdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_fw66daEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_fw9KdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russTextViewNotifyRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_o606daEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussTextView/xform}notifyRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_r_o60KdaEd2uN4Sa3mFxYg" direction="From" target="_odAhu6daEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r_o60adaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_o60qdaEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_siDrYadaEd2uN4Sa3mFxYg" iD="_siDrYKdaEd2uN4Sa3mFxYg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_siDrYqdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siDrY6daEd2uN4Sa3mFxYg" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siDrbKdaEd2uN4Sa3mFxYg" key="defaultDeclarationName" value="russTextViewNotifyResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siDrcKdaEd2uN4Sa3mFxYg" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/RussTextView/xform}notifyResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_siDrbadaEd2uN4Sa3mFxYg" direction="To" target="_odAhu6daEd2uN4Sa3mFxYg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_siDrbqdaEd2uN4Sa3mFxYg" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_siDrb6daEd2uN4Sa3mFxYg" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_gkMLW6daEd2uN4Sa3mFxYg" iD="_gkMLOKdaEd2uN4Sa3mFxYg" associations="_hDCqcadaEd2uN4Sa3mFxYg _hmDQ86daEd2uN4Sa3mFxYg" documentation="" name="" ncname="" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gkMLXKdaEd2uN4Sa3mFxYg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gkMLXadaEd2uN4Sa3mFxYg" key="projectRelativePath" value="RussianTestForm.xform"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gkMLXqdaEd2uN4Sa3mFxYg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gkMLX6daEd2uN4Sa3mFxYg" key="factoryId" value="xform"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gkMLYKdaEd2uN4Sa3mFxYg" key="taskType" value="init"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gkMLYadaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gkMLYqdaEd2uN4Sa3mFxYg" key="douri" value="project:///RussianTestForm.xform.all.wsdl?invokerequestresponse={http://example.com/RussianTestForm/xform}Process/initProcess"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u3Dz4KdaEd2uN4Sa3mFxYg" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_u3Nk4KdaEd2uN4Sa3mFxYg" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_u3Nk4adaEd2uN4Sa3mFxYg" key="roles" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u3Wu0KdaEd2uN4Sa3mFxYg" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_u3Wu0adaEd2uN4Sa3mFxYg" key="description" value="Русская форма инициализации процесса"/>
+      </eAnnotations>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_hDCqYadaEd2uN4Sa3mFxYg"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_hl6G4adaEd2uN4Sa3mFxYg"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_odAhu6daEd2uN4Sa3mFxYg" iD="_odAhmKdaEd2uN4Sa3mFxYg" associations="_r_o60KdaEd2uN4Sa3mFxYg _siDrbadaEd2uN4Sa3mFxYg" name="Русский Текст Просмотр-notify" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_odAhvKdaEd2uN4Sa3mFxYg" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_odAhvadaEd2uN4Sa3mFxYg" key="projectRelativePath" value="RussTextView.xform"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_odAhvqdaEd2uN4Sa3mFxYg" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_odAhv6daEd2uN4Sa3mFxYg" key="factoryId" value="xform"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_odAhwKdaEd2uN4Sa3mFxYg" key="taskType" value="notify"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_odAhwadaEd2uN4Sa3mFxYg" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_odAhwqdaEd2uN4Sa3mFxYg" key="douri" value="project:///RussTextView.xform.all.wsdl?wsdloperationbound={http://example.com/RussTextView/xform}WorkflowSoapService/xformPort/notify"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_syJWkKfuEd2x38HHNx5B1g" source="participant">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_syTHkKfuEd2x38HHNx5B1g" key="users" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_syc4kKfuEd2x38HHNx5B1g" key="roles" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_symCgKfuEd2x38HHNx5B1g" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_syvzgKfuEd2x38HHNx5B1g" key="description" value="уведомление"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_r_V_4adaEd2uN4Sa3mFxYg"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_sh6hcadaEd2uN4Sa3mFxYg"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_hDCqYadaEd2uN4Sa3mFxYg" iD="_hDCqYKdaEd2uN4Sa3mFxYg" source="_gkMLW6daEd2uN4Sa3mFxYg" target="_TJWWuadaEd2uN4Sa3mFxYg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hDCqYqdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hDCqY6daEd2uN4Sa3mFxYg" key="douri" value="project:///RussianTestForm.xform.all.wsdl?messageForOperation={http://example.com/RussianTestForm/xform}Process/initProcess/input/initProcessRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_hl6G4adaEd2uN4Sa3mFxYg" iD="_hl6G4KdaEd2uN4Sa3mFxYg" source="_TJWWuadaEd2uN4Sa3mFxYg" target="_gkMLW6daEd2uN4Sa3mFxYg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hl6G4qdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hl6G46daEd2uN4Sa3mFxYg" key="douri" value="project:///RussianTestForm.xform.all.wsdl?messageForOperation={http://example.com/RussianTestForm/xform}Process/initProcess/output/initProcessResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_r_V_4adaEd2uN4Sa3mFxYg" iD="_r_V_4KdaEd2uN4Sa3mFxYg" source="_qxj-IadaEd2uN4Sa3mFxYg" target="_odAhu6daEd2uN4Sa3mFxYg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_r_V_4qdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_r_V_46daEd2uN4Sa3mFxYg" key="douri" value="project:///RussTextView.xform.all.wsdl?messageForBoundOperation={http://example.com/RussTextView/xform}WorkflowSoapService/xformPort/notify/input/notifyRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_sh6hcadaEd2uN4Sa3mFxYg" iD="_sh6hcKdaEd2uN4Sa3mFxYg" source="_odAhu6daEd2uN4Sa3mFxYg" target="_qxj-IadaEd2uN4Sa3mFxYg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sh6hcqdaEd2uN4Sa3mFxYg" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sh6hc6daEd2uN4Sa3mFxYg" key="douri" value="project:///RussTextView.xform.all.wsdl?messageForBoundOperation={http://example.com/RussTextView/xform}WorkflowSoapService/xformPort/notify/output/notifyResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>

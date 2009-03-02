@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:RussTextView="http://example.com/RussTextView/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RussianTestForm="http://example.com/RussianTestForm/xform" xmlns:diag="http://example.com/RussianLangSample" xmlns:Пользователь="http://example.com/RussianLangSample/Пользователь" xmlns:Business_Process="http://example.com/RussianLangSample/Business_Process" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://example.com/RussianLangSample">
+    <wsdl:import namespace="http://example.com/RussTextView/xform" location="RussTextView.xform.all.wsdl"/>
+    <wsdl:import namespace="http://example.com/RussianTestForm/xform" location="RussianTestForm.xform.all.wsdl"/>
+    <pnlk:partnerLinkType name="ПользовательAndBusiness_Process">
+        <pnlk:role name="Пользователь_for_Business_Process" portType="RussTextView:Workflow"/>
+        <pnlk:role name="Business_Process_for_Пользователь" portType="RussianTestForm:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>
