@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<wsdl:definitions xmlns:result="http://example.com/result/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:start1="http://example.com/start/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:result1="http://example.com/result/xform/attachments" xmlns:diag="http://example.com/Escalate" xmlns:start="http://example.com/start/xform" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://example.com/Escalate/Escalate" xmlns:Client="http://example.com/Escalate/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://example.com/Escalate/Escalate">
+<wsdl:definitions xmlns:Client="http://example.com/Escalate/Client" xmlns:result1="http://example.com/result/xform/attachments" xmlns:start="http://example.com/start/xform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:start1="http://example.com/start/xform/attachments" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:diag="http://example.com/Escalate" xmlns:result="http://example.com/result/xform" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:this="http://example.com/Escalate/Escalate" targetNamespace="http://example.com/Escalate/Escalate">
     <wsdl:import namespace="http://example.com/result/xform" location="result.xform.all.wsdl"/>
     <wsdl:import namespace="http://example.com/start/xform" location="start.xform.all.wsdl"/>
     <wsdl:binding name="WFmagic_8KqGSMjrEd2lqYApHlJ9vwServiceBinding" type="result:Process">
@@ -46,12 +46,12 @@
     </wsdl:binding>
     <wsdl:service name="WFmagic_8KqGSMjrEd2lqYApHlJ9vwService">
         <wsdl:port name="Escalate_for_ClientForThePortTypeProcessPort" binding="this:WFmagic_8KqGSMjrEd2lqYApHlJ9vwServiceBinding">
-            <soap:address location="http://preprod.adomnes.com:8080/ode/processes/Escalate/Escalate/Escalate/Client/WFmagic_8KqGSMjrEd2lqYApHlJ9vw"/>
+            <soap:address location="http://localhost:8080/ode/processes/Escalate/Escalate/Escalate/Client/WFmagic_8KqGSMjrEd2lqYApHlJ9vw"/>
         </wsdl:port>
     </wsdl:service>
     <wsdl:service name="EscalateAndClientForPortTypeProcessPlkService">
         <wsdl:port name="Escalate_for_ClientPort" binding="this:EscalateAndClientForPortTypeProcessPlkServiceBinding">
-            <soap:address location="http://preprod.adomnes.com:8080/ode/processes/Escalate/Escalate/Escalate/Client/EscalateAndClientForPortTypeProcessPlk"/>
+            <soap:address location="http://localhost:8080/ode/processes/Escalate/Escalate/Escalate/Client/EscalateAndClientForPortTypeProcessPlk"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

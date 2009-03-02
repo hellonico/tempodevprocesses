@@ -129,6 +129,26 @@
       <xsd:element name="taskType" type="xsd:token"/>
       <xsd:element name="description" type="xsd:string"/>
       <xsd:element name="processId" type="xsd:string"/>
+      
+  <!-- processName is a user-defined identifier for the process 
+  it can be used in a custom task-list. -->
+      <xsd:element name="business" minOccurs="0">
+        <xsd:complexType>
+           <xsd:sequence>
+              <xsd:element name="processName" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="instanceId" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="customData" minOccurs="0">
+                <xsd:complexType>
+                   <xsd:sequence>
+                     <xsd:any minOccurs="0" maxOccurs="unbounded"/>
+                   </xsd:sequence>
+                   <xsd:anyAttribute/>
+                </xsd:complexType>
+              </xsd:element>
+           </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      
       <xsd:element name="creationDate" type="xsd:dateTime"/>
       <xsd:element name="userOwner" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
       <xsd:element name="roleOwner" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
@@ -162,6 +182,8 @@
   <xsd:element name="notifyTaskCompletionRequest">
     <xsd:complexType>
       <xsd:sequence>
+        <xsd:element name="participantToken" type="xsd:string"/>        
+        <xsd:element name="user" type="xsd:string"/>
         <xsd:element name="taskMetaData" type="xform:taskMetaDataType"/>
         <xsd:element name="taskOutput">
           <xsd:complexType>
@@ -315,7 +337,7 @@
 
   <wsdl:service name="WorkflowSoapService">
     <wsdl:port name="xformPort" binding="xform:WorkflowSoapBinding">
-      <soap:address location="http://preprod.adomnes.com:8080/fds/workflow/xform"/>
+      <soap:address location="http://localhost:8080/fds/workflow/xform"/>
     </wsdl:port>
   </wsdl:service>
 

@@ -1,19 +1,19 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:President="http://example.com/MyLoop/President" xmlns:Aform="http://example.com/Aform/xform/attachments" xmlns:Teacher="http://example.com/MyLoop/Teacher" xmlns:tns="http://www.example.org/loop" xmlns:diag="http://example.com/MyLoop" xmlns:this="http://example.com/MyLoop/System" xmlns:Bform1="http://example.com/Bform/xform" xmlns:Aform1="http://example.com/Aform/xform" xmlns:Cform="http://example.com/Cform/xform/attachments" xmlns:Cform1="http://example.com/Cform/xform" xmlns:Bform="http://example.com/Bform/xform/attachments" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="System" name="System" bpmn:id="_wkS7AAWPEd6ileXxQdrd4w" targetNamespace="http://example.com/MyLoop/System">
-  <bpel:import namespace="http://example.com/Aform/xform" location="Aform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
-  <bpel:import namespace="http://example.com/Bform/xform" location="Bform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
-  <bpel:import namespace="http://example.com/Cform/xform" location="Cform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
-  <bpel:import namespace="http://example.com/MyLoop" location="MyLoop.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:President="http://example.com/MyLoop/President" xmlns:Aform="http://example.com/Aform/xform/attachments" xmlns:Teacher="http://example.com/MyLoop/Teacher" xmlns:tns="http://www.example.org/loop" xmlns:diag="http://example.com/MyLoop" xmlns:this="http://example.com/MyLoop/System" xmlns:Bform1="http://example.com/Bform/xform" xmlns:Aform1="http://example.com/Aform/xform" xmlns:Cform="http://example.com/Cform/xform/attachments" xmlns:Cform1="http://example.com/Cform/xform" xmlns:Bform="http://example.com/Bform/xform/attachments" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="System" name="System" bpmn:id="_wkS7AAWPEd6ileXxQdrd4w" targetNamespace="http://example.com/MyLoop/System">
+  <bpel:import namespace="http://example.com/Aform/xform" location="Aform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://example.com/Bform/xform" location="Bform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://example.com/Cform/xform" location="Cform.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://example.com/MyLoop" location="MyLoop.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
   <bpel:partnerLinks>
-    <bpel:partnerLink name="presidentAndSystemPlkVar" partnerLinkType="diag:PresidentAndSystem" initializePartnerRole="yes" myRole="System_for_President" partnerRole="President_for_System"></bpel:partnerLink>
-    <bpel:partnerLink name="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" partnerLinkType="diag:WFmagic_7kWLSAWTEd6ileXxQdrd4w" initializePartnerRole="no" myRole="System_for_TeacherForThePortTypeProcess" partnerRole="Teacher_for_SystemForXformPort"></bpel:partnerLink>
+    <bpel:partnerLink name="presidentAndSystemPlkVar" partnerLinkType="diag:PresidentAndSystem" initializePartnerRole="yes" myRole="System_for_President" partnerRole="President_for_System"/>
+    <bpel:partnerLink name="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" partnerLinkType="diag:WFmagic_7kWLSAWTEd6ileXxQdrd4w" initializePartnerRole="no" myRole="System_for_TeacherForThePortTypeProcess" partnerRole="Teacher_for_SystemForXformPort"/>
   </bpel:partnerLinks>
   <bpel:variables>
-    <bpel:variable name="aform1InitProcessRequestMsg" messageType="Aform1:initProcessRequest"></bpel:variable>
-    <bpel:variable name="aform1InitProcessResponseMsg" messageType="Aform1:initProcessResponse"></bpel:variable>
-    <bpel:variable name="cform1NotifyRequestMsg" messageType="Cform1:notifyRequest"></bpel:variable>
-    <bpel:variable name="cform1NotifyResponseMsg" messageType="Cform1:notifyResponse"></bpel:variable>
-    <bpel:variable name="loop" type="xs:int"></bpel:variable>
+    <bpel:variable name="aform1InitProcessRequestMsg" messageType="Aform1:initProcessRequest"/>
+    <bpel:variable name="aform1InitProcessResponseMsg" messageType="Aform1:initProcessResponse"/>
+    <bpel:variable name="cform1NotifyRequestMsg" messageType="Cform1:notifyRequest"/>
+    <bpel:variable name="cform1NotifyResponseMsg" messageType="Cform1:notifyResponse"/>
+    <bpel:variable name="loop" type="xs:int"/>
   </bpel:variables>
   <bpel:sequence>
     <bpel:receive partnerLink="presidentAndSystemPlkVar" portType="Aform1:Process" operation="initProcess" variable="aform1InitProcessRequestMsg" createInstance="yes" bpmn:label="Start" name="Start" bpmn:id="_R9kM0AWQEd6ileXxQdrd4w"></bpel:receive>
@@ -22,7 +22,7 @@
         <bpel:from>
           <bpel:literal>
 <Aform1:initProcessResponse>
-  <Aform1:status>OK</Aform1:status>
+  <Aform1:status></Aform1:status>
   <Aform1:errorCode></Aform1:errorCode>
   <Aform1:errorReason></Aform1:errorReason>
   <Aform1:taskMetaData>
@@ -38,11 +38,11 @@
           <bpel:literal>
 <Cform1:notifyRequest>
   <Cform1:metadata>
-    <Cform1:description />
+    <Cform1:description></Cform1:description>
     <Cform1:creationDate></Cform1:creationDate>
-    <Cform1:userOwner>intalio\admin</Cform1:userOwner>
-    <Cform1:roleOwner />
-    <Cform1:formUrl>oxf://LoopProject/Cform.xform</Cform1:formUrl>
+    <Cform1:userOwner></Cform1:userOwner>
+    <Cform1:roleOwner></Cform1:roleOwner>
+    <Cform1:formUrl></Cform1:formUrl>
   </Cform1:metadata>
   <Cform1:input>
     <Cform1:input>
@@ -71,10 +71,10 @@
     <bpel:reply partnerLink="presidentAndSystemPlkVar" portType="Aform1:Process" operation="initProcess" variable="aform1InitProcessResponseMsg" bpmn:label="Start" name="Start-1" bpmn:id="_R9kM0AWQEd6ileXxQdrd4w"></bpel:reply>
     <bpel:scope bpmn:label="LoopTeacher" name="LoopTeacher" bpmn:id="_LA0p4AWgEd6ileXxQdrd4w">
       <bpel:variables>
-        <bpel:variable name="bform1CreateTaskRequestMsg" messageType="Bform1:createTaskRequest"></bpel:variable>
-        <bpel:variable name="bform1CreateTaskResponseMsg" messageType="Bform1:createTaskResponse"></bpel:variable>
-        <bpel:variable name="bform1NotifyTaskCompletionRequestMsg" messageType="Bform1:notifyTaskCompletionRequest"></bpel:variable>
-        <bpel:variable name="bform1NotifyTaskCompletionResponseMsg" messageType="Bform1:notifyTaskCompletionResponse"></bpel:variable>
+        <bpel:variable name="bform1CreateTaskRequestMsg" messageType="Bform1:createTaskRequest"/>
+        <bpel:variable name="bform1CreateTaskResponseMsg" messageType="Bform1:createTaskResponse"/>
+        <bpel:variable name="bform1NotifyTaskCompletionRequestMsg" messageType="Bform1:notifyTaskCompletionRequest"/>
+        <bpel:variable name="bform1NotifyTaskCompletionResponseMsg" messageType="Bform1:notifyTaskCompletionResponse"/>
       </bpel:variables>
       <bpel:while bpmn:label="LoopTeacher" name="LoopTeacher-1">
         <bpel:condition>$loop&lt; 5</bpel:condition>
@@ -85,10 +85,10 @@
                 <bpel:literal>
 <Bform1:createTaskRequest>
   <Bform1:taskMetaData>
-    <Bform1:taskId>_7kWLSAWTEd6ileXxQdrd4w</Bform1:taskId>
+    <Bform1:taskId></Bform1:taskId>
     <Bform1:taskState></Bform1:taskState>
     <Bform1:taskType></Bform1:taskType>
-    <Bform1:description />
+    <Bform1:description></Bform1:description>
     <Bform1:processId></Bform1:processId>
     <Bform1:business>
       <Bform1:processName></Bform1:processName>
@@ -96,8 +96,8 @@
       <Bform1:customData></Bform1:customData>
     </Bform1:business>
     <Bform1:creationDate></Bform1:creationDate>
-    <Bform1:userOwner>intalio\admin</Bform1:userOwner>
-    <Bform1:roleOwner />
+    <Bform1:userOwner></Bform1:userOwner>
+    <Bform1:roleOwner></Bform1:roleOwner>
     <Bform1:claimAction>
       <Bform1:user></Bform1:user>
       <Bform1:role></Bform1:role>
@@ -114,7 +114,7 @@
       <Bform1:user></Bform1:user>
       <Bform1:role></Bform1:role>
     </Bform1:completeAction>
-    <Bform1:formUrl>oxf://LoopProject/Bform.xform</Bform1:formUrl>
+    <Bform1:formUrl></Bform1:formUrl>
     <Bform1:failureCode></Bform1:failureCode>
     <Bform1:failureReason></Bform1:failureReason>
     <Bform1:priority></Bform1:priority>
@@ -134,17 +134,17 @@
           <mimeType></mimeType>
           <fileName></fileName>
           <title></title>
-          <description />
+          <description></description>
           <creationDate></creationDate>
         </attachmentMetadata>
         <payloadUrl></payloadUrl>
       </attachment>
     </Bform1:attachments>
-    <Bform1:userProcessCompleteSOAPAction>http://example.com/Bform/xform/Process/notifyTaskCompletion</Bform1:userProcessCompleteSOAPAction>
+    <Bform1:userProcessCompleteSOAPAction></Bform1:userProcessCompleteSOAPAction>
     <Bform1:isChainedBefore></Bform1:isChainedBefore>
     <Bform1:previousTaskId></Bform1:previousTaskId>
-    <Bform1:userProcessEndpoint>http://localhost:8080/ode/processes/LoopProject/MyLoop/System/Teacher/WFmagic_7kWLSAWTEd6ileXxQdrd4w</Bform1:userProcessEndpoint>
-    <Bform1:userProcessNamespaceURI>http://example.com/Bform/xform</Bform1:userProcessNamespaceURI>
+    <Bform1:userProcessEndpoint></Bform1:userProcessEndpoint>
+    <Bform1:userProcessNamespaceURI></Bform1:userProcessNamespaceURI>
   </Bform1:taskMetaData>
   <Bform1:participantToken></Bform1:participantToken>
   <Bform1:taskInput>
@@ -231,7 +231,7 @@
     <Bform1:userProcessEndpoint></Bform1:userProcessEndpoint>
     <Bform1:userProcessNamespaceURI></Bform1:userProcessNamespaceURI>
   </Bform1:taskMetaData>
-  <Bform1:status>OK</Bform1:status>
+  <Bform1:status></Bform1:status>
   <Bform1:errorCode></Bform1:errorCode>
   <Bform1:errorReason></Bform1:errorReason>
 </Bform1:response></bpel:literal>
@@ -253,21 +253,7 @@
               <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:description</bpel:to>
             </bpel:copy>
           </bpel:assign>
-          <bpel:assign>
-    <bpel:copy>
-        <bpel:from>"http://localhost:8080/ode/processes/LoopProject/MyLoop/System/Teacher/WFmagic_7kWLSAWTEd6ileXxQdrd4w"</bpel:from>
-        <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:userProcessEndpoint</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"http://example.com/Bform/xform/Process/notifyTaskCompletion"</bpel:from>
-        <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:userProcessCompleteSOAPAction</bpel:to>
-    </bpel:copy>
-    <bpel:copy>
-        <bpel:from>"_7kWLUgWTEd6ileXxQdrd4w"</bpel:from>
-        <bpel:to>$bform1CreateTaskRequestMsg.root/Bform1:taskMetaData/Bform1:taskId</bpel:to>
-    </bpel:copy>
-  </bpel:assign>
-  <bpel:invoke partnerLink="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" portType="Bform1:Workflow" operation="createTask" inputVariable="bform1CreateTaskRequestMsg" outputVariable="bform1CreateTaskResponseMsg" bpmn:label="Task" name="Task-1" bpmn:id="_lU2kEAWwEd6-P7Vm2deqBQ"></bpel:invoke>
+          <bpel:invoke partnerLink="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" portType="Bform1:Workflow" operation="createTask" inputVariable="bform1CreateTaskRequestMsg" outputVariable="bform1CreateTaskResponseMsg" bpmn:label="Task" name="Task-1" bpmn:id="_lU2kEAWwEd6-P7Vm2deqBQ"></bpel:invoke>
           <bpel:receive partnerLink="wFmagic_7kWLSAWTEd6ileXxQdrd4wPlkVar" portType="Bform1:Process" operation="notifyTaskCompletion" variable="bform1NotifyTaskCompletionRequestMsg" bpmn:label="Task" name="Task-2" bpmn:id="_mXnBkAWwEd6-P7Vm2deqBQ"></bpel:receive>
           <bpel:assign bpmn:label="Task" name="Task-3" bpmn:id="_mXnBkAWwEd6-P7Vm2deqBQ">
             <bpel:copy>

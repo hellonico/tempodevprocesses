@@ -1,9 +1,9 @@
 ﻿#
-#Sat Feb 28 20:03:40 CET 2009
+#Mon Mar 02 15:58:12 JST 2009
 formURI=oxf\://Escalate/start.xform
 userProcessInitSOAPAction=http\://example.com/start/xform/Process/initProcess
-processEndpoint=http\://preprod.adomnes.com\:8080/ode/processes/Escalate/Escalate/Escalate/Client/EscalateAndClientForPortTypeProcessPlk
+processEndpoint=http\://localhost\:8080/ode/processes/Escalate/Escalate/Escalate/Client/EscalateAndClientForPortTypeProcessPlk
 task-description=Initialize Escalate
 task-role-owners=
-task-user-owners=examples/msmith
+task-user-owners=examples\\msmith
 formNamespace=http\://example.com/start/xform
