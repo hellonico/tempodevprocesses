@@ -156,7 +156,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8LGyPcjrEd2lqYApHlJ9vw" key="douri" value="project:///result.xform.all.wsdl?invokerequestresponse={http://example.com/result/xform}Process/notifyTaskCompletion"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0XQl8MjsEd2lqYApHlJ9vw" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0Xjg4MjsEd2lqYApHlJ9vw" key="users" value="intalio\admin"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0Xjg4MjsEd2lqYApHlJ9vw" key="users" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0Xjg4cjsEd2lqYApHlJ9vw" key="roles" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ARzjkAZ-Ed6yAPsCSHipHQ" source="humanTask">

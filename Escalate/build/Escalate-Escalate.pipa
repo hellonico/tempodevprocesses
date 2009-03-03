@@ -1,5 +1,5 @@
 ﻿#
-#Mon Mar 02 15:58:12 JST 2009
+#Tue Mar 03 10:09:37 JST 2009
 formURI=oxf\://Escalate/start.xform
 userProcessInitSOAPAction=http\://example.com/start/xform/Process/initProcess
 processEndpoint=http\://localhost\:8080/ode/processes/Escalate/Escalate/Escalate/Client/EscalateAndClientForPortTypeProcessPlk
