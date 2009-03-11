@@ -1,0 +1,33 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://www.example.org/PeopleLookup" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:this="http://thisdiagram/external" xmlns:diag="http://thisdiagram" xmlns:lookupPersonProcess="http://thisdiagram/lookupPersonProcess" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/external">
+    <bpdm:dependencies version="6000052">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.example.org/PeopleLookup" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///PeopleLookup.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/external" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/lookupPersonProcess" bpdm:prefix="lookupPersonProcess" bpdm:comment="contrib=&apos;partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:label="lookupPersonProcess"/>
+        <bpdm:namespaceContributor bpdm:url="project:///PeopleLookup.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="external" bpdm:ID="_7hAphg2NEd6XaZbsAuYJ4Q">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="lookupPersonProcessAndExternalPlkVar" partnerLinkType="diag:lookupPersonProcessAndExternal" initializePartnerRole="yes" partnerRole="lookupPersonProcess_for_external" bpdm:invokedService="lookupPersonProcess:CanonicServiceForexternal" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/lookupPersonProcess/external" bpdm:invokedIsDefault="true" bpdm:clientTasks="_7hAphg2NEd6XaZbsAuYJ4Q:_7hApiA2NEd6XaZbsAuYJ4Q" bpdm:isManaged="true" bpdm:otherPoolId="_9rI-wA2NEd6XaZbsAuYJ4Q"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="lookupPersonProcessTaskRequestMsg" messageType="lookupPersonProcess:TaskRequest" bpdm:id="_AZ7gQA2OEd6XaZbsAuYJ4Q" bpdm:messageIds=" out:_AZyWWQ2OEd6XaZbsAuYJ4Q">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="lookupPersonProcess:TaskRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="lookupPersonProcessTaskResponseMsg" messageType="lookupPersonProcess:TaskResponse" bpdm:id="_E4L0QA2OEd6XaZbsAuYJ4Q" bpdm:messageIds="inc:_E4CDQA2OEd6XaZbsAuYJ4Q"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Task" partnerLink="lookupPersonProcessAndExternalPlkVar" portType="lookupPersonProcess:Forexternal" isMyRole="false" enableSharing="false" bpdm:label="interface" bpdm:ID="_7hApiA2NEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="lookupPersonProcessTaskRequestMsg" bpdm:msgVarScopeId="_7hAphg2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="lookupPersonProcess:TaskRequest" bpdm:ID="_AZyWWQ2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="lookupPersonProcessTaskResponseMsg" bpdm:msgVarScopeId="_7hAphg2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="lookupPersonProcess:TaskResponse" bpdm:ID="_E4CDQA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

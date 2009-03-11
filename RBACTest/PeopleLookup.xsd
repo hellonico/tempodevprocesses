@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PeopleLookup" xmlns:tns="http://www.example.org/PeopleLookup" elementFormDefault="qualified">
+
+    <element name="Person" type="tns:personType"></element>
+    
+    <complexType name="personType">
+    	<sequence>
+    		<element name="firstname" type="string"></element>
+    		<element name="lastname" type="string"></element>
+    		<element name="email" type="string"></element>
+    		<element name="username" type="string"></element>
+    		<element name="location" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="LookupPersonQuery" type="tns:personQueryType"></element>
+    
+    <complexType name="personQueryType">
+    	<sequence>
+    		<element name="username" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

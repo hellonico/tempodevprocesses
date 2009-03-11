@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_7hApgQ2NEd6XaZbsAuYJ4Q" iD="_7hApgA2NEd6XaZbsAuYJ4Q">
+  <pools xmi:type="bpmn:Pool" xmi:id="_7hAphw2NEd6XaZbsAuYJ4Q" iD="_7hAphg2NEd6XaZbsAuYJ4Q" name="external">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8bHhUA2NEd6XaZbsAuYJ4Q" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8bHhUQ2NEd6XaZbsAuYJ4Q" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AZ7gQQ2OEd6XaZbsAuYJ4Q" iD="_AZ7gQA2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AZ7gQg2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AZ7gQw2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AZ7gTA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="lookupPersonProcessTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AZ7gUA2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/lookupPersonProcess}TaskRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AZ7gTQ2OEd6XaZbsAuYJ4Q" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AZ7gTg2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AZ7gTw2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_E4L0QQ2OEd6XaZbsAuYJ4Q" iD="_E4L0QA2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E4L0Qg2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4L0Qw2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4L0TA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="lookupPersonProcessTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4L0UA2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/lookupPersonProcess}TaskResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_E4L0TQ2OEd6XaZbsAuYJ4Q" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E4L0Tg2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4L0Tw2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_7hApiQ2NEd6XaZbsAuYJ4Q" iD="_7hApiA2NEd6XaZbsAuYJ4Q" associations="_AZ7gTQ2OEd6XaZbsAuYJ4Q _E4L0TQ2OEd6XaZbsAuYJ4Q" name="interface" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_AZyWWg2OEd6XaZbsAuYJ4Q"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_E4CDQQ2OEd6XaZbsAuYJ4Q"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_9rI-wQ2NEd6XaZbsAuYJ4Q" iD="_9rI-wA2NEd6XaZbsAuYJ4Q" name="lookupPersonProcess">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AZ7gVw2OEd6XaZbsAuYJ4Q" iD="_AZ7gVg2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AZ7gWA2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AZ7gWQ2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AaFRSA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="thisTaskRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AaFRTA2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/lookupPersonProcess}TaskRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_AaFRSQ2OEd6XaZbsAuYJ4Q" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AaFRSg2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AaFRSw2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_E4CDQw2OEd6XaZbsAuYJ4Q" iD="_E4CDQg2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E4CDRA2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4CDRQ2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4CDTg2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="thisTaskResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4CDUg2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/lookupPersonProcess}TaskResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_E4CDTw2OEd6XaZbsAuYJ4Q" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E4CDUA2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E4CDUQ2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3VaWUQ2OEd6XaZbsAuYJ4Q" iD="_3VaWUA2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3VaWUg2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VaWUw2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VkHWA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="rBACQueryServiceGetUserPropertiesRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VkHXA2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/RBACQueryService/}getUserPropertiesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_3VkHWQ2OEd6XaZbsAuYJ4Q" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3VkHWg2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VkHWw2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3jkuKQ2OEd6XaZbsAuYJ4Q" iD="_3jkuKA2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3jkuKg2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jkuKw2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jt4EQ2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="rBACQueryServiceGetUserPropertiesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3j3pEQ2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/RBACQueryService/}getUserPropertiesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_3jt4Eg2OEd6XaZbsAuYJ4Q" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3jt4Ew2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3j3pEA2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_AiAo2g2PEd6XaZbsAuYJ4Q" iD="_Ah23yA2PEd6XaZbsAuYJ4Q" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AiAo2w2PEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AiAo3A2PEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AiAo3Q2PEd6XaZbsAuYJ4Q" key="douri" value="project:///PeopleLookup.xsd?xsdelement={http://www.example.org/PeopleLookup}Person"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AiKZwA2PEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="Person"/>
+      </eAnnotations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3uNaaQ2aEd6OT470zRPI8g" iD="_3txVgA2aEd6OT470zRPI8g" name="">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3uNaag2aEd6OT470zRPI8g" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3uNaaw2aEd6OT470zRPI8g" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3uNabA2aEd6OT470zRPI8g" key="douri" value="project:///RBACQueryService.wsdl?xsdelement={http://tempo.intalio.org/security/RBACQueryService/}getUserPropertiesResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ug8YA2aEd6OT470zRPI8g" key="defaultDeclarationName" value="getUserPropertiesResponse"/>
+      </eAnnotations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_AZyWUQ2OEd6XaZbsAuYJ4Q" iD="_AZyWUA2OEd6XaZbsAuYJ4Q" associations="_AaFRSQ2OEd6XaZbsAuYJ4Q" outgoingEdges="_AupMAQ2OEd6XaZbsAuYJ4Q" activityType="Task">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_AZyWWg2OEd6XaZbsAuYJ4Q"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_AufbAQ2OEd6XaZbsAuYJ4Q" iD="_AufbAA2OEd6XaZbsAuYJ4Q" associations="_3VkHWQ2OEd6XaZbsAuYJ4Q _3jt4Eg2OEd6XaZbsAuYJ4Q" outgoingEdges="_C0wj-g2OEd6XaZbsAuYJ4Q" incomingEdges="_AupMAQ2OEd6XaZbsAuYJ4Q" name="LDAP Lookup" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_3U9qYQ2OEd6XaZbsAuYJ4Q"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_3jICMQ2OEd6XaZbsAuYJ4Q"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_C0wj8Q2OEd6XaZbsAuYJ4Q" iD="_C0wj8A2OEd6XaZbsAuYJ4Q" outgoingEdges="_EHJ_8Q2OEd6XaZbsAuYJ4Q" incomingEdges="_C0wj-g2OEd6XaZbsAuYJ4Q" name="transform" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_EHA2AQ2OEd6XaZbsAuYJ4Q" iD="_EHA2AA2OEd6XaZbsAuYJ4Q" associations="_E4CDTw2OEd6XaZbsAuYJ4Q" incomingEdges="_EHJ_8Q2OEd6XaZbsAuYJ4Q" name="reply" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_E4CDQQ2OEd6XaZbsAuYJ4Q"/>
+    </vertices>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_AupMAQ2OEd6XaZbsAuYJ4Q" iD="_AupMAA2OEd6XaZbsAuYJ4Q"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_C0wj-g2OEd6XaZbsAuYJ4Q" iD="_C0wj-Q2OEd6XaZbsAuYJ4Q"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_EHJ_8Q2OEd6XaZbsAuYJ4Q" iD="_EHJ_8A2OEd6XaZbsAuYJ4Q"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_x2WFkQ2OEd6XaZbsAuYJ4Q" iD="_x2WFkA2OEd6XaZbsAuYJ4Q" name="RBAC">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zzg84A2OEd6XaZbsAuYJ4Q" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zzg84Q2OEd6XaZbsAuYJ4Q" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3VkHYw2OEd6XaZbsAuYJ4Q" iD="_3VkHYg2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3VkHZA2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VkHZQ2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VtRSA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="tnsGetUserPropertiesRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VtRTA2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/RBACQueryService/}getUserPropertiesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_3VtRSQ2OEd6XaZbsAuYJ4Q" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3VtRSg2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VtRSw2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_3ja9IQ2OEd6XaZbsAuYJ4Q" iD="_3ja9IA2OEd6XaZbsAuYJ4Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3ja9Ig2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ja9Iw2OEd6XaZbsAuYJ4Q" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3ja9LA2OEd6XaZbsAuYJ4Q" key="defaultDeclarationName" value="tnsGetUserPropertiesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jkuIg2OEd6XaZbsAuYJ4Q" key="douri2" value="builtin:///diagram?wsdlmessage={http://tempo.intalio.org/security/RBACQueryService/}getUserPropertiesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_3ja9LQ2OEd6XaZbsAuYJ4Q" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3jkuIA2OEd6XaZbsAuYJ4Q" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jkuIQ2OEd6XaZbsAuYJ4Q" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_21hVag2OEd6XaZbsAuYJ4Q" iD="_21YLaA2OEd6XaZbsAuYJ4Q" associations="_3VtRSQ2OEd6XaZbsAuYJ4Q _3ja9LQ2OEd6XaZbsAuYJ4Q" name="getUserProperties" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_21hVaw2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_21hVbA2OEd6XaZbsAuYJ4Q" key="douri" value="project:///RBACQueryService.wsdl?wsdloperationbound={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_3U9qYQ2OEd6XaZbsAuYJ4Q"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_3jICMQ2OEd6XaZbsAuYJ4Q"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_AZyWWg2OEd6XaZbsAuYJ4Q" iD="_AZyWWQ2OEd6XaZbsAuYJ4Q" source="_7hApiQ2NEd6XaZbsAuYJ4Q" target="_AZyWUQ2OEd6XaZbsAuYJ4Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w0Ld8A2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w0Ld8Q2OEd6XaZbsAuYJ4Q" key="douri" value="project:///PeopleLookup.xsd?xsdtype={http://www.example.org/PeopleLookup}personQueryType"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w0Ld8g2OEd6XaZbsAuYJ4Q" key="douri2" value="project:///PeopleLookup.xsd?xsdelement={http://www.example.org/PeopleLookup}LookupPersonQuery"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_E4CDQQ2OEd6XaZbsAuYJ4Q" iD="_E4CDQA2OEd6XaZbsAuYJ4Q" source="_EHA2AQ2OEd6XaZbsAuYJ4Q" target="_7hApiQ2NEd6XaZbsAuYJ4Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lQfYUA2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lQfYUQ2OEd6XaZbsAuYJ4Q" key="douri" value="project:///PeopleLookup.xsd?xsdtype={http://www.example.org/PeopleLookup}personType"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lQfYUg2OEd6XaZbsAuYJ4Q" key="douri2" value="project:///PeopleLookup.xsd?xsdelement={http://www.example.org/PeopleLookup}Person"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_3U9qYQ2OEd6XaZbsAuYJ4Q" iD="_3U9qYA2OEd6XaZbsAuYJ4Q" source="_AufbAQ2OEd6XaZbsAuYJ4Q" target="_21hVag2OEd6XaZbsAuYJ4Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3VRMYA2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3VRMYQ2OEd6XaZbsAuYJ4Q" key="douri" value="project:///RBACQueryService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties/input/getUserPropertiesRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_3jICMQ2OEd6XaZbsAuYJ4Q" iD="_3jICMA2OEd6XaZbsAuYJ4Q" source="_21hVag2OEd6XaZbsAuYJ4Q" target="_AufbAQ2OEd6XaZbsAuYJ4Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3jICMg2OEd6XaZbsAuYJ4Q" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3jICMw2OEd6XaZbsAuYJ4Q" key="douri" value="project:///RBACQueryService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties/output/getUserPropertiesResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>

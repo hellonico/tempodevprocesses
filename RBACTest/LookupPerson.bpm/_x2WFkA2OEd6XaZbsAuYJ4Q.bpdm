@@ -1,0 +1,33 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:this="http://thisdiagram/RBAC" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempo.intalio.org/security/RBACQueryService/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:lookupPersonProcess="http://thisdiagram/lookupPersonProcess" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/RBAC">
+    <bpdm:dependencies version="6000052">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/RBAC" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/RBACQueryService/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///RBACQueryService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/lookupPersonProcess" bpdm:prefix="lookupPersonProcess" bpdm:comment="contrib=&apos;partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:label="lookupPersonProcess"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RBACQueryService.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="RBAC" bpdm:ID="_x2WFkA2OEd6XaZbsAuYJ4Q">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="rBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlkVar" partnerLinkType="diag:RBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlk" myRole="RBAC_for_lookupPersonProcess" bpdm:enableSharing="false" bpdm:providedService="tns:RBACQueryService" bpdm:providedPort="RBACQueryServiceSOAP11port_http" bpdm:provideSOAPAddress="http://localhost:8080/axis2/services/RBACQueryService" bpdm:providedIsDefault="true" bpdm:clientTasks="_x2WFkA2OEd6XaZbsAuYJ4Q:_21YLaA2OEd6XaZbsAuYJ4Q" bpdm:isManaged="true" bpdm:otherPoolId="_9rI-wA2NEd6XaZbsAuYJ4Q"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="tnsGetUserPropertiesRequestMsg" messageType="tns:getUserPropertiesRequest" binding="tns:RBACQueryServiceSOAP12Binding" operation="getUserProperties" opMsgType="0" bpdm:id="_3VkHYg2OEd6XaZbsAuYJ4Q" bpdm:messageIds="inc:_3U9qYA2OEd6XaZbsAuYJ4Q"/>
+            <bpel:variable name="tnsGetUserPropertiesResponseMsg" messageType="tns:getUserPropertiesResponse" binding="tns:RBACQueryServiceSOAP12Binding" operation="getUserProperties" opMsgType="1" bpdm:id="_3ja9IA2OEd6XaZbsAuYJ4Q" bpdm:messageIds=" out:_3jICMA2OEd6XaZbsAuYJ4Q">
+                <bpel:from bpdm:toPart="payload">
+                    <bpel:literal bpdm:linkedMessageType="tns:getUserPropertiesResponse" bpdm:linkedPart="payload" bpdm:binding="tns:RBACQueryServiceSOAP12Binding" bpdm:opMsgType="1" bpdm:operation="getUserProperties"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="getUserProperties" partnerLink="rBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlkVar" portType="tns:RBACQueryServicePortType" isMyRole="true" enableSharing="false" bpdm:label="getUserProperties" bpdm:ID="_21YLaA2OEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsGetUserPropertiesRequestMsg" bpdm:msgVarScopeId="_x2WFkA2OEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="tns:getUserPropertiesRequest" bpdm:binding="tns:RBACQueryServiceSOAP12Binding" bpdm:ID="_3U9qYA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsGetUserPropertiesResponseMsg" bpdm:msgVarScopeId="_x2WFkA2OEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="tns:getUserPropertiesResponse" bpdm:binding="tns:RBACQueryServiceSOAP12Binding" bpdm:ID="_3jICMA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

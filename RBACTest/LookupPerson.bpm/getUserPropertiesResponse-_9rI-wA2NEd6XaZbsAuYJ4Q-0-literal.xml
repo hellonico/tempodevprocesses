@@ -1,0 +1,24 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:RBAC="http://thisdiagram/RBAC"
+    xmlns:tns="http://www.example.org/PeopleLookup"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:RBACQueryService="http://tempo.intalio.org/security/RBACQueryService/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diag="http://thisdiagram"
+    xmlns:this="http://thisdiagram/lookupPersonProcess"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<RBACQueryService:getUserPropertiesResponse>
+    <RBACQueryService:property>
+        <RBACQueryService:name>givenname</RBACQueryService:name>
+        <RBACQueryService:value>Mark</RBACQueryService:value>
+    </RBACQueryService:property>
+    <RBACQueryService:property>
+        <RBACQueryService:name>sn</RBACQueryService:name>
+        <RBACQueryService:value>Smith</RBACQueryService:value>
+    </RBACQueryService:property>
+    <RBACQueryService:property>
+        <RBACQueryService:name>mail</RBACQueryService:name>
+        <RBACQueryService:value>msmith@test.intalio.org</RBACQueryService:value>
+    </RBACQueryService:property>
+</RBACQueryService:getUserPropertiesResponse>
+</bpel:literal>

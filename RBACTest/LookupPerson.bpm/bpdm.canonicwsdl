@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:tns="http://www.example.org/PeopleLookup" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:lookupPersonProcess="http://thisdiagram/lookupPersonProcess" xmlns:RBAC="http://thisdiagram/RBAC" xmlns:RBACQueryService="http://tempo.intalio.org/security/RBACQueryService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000052" bpdm:canid="_7hApgA2NEd6XaZbsAuYJ4Q" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="lookupPersonProcessAndExternal" bpdm:poolOneId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="lookupPersonProcess" bpdm:poolTwoId="_7hAphg2NEd6XaZbsAuYJ4Q" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="external">
+    <pnlk:role name="lookupPersonProcess_for_external" portType="lookupPersonProcess:Forexternal" bpdm:thisPoolId="_9rI-wA2NEd6XaZbsAuYJ4Q">
+      <wsdl:portType name="Forexternal">
+        <wsdl:operation name="Task" bpdm:canid="_7hApiA2NEd6XaZbsAuYJ4Q._AZyWUA2OEd6XaZbsAuYJ4Q._EHA2AA2OEd6XaZbsAuYJ4Q.">
+          <wsdl:input message="lookupPersonProcess:TaskRequest" name="Task" bpdm:canid="_AZyWWQ2OEd6XaZbsAuYJ4Q" bpdm:senderId="_7hApiA2NEd6XaZbsAuYJ4Q" bpdm:receiverId="_AZyWUA2OEd6XaZbsAuYJ4Q" bpdm:senderName="interface" bpdm:receiverName="Task" bpdm:receiverPoolId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:dataobjectPointer="project:///PeopleLookup.xsd?xsdtype={http://www.example.org/PeopleLookup}personQueryType" bpdm:bodyPartElemName="TaskRequest" bpdm:bodyPartElemType="{http://www.example.org/PeopleLookup}personQueryType"></wsdl:input>
+          <wsdl:output message="lookupPersonProcess:TaskResponse" name="TaskResponse" bpdm:canid="_E4CDQA2OEd6XaZbsAuYJ4Q" bpdm:senderId="_EHA2AA2OEd6XaZbsAuYJ4Q" bpdm:receiverId="_7hApiA2NEd6XaZbsAuYJ4Q" bpdm:senderName="reply" bpdm:receiverName="interface" bpdm:receiverPoolId="_7hAphg2NEd6XaZbsAuYJ4Q" bpdm:dataobjectPointer="project:///PeopleLookup.xsd?xsdtype={http://www.example.org/PeopleLookup}personType" bpdm:bodyPartElemName="TaskResponse" bpdm:bodyPartElemType="{http://www.example.org/PeopleLookup}personType"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="RBAcAndLookupPersonProcess" bpdm:poolOneId="_x2WFkA2OEd6XaZbsAuYJ4Q" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="RBAC" bpdm:poolTwoId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="lookupPersonProcess">
+    <pnlk:role name="RBAC_for_lookupPersonProcess" portType="RBAC:ForlookupPersonProcess" bpdm:thisPoolId="_x2WFkA2OEd6XaZbsAuYJ4Q">
+      <wsdl:portType name="ForlookupPersonProcess">
+        <wsdl:operation name="getUserProperties" bpdm:canid="_21YLaA2OEd6XaZbsAuYJ4Q._AufbAA2OEd6XaZbsAuYJ4Q." bpdm:dataobjectPointer="project:///RBACQueryService.wsdl?wsdloperationbound={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties">
+          <wsdl:input message="RBACQueryService:getUserPropertiesRequest" name="getUserProperties" bpdm:canid="_3U9qYA2OEd6XaZbsAuYJ4Q" bpdm:senderId="_AufbAA2OEd6XaZbsAuYJ4Q" bpdm:receiverId="_21YLaA2OEd6XaZbsAuYJ4Q" bpdm:senderName="LDAP Lookup" bpdm:receiverName="getUserProperties" bpdm:receiverPoolId="_x2WFkA2OEd6XaZbsAuYJ4Q" bpdm:dataobjectPointer="project:///RBACQueryService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties/input/getUserPropertiesRequest"></wsdl:input>
+          <wsdl:output message="RBACQueryService:getUserPropertiesResponse" name="getUserPropertiesResponse" bpdm:canid="_3jICMA2OEd6XaZbsAuYJ4Q" bpdm:senderId="_21YLaA2OEd6XaZbsAuYJ4Q" bpdm:receiverId="_AufbAA2OEd6XaZbsAuYJ4Q" bpdm:senderName="getUserProperties" bpdm:receiverName="LDAP Lookup" bpdm:receiverPoolId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:dataobjectPointer="project:///RBACQueryService.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/RBACQueryService/}RBACQueryService/RBACQueryServiceSOAP12port_http/getUserProperties/output/getUserPropertiesResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="RBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlk" bpdm:canPlkId="_x2WFkA2OEd6XaZbsAuYJ4Q-_9rI-wA2NEd6XaZbsAuYJ4Q">
+    <pnlk:role name="RBAC_for_lookupPersonProcess" portType="RBACQueryService:RBACQueryServicePortType"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

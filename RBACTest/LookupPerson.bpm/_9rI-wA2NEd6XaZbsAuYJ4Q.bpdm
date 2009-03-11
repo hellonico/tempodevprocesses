@@ -1,0 +1,109 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:RBAC="http://thisdiagram/RBAC" xmlns:tns="http://www.example.org/PeopleLookup" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:RBACQueryService="http://tempo.intalio.org/security/RBACQueryService/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/lookupPersonProcess" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/lookupPersonProcess">
+    <bpdm:dependencies version="6000052">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/RBAC" bpdm:prefix="RBAC" bpdm:comment="contrib=&apos;partner-pool:///_x2WFkA2OEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.example.org/PeopleLookup" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///PeopleLookup.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/RBACQueryService/" bpdm:prefix="RBACQueryService" bpdm:comment="contrib=&apos;project:///RBACQueryService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/lookupPersonProcess" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="Forexternal">
+                <wsdl:operation name="Task" bpdm:source="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q">
+                    <wsdl:input message="this:TaskRequest" name="Task"/>
+                    <wsdl:output message="this:TaskResponse" name="TaskResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="TaskRequest" type="tns:personQueryType" bpdm:source="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q"/>
+            <wsdl:message name="TaskRequest" bpdm:source="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q">
+                <wsdl:part name="body" element="this:TaskRequest"/>
+            </wsdl:message>
+            <xs:element name="TaskResponse" type="tns:personType" bpdm:source="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q"/>
+            <wsdl:message name="TaskResponse" bpdm:source="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q">
+                <wsdl:part name="body" element="this:TaskResponse"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForexternal" type="this:Forexternal" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_7hAphg2NEd6XaZbsAuYJ4Q" bpdm:label="external"/>
+        <bpdm:namespaceContributor bpdm:url="project:///PeopleLookup.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_x2WFkA2OEd6XaZbsAuYJ4Q" bpdm:label="RBAC"/>
+        <bpdm:namespaceContributor bpdm:url="project:///RBACQueryService.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="lookupPersonProcess" bpdm:ID="_9rI-wA2NEd6XaZbsAuYJ4Q">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="lookupPersonProcessAndExternalPlkVar" partnerLinkType="diag:lookupPersonProcessAndExternal" myRole="lookupPersonProcess_for_external" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForexternal" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/lookupPersonProcess/external" bpdm:providedIsDefault="true" bpdm:clientTasks="_9rI-wA2NEd6XaZbsAuYJ4Q:_AZyWUA2OEd6XaZbsAuYJ4Q, _9rI-wA2NEd6XaZbsAuYJ4Q:_EHA2AA2OEd6XaZbsAuYJ4Q" bpdm:isManaged="true" bpdm:otherPoolId="_7hAphg2NEd6XaZbsAuYJ4Q"/>
+            <bpel:partnerLink name="rBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlkVar" partnerLinkType="diag:RBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlk" initializePartnerRole="yes" partnerRole="RBAC_for_lookupPersonProcess" bpdm:invokedService="RBACQueryService:RBACQueryService" bpdm:invokedPort="RBACQueryServiceSOAP11port_http" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/RBACQueryService" bpdm:invokedIsDefault="true" bpdm:clientTasks="_9rI-wA2NEd6XaZbsAuYJ4Q:_AufbAA2OEd6XaZbsAuYJ4Q" bpdm:isManaged="true" bpdm:otherPoolId="_x2WFkA2OEd6XaZbsAuYJ4Q"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="thisTaskRequestMsg" messageType="this:TaskRequest" bpdm:id="_AZ7gVg2OEd6XaZbsAuYJ4Q" bpdm:messageIds="inc:_AZyWWQ2OEd6XaZbsAuYJ4Q"/>
+            <bpel:variable name="thisTaskResponseMsg" messageType="this:TaskResponse" bpdm:id="_E4CDQg2OEd6XaZbsAuYJ4Q" bpdm:messageIds=" out:_E4CDQA2OEd6XaZbsAuYJ4Q">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:TaskResponse" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="rBACQueryServiceGetUserPropertiesRequestMsg" messageType="RBACQueryService:getUserPropertiesRequest" binding="RBACQueryService:RBACQueryServiceSOAP12Binding" operation="getUserProperties" opMsgType="0" bpdm:id="_3VaWUA2OEd6XaZbsAuYJ4Q" bpdm:messageIds=" out:_3U9qYA2OEd6XaZbsAuYJ4Q">
+                <bpel:from bpdm:toPart="payload">
+                    <bpel:literal bpdm:linkedMessageType="RBACQueryService:getUserPropertiesRequest" bpdm:linkedPart="payload" bpdm:binding="RBACQueryService:RBACQueryServiceSOAP12Binding" bpdm:opMsgType="0" bpdm:operation="getUserProperties"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="rBACQueryServiceGetUserPropertiesResponseMsg" messageType="RBACQueryService:getUserPropertiesResponse" binding="RBACQueryService:RBACQueryServiceSOAP12Binding" operation="getUserProperties" opMsgType="1" bpdm:id="_3jkuKA2OEd6XaZbsAuYJ4Q" bpdm:messageIds="inc:_3jICMA2OEd6XaZbsAuYJ4Q"/>
+            <bpel:variable name="Person" element="tns:Person" bpdm:id="_Ah23yA2PEd6XaZbsAuYJ4Q">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedElement="tns:Person"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="getUserPropertiesResponse" element="RBACQueryService:getUserPropertiesResponse" bpdm:id="_3txVgA2aEd6OT470zRPI8g">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedElement="RBACQueryService:getUserPropertiesResponse" bpdm:linkedFile="getUserPropertiesResponse-_9rI-wA2NEd6XaZbsAuYJ4Q-0-literal.xml"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Task" partnerLink="lookupPersonProcessAndExternalPlkVar" portType="this:Forexternal" isMyRole="true" enableSharing="false" bpdm:label="Task" bpdm:ID="_AZyWUA2OEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisTaskRequestMsg" bpdm:msgVarScopeId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="this:TaskRequest" bpdm:ID="_AZyWWQ2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="getUserProperties" partnerLink="rBAcAndLookupPersonProcessForRBACQueryServiceSOAP12port_httpPlkVar" portType="RBACQueryService:RBACQueryServicePortType" isMyRole="false" enableSharing="false" bpdm:label="LDAP Lookup" bpdm:ID="_AufbAA2OEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$thisTaskRequestMsg.body/tns:username</bpel:from>
+                        <bpel:to>$rBACQueryServiceGetUserPropertiesRequestMsg.payload/RBACQueryService:user</bpel:to><mapper:mapperLink><mapper:vertice id="117458" targetPath="$rBACQueryServiceGetUserPropertiesRequestMsg.payload/RBACQueryService:user" targetedBy="32329920-arg0"></mapper:vertice><mapper:vertice id="32329920" sourcePath="$thisTaskRequestMsg.body/tns:username"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="rBACQueryServiceGetUserPropertiesRequestMsg" bpdm:msgVarScopeId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="RBACQueryService:getUserPropertiesRequest" bpdm:binding="RBACQueryService:RBACQueryServiceSOAP12Binding" bpdm:ID="_3U9qYA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="rBACQueryServiceGetUserPropertiesResponseMsg" bpdm:msgVarScopeId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="RBACQueryService:getUserPropertiesResponse" bpdm:binding="RBACQueryService:RBACQueryServiceSOAP12Binding" bpdm:ID="_3jICMA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+                <bpdm:thrownFault msgFaultNcName="RBACFault" msgFaultTypeQname="RBACQueryService:RBACFault"/>
+                <bpdm:thrownFault msgFaultNcName="RemoteFault" msgFaultTypeQname="RBACQueryService:RemoteFault"/>
+                <bpdm:thrownFault msgFaultNcName="UserNotFoundFault" msgFaultTypeQname="RBACQueryService:UserNotFoundFault"/>
+                <bpdm:thrownFault msgFaultNcName="IllegalArgumentFault" msgFaultTypeQname="RBACQueryService:IllegalArgumentFault"/>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask bpdm:label="transform" bpdm:ID="_C0wj8A2OEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>bpel:doXslTransform("rbac2person.xsl", $rBACQueryServiceGetUserPropertiesResponseMsg.payload)</bpel:from>
+                        <bpel:to>$Person</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="191079" targetPath="$Person" targetedBy="20955026-arg1"></mapper:vertice>
+  <mapper:vertice id="20955026" dimension="150x24" location="163,56">
+    <mapper:value>bpel:doXslTransform()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="9821274" dimension="90x24" location="24,36" targetedBy="20955026-arg0">
+    <mapper:value>"rbac2person.xsl"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="24635683" sourcePath="$rBACQueryServiceGetUserPropertiesResponseMsg.payload" targetedBy="20955026-arg2"></mapper:vertice>
+</mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="Task" partnerLink="lookupPersonProcessAndExternalPlkVar" portType="this:Forexternal" isMyRole="true" enableSharing="false" bpdm:label="reply" bpdm:ID="_EHA2AA2OEd6XaZbsAuYJ4Q">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$Person</bpel:from>
+                        <bpel:to>$thisTaskResponseMsg.body</bpel:to><mapper:mapperLink><mapper:vertice id="457601" targetPath="$thisTaskResponseMsg.body" targetedBy="12536919-arg0"></mapper:vertice><mapper:vertice id="12536919" sourcePath="$Person"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisTaskResponseMsg" bpdm:msgVarScopeId="_9rI-wA2NEd6XaZbsAuYJ4Q" bpdm:variableIsManaged="true" bpdm:messageType="this:TaskResponse" bpdm:ID="_E4CDQA2OEd6XaZbsAuYJ4Q"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
