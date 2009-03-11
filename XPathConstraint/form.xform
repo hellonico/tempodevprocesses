@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/form/xform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_date {position : absolute; top : 105px; left : 45px; width : 255px; height : 27px; margin : 0px; padding : 0px;}
+#xforms_cntrl_date input {width : 220px; height : 19px}
+#xforms_cntrl_UserName {position : absolute; top : 60px; left : 47px; width : 253px; height : 27px; margin : 0px; padding : 0px;}
+#xforms_cntrl_UserName input {width : 187px; height : 19px}
+</xhtml:style>
+    <xforms:model schema="form.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <date xmlns="http://example.com/form/xform"/>
+          <UserName xmlns="http://example.com/form/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <date xmlns="http://example.com/form/xform"/>
+          <UserName xmlns="http://example.com/form/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:date" value="instance('taskinput')/fe:date"/>
+          <xforms:setvalue ref="instance('taskoutput')/fe:UserName" value="instance('taskinput')/fe:UserName"/>
+        </xforms:action>
+      </xforms:action>
+      <xforms:bind nodeset="instance('taskoutput')/fe:date" required="true()" type="xs:date"/>
+      <xforms:bind nodeset="instance('taskinput')/fe:date" required="true()" type="xs:date"/>
+      <xforms:bind nodeset="instance('taskoutput')/fe:UserName" required="true()" constraint="string-length() &gt; 10"/>
+      <xforms:bind nodeset="instance('taskinput')/fe:UserName" required="true()" constraint="string-length() &gt; 10"/>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_date">
+        <xforms:input ref="instance('taskoutput')/fe:date">
+          <xforms:label>date:</xforms:label>
+          <xforms:alert>Enter a date</xforms:alert>
+        </xforms:input>
+      </xhtml:div>
+      <xhtml:div id="xforms_cntrl_UserName">
+        <xforms:input ref="instance('taskoutput')/fe:UserName">
+          <xforms:label>UserName:</xforms:label>
+          <xforms:alert>String is less than 10, Please enter string of length greater than 10.</xforms:alert>
+        </xforms:input>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>

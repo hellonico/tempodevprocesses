@@ -1,0 +1,35 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://thisdiagram/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:XPathConstraint="http://thisdiagram/XPathConstraint" xmlns:form1="http://example.com/form/xform/attachments" xmlns:form="http://example.com/form/xform" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Client">
+    <bpdm:dependencies version="6000052">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_cJK6MG6rEd214PFZwgbO_A"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/XPathConstraint" bpdm:prefix="XPathConstraint" bpdm:comment="contrib=&apos;partner-pool:///_cJK6MG6rEd214PFZwgbO_A"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_cJK6MG6rEd214PFZwgbO_A" bpdm:label="XPathConstraint"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Client" bpdm:ID="_ZIsy0G6rEd214PFZwgbO_A">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="xPathConstraintAndClientForPortTypeProcessPlkVar" partnerLinkType="diag:XPathConstraintAndClientForPortTypeProcessPlk" initializePartnerRole="yes" partnerRole="XPathConstraint_for_Client" bpdm:invokedService="XPathConstraint:XPathConstraintAndClientForPortTypeProcessPlkService" bpdm:invokedPort="XPathConstraint_for_ClientPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/XPathConstraint/Client/XPathConstraintAndClientForPortTypeProcessPlk" bpdm:invokedIsDefault="true" bpdm:clientTasks="_ZIsy0G6rEd214PFZwgbO_A:_fNXrCG6rEd214PFZwgbO_A" bpdm:isManaged="true" bpdm:otherPoolId="_cJK6MG6rEd214PFZwgbO_A"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="formInitProcessRequestMsg" messageType="form:initProcessRequest" bpdm:id="_fyysQG6rEd214PFZwgbO_A" bpdm:messageIds=" out:_fyWAUG6rEd214PFZwgbO_A">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form:initProcessRequest" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="formInitProcessResponseMsg" messageType="form:initProcessResponse" bpdm:id="_gC49x26rEd214PFZwgbO_A" bpdm:messageIds="inc:_gCJW4G6rEd214PFZwgbO_A"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="xPathConstraintAndClientForPortTypeProcessPlkVar" portType="form:Process" isMyRole="false" enableSharing="false" bpdm:label="form-init" bpdm:ID="_fNXrCG6rEd214PFZwgbO_A">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="formInitProcessResponseMsg" bpdm:msgVarScopeId="_ZIsy0G6rEd214PFZwgbO_A" bpdm:variableIsManaged="true" bpdm:messageType="form:initProcessResponse" bpdm:ID="_gCJW4G6rEd214PFZwgbO_A"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="formInitProcessRequestMsg" bpdm:msgVarScopeId="_ZIsy0G6rEd214PFZwgbO_A" bpdm:variableIsManaged="true" bpdm:messageType="form:initProcessRequest" bpdm:ID="_fyWAUG6rEd214PFZwgbO_A"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

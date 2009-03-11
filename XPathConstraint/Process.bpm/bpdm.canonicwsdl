@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:form="http://example.com/form/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XPathConstraint="http://thisdiagram/XPathConstraint" xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000052" bpdm:canid="_ZHD0EG6rEd214PFZwgbO_A" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="XPathConstraintAndClient" bpdm:poolOneId="_cJK6MG6rEd214PFZwgbO_A" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="XPathConstraint" bpdm:poolTwoId="_ZIsy0G6rEd214PFZwgbO_A" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="XPathConstraint_for_Client" portType="XPathConstraint:ForClient" bpdm:thisPoolId="_cJK6MG6rEd214PFZwgbO_A">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="init" bpdm:canid="_ZIsy0m6rEd214PFZwgbO_A._fNXrCG6rEd214PFZwgbO_A." bpdm:dataobjectPointer="project:///form.xform.all.wsdl?wsdloperation={http://example.com/form/xform}Process/initProcess">
+          <wsdl:input message="form:initProcessRequest" name="init" bpdm:canid="_fyWAUG6rEd214PFZwgbO_A" bpdm:senderId="_fNXrCG6rEd214PFZwgbO_A" bpdm:receiverId="_ZIsy0m6rEd214PFZwgbO_A" bpdm:senderName="form-init" bpdm:receiverName="init" bpdm:receiverPoolId="_cJK6MG6rEd214PFZwgbO_A" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form/xform}Process/initProcess/input/initProcessRequest"></wsdl:input>
+          <wsdl:output message="form:initProcessResponse" name="initResponse" bpdm:canid="_gCJW4G6rEd214PFZwgbO_A" bpdm:senderId="_ZIsy0m6rEd214PFZwgbO_A" bpdm:receiverId="_fNXrCG6rEd214PFZwgbO_A" bpdm:senderName="init" bpdm:receiverName="form-init" bpdm:receiverPoolId="_ZIsy0G6rEd214PFZwgbO_A" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form/xform}Process/initProcess/output/initProcessResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="XPathConstraintAndClientForPortTypeProcessPlk" bpdm:canPlkId="_cJK6MG6rEd214PFZwgbO_A-_ZIsy0G6rEd214PFZwgbO_A">
+    <pnlk:role name="XPathConstraint_for_Client" portType="form:Process"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>
