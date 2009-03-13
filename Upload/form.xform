@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/form/xform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_Start_Upload_Process {position : absolute; top : 75px; left : 75px; width : 240px; height : 55px; margin : 0px; padding : 0px;}
+</xhtml:style>
+    <xforms:model schema="form.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <Start_Upload_Process xmlns="http://example.com/form/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <Start_Upload_Process xmlns="http://example.com/form/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:Start_Upload_Process" value="instance('taskinput')/fe:Start_Upload_Process"/>
+        </xforms:action>
+      </xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_Start_Upload_Process">
+        <xforms:output ref="instance('taskoutput')/fe:Start_Upload_Process">
+          <xforms:label>Start Upload Process</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>

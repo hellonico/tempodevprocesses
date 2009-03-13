@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/form1/xform" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_upload1 {position : absolute; top : 154px; left : 90px; width : 145px; height : 41px; margin : 0px; padding : 0px;}
+#xforms_cntrl_upload1 upload {width : 133px; height : 33px}
+#xforms_cntrl_upload1 label.xforms-label {vertical-align : top}
+</xhtml:style>
+    <xforms:model schema="form1.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input/>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <upload1 filename="" mediatype="" upload-id="upload1" xmlns="http://example.com/form1/xform"/>
+        </fe:output>
+      </xforms:instance>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_upload1">
+        <xforms:upload ref="instance('taskoutput')/fe:upload1">
+          <xforms:filename ref="@filename"/>
+          <xforms:mediatype ref="@mediatype"/>
+        </xforms:upload>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>
