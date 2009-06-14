@@ -1,0 +1,104 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1="http://example.com/form/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form2="http://example.com/form2/xform/attachments" xmlns:form21="http://example.com/form2/xform" xmlns:form="http://example.com/form/xform/attachments" xmlns:Utilisateur="http://thisdiagram/Utilisateur" xmlns:this="http://thisdiagram/Process" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Process">
+    <bpdm:dependencies version="6000076">
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form2/xform/attachments" bpdm:prefix="form2" bpdm:comment="contrib=&apos;project:///form2.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form2/xform" bpdm:prefix="form21" bpdm:comment="contrib=&apos;project:///form2.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Utilisateur" bpdm:prefix="Utilisateur" bpdm:comment="contrib=&apos;partner-pool:///_p1s10C2AEd6x2edBb2i3Mw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_p1s10C2AEd6x2edBb2i3Mw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="WFmagic_CPo1IC2BEd6x2edBb2i3MwService">
+                <wsdl:port name="Process_for_UtilisateurForThePortTypeProcessPort" binding="this:WFmagic_CPo1IC2BEd6x2edBb2i3MwServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Utilisateur/WFmagic_CPo1IC2BEd6x2edBb2i3Mw"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_CPo1IC2BEd6x2edBb2i3MwServiceBinding" type="form1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_l1atGFdKEd6Gi6j85e_vJwService">
+                <wsdl:port name="Process_for_UtilisateurForThePortTypeProcessPort" binding="this:WFmagic_l1atGFdKEd6Gi6j85e_vJwServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Utilisateur/WFmagic_l1atGFdKEd6Gi6j85e_vJw"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_l1atGFdKEd6Gi6j85e_vJwServiceBinding" type="form21:Process" bpdm:isSynchronized="true"/>
+            <wsdl:portType name="ForUtilisateur">
+                <wsdl:operation name="Initiate_process" bpdm:source="partner-pool:///_p1s10C2AEd6x2edBb2i3Mw">
+                    <wsdl:input message="this:Initiate_processRequest" name="Initiate_process"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="Initiate_processRequest" type="xs:string" bpdm:source="partner-pool:///_p1s10C2AEd6x2edBb2i3Mw"/>
+            <wsdl:message name="Initiate_processRequest" bpdm:source="partner-pool:///_p1s10C2AEd6x2edBb2i3Mw">
+                <wsdl:part name="body" element="this:Initiate_processRequest"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForUtilisateur" type="this:ForUtilisateur" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_p1s10C2AEd6x2edBb2i3Mw" bpdm:label="Utilisateur"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form2.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form2.xform.xsd"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Process" bpdm:ID="_qQhJkC2AEd6x2edBb2i3Mw">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_CPo1IC2BEd6x2edBb2i3MwPlkVar" partnerLinkType="diag:WFmagic_CPo1IC2BEd6x2edBb2i3Mw" initializePartnerRole="no" myRole="Process_for_UtilisateurForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_CPo1IC2BEd6x2edBb2i3MwService" bpdm:providedPort="Process_for_UtilisateurForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Utilisateur/WFmagic_CPo1IC2BEd6x2edBb2i3Mw" bpdm:providedIsDefault="true" partnerRole="Utilisateur_for_ProcessForXformPort" bpdm:invokedService="form1:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_qQhJkC2AEd6x2edBb2i3Mw:_DzemcC2BEd6x2edBb2i3Mw, _qQhJkC2AEd6x2edBb2i3Mw:_DCvtEC2BEd6x2edBb2i3Mw" bpdm:isManaged="true" bpdm:otherPoolId="_p1s10C2AEd6x2edBb2i3Mw"/>
+            <bpel:partnerLink name="wFmagic_l1atGFdKEd6Gi6j85e_vJwPlkVar" partnerLinkType="diag:WFmagic_l1atGFdKEd6Gi6j85e_vJw" initializePartnerRole="no" myRole="Process_for_UtilisateurForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_l1atGFdKEd6Gi6j85e_vJwService" bpdm:providedPort="Process_for_UtilisateurForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Utilisateur/WFmagic_l1atGFdKEd6Gi6j85e_vJw" bpdm:providedIsDefault="true" partnerRole="Utilisateur_for_ProcessForXformPort" bpdm:invokedService="form21:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_qQhJkC2AEd6x2edBb2i3Mw:_mSBwkFdKEd6Gi6j85e_vJw, _qQhJkC2AEd6x2edBb2i3Mw:_nNyOMFdKEd6Gi6j85e_vJw" bpdm:isManaged="true" bpdm:otherPoolId="_p1s10C2AEd6x2edBb2i3Mw"/>
+            <bpel:partnerLink name="processAndUtilisateurPlkVar" partnerLinkType="diag:ProcessAndUtilisateur" myRole="Process_for_Utilisateur" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForUtilisateur" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Process/Utilisateur" bpdm:providedIsDefault="true" bpdm:clientTasks="_qQhJkC2AEd6x2edBb2i3Mw:_938cIC2AEd6x2edBb2i3Mw" bpdm:isManaged="true" bpdm:otherPoolId="_p1s10C2AEd6x2edBb2i3Mw"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="form1CreateTaskRequestMsg" messageType="form1:createTaskRequest" binding="form1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_HFIkcC2BEd6x2edBb2i3Mw" bpdm:messageIds=" out:_HEr4gC2BEd6x2edBb2i3Mw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="form1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form1CreateTaskResponseMsg" messageType="form1:createTaskResponse" binding="form1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_HSiuVy2BEd6x2edBb2i3Mw" bpdm:messageIds="inc:_HRNRkC2BEd6x2edBb2i3Mw"/>
+            <bpel:variable name="form1NotifyTaskCompletionRequestMsg" messageType="form1:notifyTaskCompletionRequest" bpdm:id="_HmN4SS2BEd6x2edBb2i3Mw" bpdm:messageIds="inc:_HlnbUC2BEd6x2edBb2i3Mw"/>
+            <bpel:variable name="form1NotifyTaskCompletionResponseMsg" messageType="form1:notifyTaskCompletionResponse" bpdm:id="_HzVHMC2BEd6x2edBb2i3Mw" bpdm:messageIds=" out:_HzCMQC2BEd6x2edBb2i3Mw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form1:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form21CreateTaskRequestMsg" messageType="form21:createTaskRequest" binding="form21:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_n9nvs1dKEd6Gi6j85e_vJw" bpdm:messageIds=" out:_n9d-sFdKEd6Gi6j85e_vJw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form21:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="form21:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form21CreateTaskResponseMsg" messageType="form21:createTaskResponse" binding="form21:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_oI8O8ldKEd6Gi6j85e_vJw" bpdm:messageIds="inc:_oIpT8FdKEd6Gi6j85e_vJw"/>
+            <bpel:variable name="form21NotifyTaskCompletionRequestMsg" messageType="form21:notifyTaskCompletionRequest" bpdm:id="_pRqKd1dKEd6Gi6j85e_vJw" bpdm:messageIds="inc:_pRNegFdKEd6Gi6j85e_vJw"/>
+            <bpel:variable name="form21NotifyTaskCompletionResponseMsg" messageType="form21:notifyTaskCompletionResponse" bpdm:id="_pe7KY1dKEd6Gi6j85e_vJw" bpdm:messageIds=" out:_pexZYFdKEd6Gi6j85e_vJw">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form21:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="thisInitiate_processRequestMsg" messageType="this:Initiate_processRequest" bpdm:id="_7NpO51dKEd6Gi6j85e_vJw" bpdm:messageIds="inc:_94PXEC2AEd6x2edBb2i3Mw"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Initiate_process" partnerLink="processAndUtilisateurPlkVar" portType="this:ForUtilisateur" isMyRole="true" enableSharing="false" bpdm:label="Initiate process" bpdm:ID="_938cIC2AEd6x2edBb2i3Mw">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisInitiate_processRequestMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="this:Initiate_processRequest" bpdm:ID="_94PXEC2AEd6x2edBb2i3Mw"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_CPo1IC2BEd6x2edBb2i3MwPlkVar" portType="form1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Create1" bpdm:ID="_DCvtEC2BEd6x2edBb2i3Mw">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form1CreateTaskRequestMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form1:createTaskRequest" bpdm:binding="form1:WorkflowSoapBinding" bpdm:ID="_HEr4gC2BEd6x2edBb2i3Mw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form1CreateTaskResponseMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form1:createTaskResponse" bpdm:binding="form1:WorkflowSoapBinding" bpdm:ID="_HRNRkC2BEd6x2edBb2i3Mw"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_CPo1IC2BEd6x2edBb2i3MwPlkVar" portType="form1:Process" isMyRole="true" enableSharing="false" bpdm:label="Complete1" bpdm:ID="_DzemcC2BEd6x2edBb2i3Mw">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="form1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form1:notifyTaskCompletionRequest" bpdm:ID="_HlnbUC2BEd6x2edBb2i3Mw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="form1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form1:notifyTaskCompletionResponse" bpdm:ID="_HzCMQC2BEd6x2edBb2i3Mw"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_l1atGFdKEd6Gi6j85e_vJwPlkVar" portType="form21:Workflow" isMyRole="false" enableSharing="false" bpdm:label="create2" bpdm:ID="_mSBwkFdKEd6Gi6j85e_vJw">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$form1NotifyTaskCompletionRequestMsg.root/form1:taskMetaData/form1:attachments</bpel:from>
+                        <bpel:to>$form21CreateTaskRequestMsg.root/form21:taskMetaData/form21:attachments</bpel:to><mapper:mapperLink><mapper:vertice id="18781234" targetPath="$form21CreateTaskRequestMsg.root/form21:taskMetaData/form21:attachments" targetedBy="6567449-arg0"></mapper:vertice><mapper:vertice id="6567449" sourcePath="$form1NotifyTaskCompletionRequestMsg.root/form1:taskMetaData/form1:attachments"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form21CreateTaskRequestMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form21:createTaskRequest" bpdm:binding="form21:WorkflowSoapBinding" bpdm:ID="_n9d-sFdKEd6Gi6j85e_vJw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form21CreateTaskResponseMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form21:createTaskResponse" bpdm:binding="form21:WorkflowSoapBinding" bpdm:ID="_oIpT8FdKEd6Gi6j85e_vJw"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_l1atGFdKEd6Gi6j85e_vJwPlkVar" portType="form21:Process" isMyRole="true" enableSharing="false" bpdm:label="Complete 2" bpdm:ID="_nNyOMFdKEd6Gi6j85e_vJw">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="form21NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form21:notifyTaskCompletionRequest" bpdm:ID="_pRNegFdKEd6Gi6j85e_vJw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="form21NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_qQhJkC2AEd6x2edBb2i3Mw" bpdm:variableIsManaged="true" bpdm:messageType="form21:notifyTaskCompletionResponse" bpdm:ID="_pexZYFdKEd6Gi6j85e_vJw"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

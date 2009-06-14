@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fe="http://example.com/form2/xform" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms">
+  <xhtml:head>
+    <xhtml:style type="text/css" id="intalio-fe-xforms" xml:space="preserve">#xforms_cntrl_Do_you_see_the_attachments {position : absolute; top : 60px; left : 120px; width : 240px; height : 30px; margin : 0px; padding : 0px;}
+</xhtml:style>
+    <xforms:model schema="form2.xform.xsd">
+      <!-- Task Input -->
+      <xforms:instance id="taskinput">
+        <fe:input>
+          <Do_you_see_the_attachments xmlns="http://example.com/form2/xform"/>
+        </fe:input>
+      </xforms:instance>
+      <!-- Task metadata - used only for People Initiating Processes Task forms -->
+      <xforms:instance id="taskmetadata">
+        <taskmetadata/>
+      </xforms:instance>
+      <!-- Task Output -->
+      <xforms:instance id="taskoutput">
+        <fe:output>
+          <Do_you_see_the_attachments xmlns="http://example.com/form2/xform"/>
+        </fe:output>
+      </xforms:instance>
+      <xforms:action ev:event="xforms-ready">
+        <xforms:action xforms:if="string(instance('taskoutput')/@saved) != 'true'">
+          <xforms:setvalue ref="instance('taskoutput')/fe:Do_you_see_the_attachments" value="instance('taskinput')/fe:Do_you_see_the_attachments"/>
+        </xforms:action>
+      </xforms:action>
+    </xforms:model>
+  </xhtml:head>
+  <xhtml:body>
+    <xhtml:div id="intalio-bpms-form">
+      <xhtml:div id="xforms_cntrl_Do_you_see_the_attachments">
+        <xforms:output ref="instance('taskoutput')/fe:Do_you_see_the_attachments">
+          <xforms:label>Do you see the attachments?</xforms:label>
+        </xforms:output>
+      </xhtml:div>
+    </xhtml:div>
+  </xhtml:body>
+</xhtml:html>
