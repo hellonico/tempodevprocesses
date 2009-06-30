@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_BYIdEGTyEd6Mb56E1Um2PQ" iD="_BX3XUWTyEd6Mb56E1Um2PQ">
   <pools xmi:type="bpmn:Pool" xmi:id="_ELFF0WTyEd6Mb56E1Um2PQ" iD="_ELFF0GTyEd6Mb56E1Um2PQ" name="Pool0">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aLNLgGWqEd6-yfGkbRd8AA" source="participant">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aLRc8GWqEd6-yfGkbRd8AA" key="users" value="intalio\admin"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aLRc8WWqEd6-yfGkbRd8AA" key="roles" value=""/>
+    </eAnnotations>
     <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_M7j_MWVOEd6OO_jl2pKiLg" iD="_M7j_MGVOEd6OO_jl2pKiLg" name="The goal of this process, is to ensure that the 3 tasks below, and the notification are being assigned the same instanceId."/>
-    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_AE-e8WWpEd6-yfGkbRd8AA" iD="_AE-e8GWpEd6-yfGkbRd8AA" name="The notification should have a description including the $ode:processQName. Here it should be the name of the pool.">
+    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_AE-e8WWpEd6-yfGkbRd8AA" iD="_AE-e8GWpEd6-yfGkbRd8AA" name="Also, this notification should have a processId equals to $ode:processQName.">
       <associations xmi:type="bpmn:Association" xmi:id="_FhRIgGWpEd6-yfGkbRd8AA"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_EA4B4GWrEd6-yfGkbRd8AA"/>
     </artifacts>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_h9qADGUBEd6XJM6fvE8wbQ" iD="_h9aIUmUBEd6XJM6fvE8wbQ" incomingEdges="_wBL3YWVJEd6OO_jl2pKiLg" name="form-human-task" activityType="SubProcess">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h9qADWUBEd6XJM6fvE8wbQ" source="skipAsScope">
@@ -17,7 +22,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qAE2UBEd6XJM6fvE8wbQ" key="projectRelativePath" value="form.xform"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_i4Fn4GUBEd6XJM6fvE8wbQ" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4KgYGUBEd6XJM6fvE8wbQ" key="users" value="intalio\admin"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4KgYGUBEd6XJM6fvE8wbQ" key="users" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_i4MVkGUBEd6XJM6fvE8wbQ" key="roles" value=""/>
       </eAnnotations>
       <vertices xmi:type="bpmn:Activity" xmi:id="_h9qAFGUBEd6XJM6fvE8wbQ" iD="_h9avYmUBEd6XJM6fvE8wbQ" outgoingEdges="_h9qAJWUBEd6XJM6fvE8wbQ" name="form-create" activityType="Task">
@@ -32,6 +37,9 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qAG2UBEd6XJM6fvE8wbQ" key="partnerLinkTypeKey" value="WFmagic_h9avYmUBEd6XJM6fvE8wbQ"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qAHGUBEd6XJM6fvE8wbQ" key="douri" value="project:///form.xform.all.wsdl?invokerequestresponsebound={http://example.com/form/xform}WorkflowSoapService/xformPort/createTask"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qAHWUBEd6XJM6fvE8wbQ" key="blackbox" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bXIMEGWqEd6-yfGkbRd8AA" source="pipa">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bXKBQGWqEd6-yfGkbRd8AA" key="description" value=""/>
         </eAnnotations>
       </vertices>
       <vertices xmi:type="bpmn:Activity" xmi:id="_h9qAHmUBEd6XJM6fvE8wbQ" iD="_h9dLoGUBEd6XJM6fvE8wbQ" incomingEdges="_h9qAJWUBEd6XJM6fvE8wbQ" name="form-complete" activityType="Task">
@@ -50,7 +58,7 @@
       </vertices>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_h9qAJWUBEd6XJM6fvE8wbQ" iD="_h9irMWUBEd6XJM6fvE8wbQ" name=""/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_tqu9YGVJEd6OO_jl2pKiLg" iD="_tquWUGVJEd6OO_jl2pKiLg" outgoingEdges="_wBL3YWVJEd6OO_jl2pKiLg _xo4N8WVJEd6OO_jl2pKiLg _0fRzUWVJEd6OO_jl2pKiLg _PK850WVMEd6OO_jl2pKiLg" incomingEdges="_HolYIWWaEd6-yfGkbRd8AA" activityType="GatewayParallel"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_tqu9YGVJEd6OO_jl2pKiLg" iD="_tquWUGVJEd6OO_jl2pKiLg" outgoingEdges="_wBL3YWVJEd6OO_jl2pKiLg _xo4N8WVJEd6OO_jl2pKiLg _0fRzUWVJEd6OO_jl2pKiLg _DhglUWWrEd6-yfGkbRd8AA" incomingEdges="_HolYIWWaEd6-yfGkbRd8AA" activityType="GatewayParallel"/>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_xF3ngGVJEd6OO_jl2pKiLg" iD="_xFYfUGVJEd6OO_jl2pKiLg" incomingEdges="_xo4N8WVJEd6OO_jl2pKiLg" name="form-human-task" activityType="SubProcess">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xF3ngWVJEd6OO_jl2pKiLg" source="skipAsScope">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xF3ngmVJEd6OO_jl2pKiLg" key="skip" value="noVars"/>
@@ -63,7 +71,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xF3nh2VJEd6OO_jl2pKiLg" key="projectRelativePath" value="form.xform"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2ESpUGVJEd6OO_jl2pKiLg" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2EdocGVJEd6OO_jl2pKiLg" key="users" value="intalio\admin"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2EdocGVJEd6OO_jl2pKiLg" key="users" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2EgrwGVJEd6OO_jl2pKiLg" key="roles" value=""/>
       </eAnnotations>
       <vertices xmi:type="bpmn:Activity" xmi:id="_xF3niGVJEd6OO_jl2pKiLg" iD="_xFZtcmVJEd6OO_jl2pKiLg" outgoingEdges="_xF3nmWVJEd6OO_jl2pKiLg" name="form-create" activityType="Task">
@@ -111,7 +119,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zNjF02VJEd6OO_jl2pKiLg" key="projectRelativePath" value="form.xform"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1Ji4UGVJEd6OO_jl2pKiLg" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1KALUGVJEd6OO_jl2pKiLg" key="users" value="intalio\admin"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1KALUGVJEd6OO_jl2pKiLg" key="users" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1KD1sGVJEd6OO_jl2pKiLg" key="roles" value=""/>
       </eAnnotations>
       <vertices xmi:type="bpmn:Activity" xmi:id="_zNjF1GVJEd6OO_jl2pKiLg" iD="_zNZUsmVJEd6OO_jl2pKiLg" outgoingEdges="_zNjF5WVJEd6OO_jl2pKiLg" name="form-create" activityType="Task">
@@ -126,6 +134,9 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zNjF22VJEd6OO_jl2pKiLg" key="partnerLinkTypeKey" value="WFmagic_zNZUsmVJEd6OO_jl2pKiLg"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zNjF3GVJEd6OO_jl2pKiLg" key="douri" value="project:///form.xform.all.wsdl?invokerequestresponsebound={http://example.com/form/xform}WorkflowSoapService/xformPort/createTask"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zNjF3WVJEd6OO_jl2pKiLg" key="blackbox" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cWnTIGWqEd6-yfGkbRd8AA" source="pipa">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cWpIUGWqEd6-yfGkbRd8AA" key="description" value=""/>
         </eAnnotations>
       </vertices>
       <vertices xmi:type="bpmn:Activity" xmi:id="_zNjF3mVJEd6OO_jl2pKiLg" iD="_zNai02VJEd6OO_jl2pKiLg" incomingEdges="_zNjF5WVJEd6OO_jl2pKiLg" name="form-complete" activityType="Task">
@@ -144,23 +155,6 @@
       </vertices>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_zNjF5WVJEd6OO_jl2pKiLg" iD="_zNbw8WVJEd6OO_jl2pKiLg" name=""/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Ok0G4GVMEd6OO_jl2pKiLg" iD="_Okv1cGVMEd6OO_jl2pKiLg" associations="_FhRIgGWpEd6-yfGkbRd8AA" incomingEdges="_PK850WVMEd6OO_jl2pKiLg" name="form2-notify" activityType="Task">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ok0G4WVMEd6OO_jl2pKiLg" source="genericFile">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G4mVMEd6OO_jl2pKiLg" key="projectRelativePath" value="form2.xform"/>
-      </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ok0G42VMEd6OO_jl2pKiLg" source="humanTask">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G5GVMEd6OO_jl2pKiLg" key="taskType" value="notify"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G5WVMEd6OO_jl2pKiLg" key="factoryId" value="xform"/>
-      </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ok0G5mVMEd6OO_jl2pKiLg" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G52VMEd6OO_jl2pKiLg" key="douri" value="project:///form2.xform.all.wsdl?invokerequestresponsebound={http://example.com/form2/xform}WorkflowSoapService/xformPort/notify"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G6GVMEd6OO_jl2pKiLg" key="blackbox" value="true"/>
-      </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_P8z0kGVMEd6OO_jl2pKiLg" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P82Q0GVMEd6OO_jl2pKiLg" key="users" value="intalio\admin"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P8234GVMEd6OO_jl2pKiLg" key="roles" value=""/>
-      </eAnnotations>
-    </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_j0DZ4GVOEd6OO_jl2pKiLg" iD="_jz_IcGVOEd6OO_jl2pKiLg" outgoingEdges="_HolYIWWaEd6-yfGkbRd8AA" name="form-init request" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j0DZ4WVOEd6OO_jl2pKiLg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j0DZ4mVOEd6OO_jl2pKiLg" key="projectRelativePath" value="form.xform"/>
@@ -174,17 +168,30 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j0DZ6GVOEd6OO_jl2pKiLg" key="blackbox" value="true"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lVqWkGVOEd6OO_jl2pKiLg" source="participant">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lVsy0GVOEd6OO_jl2pKiLg" key="users" value="intalio\admin"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lVsy0GVOEd6OO_jl2pKiLg" key="users" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lVuA8GVOEd6OO_jl2pKiLg" key="roles" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oPjU0GVOEd6OO_jl2pKiLg" source="pipa">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oPoNUGVOEd6OO_jl2pKiLg" key="description" value="Test InstanceId process"/>
       </eAnnotations>
     </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_C6MGqGWrEd6-yfGkbRd8AA" iD="_C6IcQmWrEd6-yfGkbRd8AA" associations="_EA4B4GWrEd6-yfGkbRd8AA" incomingEdges="_DhglUWWrEd6-yfGkbRd8AA" name="form2-notify" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C6MGqWWrEd6-yfGkbRd8AA" source="genericFile">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6MGqmWrEd6-yfGkbRd8AA" key="projectRelativePath" value="form2.xform"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C6MGq2WrEd6-yfGkbRd8AA" source="humanTask">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6MGrGWrEd6-yfGkbRd8AA" key="taskType" value="notify"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6MGrWWrEd6-yfGkbRd8AA" key="factoryId" value="xform"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C6MGrmWrEd6-yfGkbRd8AA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6MGr2WrEd6-yfGkbRd8AA" key="douri" value="project:///form2.xform.all.wsdl?invokerequestresponsebound={http://example.com/form2/xform}WorkflowSoapService/xformPort/notify"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C6MGsGWrEd6-yfGkbRd8AA" key="blackbox" value="true"/>
+      </eAnnotations>
+    </vertices>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_wBL3YWVJEd6OO_jl2pKiLg" iD="_wBL3YGVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_xo4N8WVJEd6OO_jl2pKiLg" iD="_xo4N8GVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_0fRzUWVJEd6OO_jl2pKiLg" iD="_0fRzUGVJEd6OO_jl2pKiLg"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_PK850WVMEd6OO_jl2pKiLg" iD="_PK850GVMEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_HolYIWWaEd6-yfGkbRd8AA" iD="_HolYIGWaEd6-yfGkbRd8AA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_DhglUWWrEd6-yfGkbRd8AA" iD="_DhglUGWrEd6-yfGkbRd8AA"/>
   </pools>
 </bpmn:BpmnDiagram>
