@@ -151,6 +151,15 @@
         <element xmi:type="bpmn:Activity" href="modeler.bpmn#_j0DZ4GVOEd6OO_jl2pKiLg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j0Cy12VOEd6OO_jl2pKiLg" x="120" y="120"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_AFAUIGWpEd6-yfGkbRd8AA" type="1002">
+        <children xmi:type="notation:Node" xmi:id="_AFA7MGWpEd6-yfGkbRd8AA" type="4009"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_AFAUIWWpEd6-yfGkbRd8AA" fontName="Verdana" fontHeight="11"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_AFAUImWpEd6-yfGkbRd8AA"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_AFAUI2WpEd6-yfGkbRd8AA"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_AFAUJGWpEd6-yfGkbRd8AA" lineColor="0"/>
+        <element xmi:type="bpmn:TextAnnotation" href="modeler.bpmn#_AE-e8WWpEd6-yfGkbRd8AA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AFAUJWWpEd6-yfGkbRd8AA" x="524" y="197" width="160"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_ELLzgWTyEd6Mb56E1Um2PQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_ELLzgmTyEd6Mb56E1Um2PQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_ELLzg2TyEd6Mb56E1Um2PQ"/>
@@ -160,7 +169,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_ELKlY2TyEd6Mb56E1Um2PQ" fillColor="15053796"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_ELKlZGTyEd6Mb56E1Um2PQ" lineColor="11119017"/>
     <element xmi:type="bpmn:Pool" href="modeler.bpmn#_ELFF0WTyEd6Mb56E1Um2PQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELKlZWTyEd6Mb56E1Um2PQ" x="16" y="16" width="811" height="316"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELKlZWTyEd6Mb56E1Um2PQ" x="16" y="16" width="799" height="316"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_BaktEWTyEd6Mb56E1Um2PQ"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_BaktEmTyEd6Mb56E1Um2PQ"/>
@@ -261,5 +270,13 @@
     <styles xmi:type="notation:LineStyle" xmi:id="_HoyMc2WaEd6-yfGkbRd8AA" lineColor="0"/>
     <element xmi:type="bpmn:SequenceEdge" href="modeler.bpmn#_HolYIWWaEd6-yfGkbRd8AA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HoyMdGWaEd6-yfGkbRd8AA" points="[54, -3, -194, -4]$[258, -14, 10, -15]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_FhRvkGWpEd6-yfGkbRd8AA" type="3003" source="_AFAUIGWpEd6-yfGkbRd8AA" target="_Okzf0GVMEd6OO_jl2pKiLg">
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_FhRvkWWpEd6-yfGkbRd8AA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_FhRvkmWpEd6-yfGkbRd8AA" fontName="Arial"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_FhRvk2WpEd6-yfGkbRd8AA" lineColor="0"/>
+    <element xmi:type="bpmn:Association" href="modeler.bpmn#_FhRIgGWpEd6-yfGkbRd8AA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FhRvlGWpEd6-yfGkbRd8AA" points="[0, 0, 86, -17]$[-32, 2, 54, -15]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FhTkwGWpEd6-yfGkbRd8AA" id="(0.0,0.275)"/>
   </edges>
 </notation:Diagram>

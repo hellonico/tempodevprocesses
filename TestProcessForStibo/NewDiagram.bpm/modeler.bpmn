@@ -2,6 +2,9 @@
 <bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_BYIdEGTyEd6Mb56E1Um2PQ" iD="_BX3XUWTyEd6Mb56E1Um2PQ">
   <pools xmi:type="bpmn:Pool" xmi:id="_ELFF0WTyEd6Mb56E1Um2PQ" iD="_ELFF0GTyEd6Mb56E1Um2PQ" name="Pool0">
     <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_M7j_MWVOEd6OO_jl2pKiLg" iD="_M7j_MGVOEd6OO_jl2pKiLg" name="The goal of this process, is to ensure that the 3 tasks below, and the notification are being assigned the same instanceId."/>
+    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_AE-e8WWpEd6-yfGkbRd8AA" iD="_AE-e8GWpEd6-yfGkbRd8AA" name="The notification should have a description including the $ode:processQName. Here it should be the name of the pool.">
+      <associations xmi:type="bpmn:Association" xmi:id="_FhRIgGWpEd6-yfGkbRd8AA"/>
+    </artifacts>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_h9qADGUBEd6XJM6fvE8wbQ" iD="_h9aIUmUBEd6XJM6fvE8wbQ" incomingEdges="_wBL3YWVJEd6OO_jl2pKiLg" name="form-human-task" activityType="SubProcess">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h9qADWUBEd6XJM6fvE8wbQ" source="skipAsScope">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qADmUBEd6XJM6fvE8wbQ" key="skip" value="noVars"/>
@@ -141,7 +144,7 @@
       </vertices>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_zNjF5WVJEd6OO_jl2pKiLg" iD="_zNbw8WVJEd6OO_jl2pKiLg" name=""/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Ok0G4GVMEd6OO_jl2pKiLg" iD="_Okv1cGVMEd6OO_jl2pKiLg" incomingEdges="_PK850WVMEd6OO_jl2pKiLg" name="form2-notify" activityType="Task">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Ok0G4GVMEd6OO_jl2pKiLg" iD="_Okv1cGVMEd6OO_jl2pKiLg" associations="_FhRIgGWpEd6-yfGkbRd8AA" incomingEdges="_PK850WVMEd6OO_jl2pKiLg" name="form2-notify" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ok0G4WVMEd6OO_jl2pKiLg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ok0G4mVMEd6OO_jl2pKiLg" key="projectRelativePath" value="form2.xform"/>
       </eAnnotations>
