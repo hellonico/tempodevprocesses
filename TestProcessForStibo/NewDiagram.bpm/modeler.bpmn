@@ -6,7 +6,7 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aLRc8WWqEd6-yfGkbRd8AA" key="roles" value=""/>
     </eAnnotations>
     <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_M7j_MWVOEd6OO_jl2pKiLg" iD="_M7j_MGVOEd6OO_jl2pKiLg" name="The goal of this process, is to ensure that the 3 tasks below, and the notification are being assigned the same instanceId."/>
-    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_AE-e8WWpEd6-yfGkbRd8AA" iD="_AE-e8GWpEd6-yfGkbRd8AA" name="Also, this notification should have a processId equals to $ode:processQName.">
+    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_AE-e8WWpEd6-yfGkbRd8AA" iD="_AE-e8GWpEd6-yfGkbRd8AA" name="This notification should have a processId equals to $ode:processQName.">
       <associations xmi:type="bpmn:Association" xmi:id="_FhRIgGWpEd6-yfGkbRd8AA"/>
       <associations xmi:type="bpmn:Association" xmi:id="_EA4B4GWrEd6-yfGkbRd8AA"/>
     </artifacts>

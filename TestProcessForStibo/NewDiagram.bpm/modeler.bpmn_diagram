@@ -149,7 +149,7 @@
         <styles xmi:type="notation:FillStyle" xmi:id="_AFAUI2WpEd6-yfGkbRd8AA"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_AFAUJGWpEd6-yfGkbRd8AA" lineColor="0"/>
         <element xmi:type="bpmn:TextAnnotation" href="modeler.bpmn#_AE-e8WWpEd6-yfGkbRd8AA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AFAUJWWpEd6-yfGkbRd8AA" x="524" y="197" width="160"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AFAUJWWpEd6-yfGkbRd8AA" x="520" y="220" width="160"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_C6MGoWWrEd6-yfGkbRd8AA" type="2001">
         <children xmi:type="notation:Node" xmi:id="_C6MGomWrEd6-yfGkbRd8AA" type="4001"/>
