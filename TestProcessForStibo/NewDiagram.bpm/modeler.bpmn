@@ -43,6 +43,9 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rw7QcGTyEd6Mb56E1Um2PQ" key="users" value="intalio\admin"/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RxDzUGTyEd6Mb56E1Um2PQ" key="roles" value=""/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cPdAAGVOEd6OO_jl2pKiLg" source="pipa">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cPnYEGVOEd6OO_jl2pKiLg" key="description" value="InstanceId check process"/>
+      </eAnnotations>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_Pu_08GTyEd6Mb56E1Um2PQ"/>
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_QLpUsWTyEd6Mb56E1Um2PQ"/>
     </vertices>
@@ -72,6 +75,7 @@
         </eAnnotations>
       </associations>
     </artifacts>
+    <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_M7j_MWVOEd6OO_jl2pKiLg" iD="_M7j_MGVOEd6OO_jl2pKiLg" name="The goal of this process, is to ensure that the 3 tasks below, and the notification are being assigned the same instanceId."/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_Pu1c4WTyEd6Mb56E1Um2PQ" iD="_Pu1c4GTyEd6Mb56E1Um2PQ" associations="_Pv9eQGTyEd6Mb56E1Um2PQ _QMebIGTyEd6Mb56E1Um2PQ" outgoingEdges="_tq6jkWVJEd6OO_jl2pKiLg" activityType="Task">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_Pu_08GTyEd6Mb56E1Um2PQ"/>
       <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_QLpUsWTyEd6Mb56E1Um2PQ"/>

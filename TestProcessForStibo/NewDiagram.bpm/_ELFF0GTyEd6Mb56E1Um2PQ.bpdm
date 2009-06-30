@@ -1,4 +1,4 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:form2="http://example.com/form2/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form21="http://example.com/form2/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form1="http://example.com/form/xform" xmlns:form="http://example.com/form/xform/attachments" xmlns:Pool0implicitPartner="http://thisdiagram/Pool0implicitPartner" xmlns:this="http://thisdiagram/Pool0" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool0">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:form2="http://example.com/form2/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form21="http://example.com/form2/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form1="http://example.com/form/xform" xmlns:form="http://example.com/form/xform/attachments" xmlns:Pool="http://thisdiagram/Pool" xmlns:this="http://thisdiagram/Pool0" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool0">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form2/xform/attachments" bpdm:prefix="form2" bpdm:comment="contrib=&apos;project:///form2.xform.all.wsdl"></bpdm:namespaceDefinition>
@@ -8,15 +8,9 @@
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_ELFF0GTyEd6Mb56E1Um2PQimplicitPartner"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool0implicitPartner" bpdm:prefix="Pool0implicitPartner" bpdm:comment="contrib=&apos;partner-pool:///_ELFF0GTyEd6Mb56E1Um2PQimplicitPartner"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool" bpdm:prefix="Pool" bpdm:comment="contrib=&apos;partner-pool:///_BbZzgGTyEd6Mb56E1Um2PQ"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool0" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
-            <wsdl:service name="Pool0AndPoolForPortTypeProcessPlkService">
-                <wsdl:port name="Pool0_for_PoolPort" binding="this:Pool0AndPoolForPortTypeProcessPlkServiceBinding">
-                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk"/>
-                </wsdl:port>
-            </wsdl:service>
-            <bpel:binding name="Pool0AndPoolForPortTypeProcessPlkServiceBinding" type="form1:Process" bpdm:isSynchronized="true"/>
             <wsdl:service name="WFmagic_h9avYmUBEd6XJM6fvE8wbQService">
                 <wsdl:port name="Pool0_for_Pool0implicitPartnerForThePortTypeProcessPort" binding="this:WFmagic_h9avYmUBEd6XJM6fvE8wbQServiceBinding">
                     <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Pool0/Pool0implicitPartner/WFmagic_h9avYmUBEd6XJM6fvE8wbQ"/>
@@ -35,6 +29,12 @@
                 </wsdl:port>
             </wsdl:service>
             <bpel:binding name="WFmagic_xFZtcmVJEd6OO_jl2pKiLgServiceBinding" type="form1:Process" bpdm:isSynchronized="true"/>
+            <wsdl:service name="Pool0AndPoolForPortTypeProcessPlkService">
+                <wsdl:port name="Pool0_for_PoolPort" binding="this:Pool0AndPoolForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="Pool0AndPoolForPortTypeProcessPlkServiceBinding" type="form1:Process" bpdm:isSynchronized="true"/>
         </bpdm:namespaceContributor>
         <bpdm:namespaceContributor bpdm:url="project:///form.xform.all.wsdl"/>
         <bpdm:namespaceContributor bpdm:url="project:///form.xform.xsd"/>
