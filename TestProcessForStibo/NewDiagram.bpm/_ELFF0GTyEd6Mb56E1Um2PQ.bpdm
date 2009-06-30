@@ -1,4 +1,4 @@
-﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:form2="http://example.com/form2/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form21="http://example.com/form2/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form="http://example.com/form/xform/attachments" xmlns:form1="http://example.com/form/xform" xmlns:Pool0implicitPartner="http://thisdiagram/Pool0implicitPartner" xmlns:this="http://thisdiagram/Pool0" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool0">
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:form2="http://example.com/form2/xform/attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form21="http://example.com/form2/xform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:diag="http://thisdiagram" xmlns:form1="http://example.com/form/xform" xmlns:form="http://example.com/form/xform/attachments" xmlns:Pool0implicitPartner="http://thisdiagram/Pool0implicitPartner" xmlns:this="http://thisdiagram/Pool0" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool0">
     <bpdm:dependencies version="6000089">
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form2/xform/attachments" bpdm:prefix="form2" bpdm:comment="contrib=&apos;project:///form2.xform.all.wsdl"></bpdm:namespaceDefinition>
@@ -6,8 +6,8 @@
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form2/xform" bpdm:prefix="form21" bpdm:comment="contrib=&apos;project:///form2.xform.all.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_ELFF0GTyEd6Mb56E1Um2PQimplicitPartner"></bpdm:namespaceDefinition>
-        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool0implicitPartner" bpdm:prefix="Pool0implicitPartner" bpdm:comment="contrib=&apos;partner-pool:///_ELFF0GTyEd6Mb56E1Um2PQimplicitPartner"></bpdm:namespaceDefinition>
         <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool0" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
         <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
@@ -69,8 +69,8 @@
                     <bpel:literal bpdm:linkedMessageType="form21:notifyRequest" bpdm:linkedPart="root" bpdm:binding="form21:WorkflowSoapBinding" bpdm:opMsgType="1" bpdm:operation="notify"></bpel:literal>
                 </bpel:from>
             </bpel:variable>
-            <bpel:variable name="form1InitProcessRequestMsg" messageType="form1:initProcessRequest" bpdm:id="_Pv3XoGTyEd6Mb56E1Um2PQ" bpdm:messageIds="inc:_jz_IcGVOEd6OO_jl2pKiLgIncoming"/>
-            <bpel:variable name="form1InitProcessResponseMsg" messageType="form1:initProcessResponse" bpdm:id="_QMV4QGTyEd6Mb56E1Um2PQ" bpdm:messageIds=" out:_jz_IcGVOEd6OO_jl2pKiLgOutgoing">
+            <bpel:variable name="form1InitProcessRequestMsg" messageType="form1:initProcessRequest" bpdm:messageIds="inc:_jz_IcGVOEd6OO_jl2pKiLgIncoming"/>
+            <bpel:variable name="form1InitProcessResponseMsg" messageType="form1:initProcessResponse" bpdm:messageIds=" out:_jz_IcGVOEd6OO_jl2pKiLgOutgoing">
                 <bpel:from bpdm:toPart="root">
                     <bpel:literal bpdm:linkedMessageType="form1:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
                 </bpel:from>
@@ -126,6 +126,22 @@
                 </bpel:sequence>
                 <bpel:sequence>
                     <bpdm:messagingtask operation="notify" partnerLink="pool0implicitPartnerAndPool0ForXformPortPlkVar" portType="form21:Workflow" isMyRole="false" enableSharing="false" bpdm:label="form2-notify" bpdm:ID="_Okv1cGVMEd6OO_jl2pKiLg">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>concat("Notification with processQName:", $ode:processQName)</bpel:from>
+                                <bpel:to>$form21NotifyRequestMsg.root/form21:metadata/form21:description</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="16101504" targetPath="$form21NotifyRequestMsg.root/form21:metadata/form21:description" targetedBy="2942925-arg1"></mapper:vertice>
+  <mapper:vertice id="2942925" dimension="78x24" location="336,48">
+    <mapper:value>concat()</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="14344916" dimension="225x24" location="24,24" targetedBy="2942925-arg0">
+    <mapper:value>"Notification with processQName:"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="1667147" sourcePath="$ode:processQName" targetedBy="2942925-arg2"></mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
                         <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form21NotifyRequestMsg" bpdm:variableIsManaged="true" bpdm:messageType="form21:notifyRequest" bpdm:binding="form21:WorkflowSoapBinding" bpdm:ID="_Okv1cGVMEd6OO_jl2pKiLgOutgoing"></bpdm:linkset>
                         <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form21NotifyResponseMsg" bpdm:variableIsManaged="true" bpdm:messageType="form21:notifyResponse" bpdm:binding="form21:WorkflowSoapBinding" bpdm:ID="_Okv1cGVMEd6OO_jl2pKiLgIncoming"></bpdm:linkset>
                     </bpdm:messagingtask>

@@ -160,7 +160,7 @@
     <styles xmi:type="notation:FillStyle" xmi:id="_ELKlY2TyEd6Mb56E1Um2PQ" fillColor="15053796"/>
     <styles xmi:type="notation:LineStyle" xmi:id="_ELKlZGTyEd6Mb56E1Um2PQ" lineColor="11119017"/>
     <element xmi:type="bpmn:Pool" href="modeler.bpmn#_ELFF0WTyEd6Mb56E1Um2PQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELKlZWTyEd6Mb56E1Um2PQ" x="16" y="16" width="643" height="316"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELKlZWTyEd6Mb56E1Um2PQ" x="16" y="16" width="811" height="316"/>
   </children>
   <styles xmi:type="notation:PageStyle" xmi:id="_BaktEWTyEd6Mb56E1Um2PQ"/>
   <styles xmi:type="notation:GuideStyle" xmi:id="_BaktEmTyEd6Mb56E1Um2PQ"/>
