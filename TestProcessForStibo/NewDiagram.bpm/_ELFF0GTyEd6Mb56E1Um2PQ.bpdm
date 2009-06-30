@@ -136,13 +136,17 @@
 </mapper:mapperLink>
                             </bpel:copy>
                             <bpel:copy>
-                                <bpel:from>"Check my instanceId and my processId"</bpel:from>
+                                <bpel:from>concat("Notification with processId:", $ode:processQName)</bpel:from>
                                 <bpel:to>$form21NotifyRequestMsg.root/form21:metadata/form21:description</bpel:to>
 <mapper:mapperLink>
-  <mapper:vertice id="4046201" targetPath="$form21NotifyRequestMsg.root/form21:metadata/form21:description" targetedBy="10401352-arg0"></mapper:vertice>
-  <mapper:vertice id="10401352" dimension="180x24" location="144,72">
-    <mapper:value>"Check my instanceId and my processId"</mapper:value>
+  <mapper:vertice id="4293299" targetPath="$form21NotifyRequestMsg.root/form21:metadata/form21:description" targetedBy="11919072-arg1"></mapper:vertice>
+  <mapper:vertice id="11919072" dimension="78x24" location="300,24">
+    <mapper:value>concat()</mapper:value>
   </mapper:vertice>
+  <mapper:vertice id="16502430" dimension="203x24" location="36,12" targetedBy="11919072-arg0">
+    <mapper:value>"Notification with processId:"</mapper:value>
+  </mapper:vertice>
+  <mapper:vertice id="10051620" sourcePath="$ode:processQName" targetedBy="11919072-arg2"></mapper:vertice>
 </mapper:mapperLink>
                             </bpel:copy>
                         </bpdm:linkset>
