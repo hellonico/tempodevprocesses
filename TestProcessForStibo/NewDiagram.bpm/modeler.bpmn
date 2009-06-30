@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_BYIdEGTyEd6Mb56E1Um2PQ" iD="_BX3XUWTyEd6Mb56E1Um2PQ">
   <pools xmi:type="bpmn:Pool" xmi:id="_ELFF0WTyEd6Mb56E1Um2PQ" iD="_ELFF0GTyEd6Mb56E1Um2PQ" name="Pool0">
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Pv3XoWTyEd6Mb56E1Um2PQ" iD="_Pv3XoGTyEd6Mb56E1Um2PQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Pv3XomTyEd6Mb56E1Um2PQ" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Pv3Xo2TyEd6Mb56E1Um2PQ" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Pv7pEmTyEd6Mb56E1Um2PQ" key="defaultDeclarationName" value="form1InitProcessRequestMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PwBIoWTyEd6Mb56E1Um2PQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/form/xform}initProcessRequest"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_Pv9eQGTyEd6Mb56E1Um2PQ" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Pv_TcGTyEd6Mb56E1Um2PQ" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PwBIoGTyEd6Mb56E1Um2PQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_QMV4QWTyEd6Mb56E1Um2PQ" iD="_QMV4QGTyEd6Mb56E1Um2PQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QMV4QmTyEd6Mb56E1Um2PQ" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QMV4Q2TyEd6Mb56E1Um2PQ" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QMbX0mTyEd6Mb56E1Um2PQ" key="defaultDeclarationName" value="form1InitProcessResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QMj6sWTyEd6Mb56E1Um2PQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://example.com/form/xform}initProcessResponse"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_QMebIGTyEd6Mb56E1Um2PQ" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QMhecGTyEd6Mb56E1Um2PQ" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QMj6sGTyEd6Mb56E1Um2PQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
     <artifacts xmi:type="bpmn:TextAnnotation" xmi:id="_M7j_MWVOEd6OO_jl2pKiLg" iD="_M7j_MGVOEd6OO_jl2pKiLg" name="The goal of this process, is to ensure that the 3 tasks below, and the notification are being assigned the same instanceId."/>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_Pu1c4WTyEd6Mb56E1Um2PQ" iD="_Pu1c4GTyEd6Mb56E1Um2PQ" associations="_Pv9eQGTyEd6Mb56E1Um2PQ _QMebIGTyEd6Mb56E1Um2PQ" outgoingEdges="_tq6jkWVJEd6OO_jl2pKiLg" incomingEdges="_kmvbEWVOEd6OO_jl2pKiLg" activityType="Task"/>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_h9qADGUBEd6XJM6fvE8wbQ" iD="_h9aIUmUBEd6XJM6fvE8wbQ" incomingEdges="_wBL3YWVJEd6OO_jl2pKiLg" name="form-human-task" activityType="SubProcess">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h9qADWUBEd6XJM6fvE8wbQ" source="skipAsScope">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9qADmUBEd6XJM6fvE8wbQ" key="skip" value="noVars"/>
@@ -72,7 +47,7 @@
       </vertices>
       <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_h9qAJWUBEd6XJM6fvE8wbQ" iD="_h9irMWUBEd6XJM6fvE8wbQ" name=""/>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_tqu9YGVJEd6OO_jl2pKiLg" iD="_tquWUGVJEd6OO_jl2pKiLg" outgoingEdges="_wBL3YWVJEd6OO_jl2pKiLg _xo4N8WVJEd6OO_jl2pKiLg _0fRzUWVJEd6OO_jl2pKiLg _PK850WVMEd6OO_jl2pKiLg" incomingEdges="_tq6jkWVJEd6OO_jl2pKiLg" activityType="GatewayParallel"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_tqu9YGVJEd6OO_jl2pKiLg" iD="_tquWUGVJEd6OO_jl2pKiLg" outgoingEdges="_wBL3YWVJEd6OO_jl2pKiLg _xo4N8WVJEd6OO_jl2pKiLg _0fRzUWVJEd6OO_jl2pKiLg _PK850WVMEd6OO_jl2pKiLg" incomingEdges="_HolYIWWaEd6-yfGkbRd8AA" activityType="GatewayParallel"/>
     <vertices xmi:type="bpmn:SubProcess" xmi:id="_xF3ngGVJEd6OO_jl2pKiLg" iD="_xFYfUGVJEd6OO_jl2pKiLg" incomingEdges="_xo4N8WVJEd6OO_jl2pKiLg" name="form-human-task" activityType="SubProcess">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xF3ngWVJEd6OO_jl2pKiLg" source="skipAsScope">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xF3ngmVJEd6OO_jl2pKiLg" key="skip" value="noVars"/>
@@ -183,7 +158,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_P8234GVMEd6OO_jl2pKiLg" key="roles" value=""/>
       </eAnnotations>
     </vertices>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_j0DZ4GVOEd6OO_jl2pKiLg" iD="_jz_IcGVOEd6OO_jl2pKiLg" outgoingEdges="_kmvbEWVOEd6OO_jl2pKiLg" name="form-init request" activityType="Task">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_j0DZ4GVOEd6OO_jl2pKiLg" iD="_jz_IcGVOEd6OO_jl2pKiLg" outgoingEdges="_HolYIWWaEd6-yfGkbRd8AA" name="form-init request" activityType="Task">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j0DZ4WVOEd6OO_jl2pKiLg" source="genericFile">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j0DZ4mVOEd6OO_jl2pKiLg" key="projectRelativePath" value="form.xform"/>
       </eAnnotations>
@@ -203,11 +178,10 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oPoNUGVOEd6OO_jl2pKiLg" key="description" value="Test InstanceId process"/>
       </eAnnotations>
     </vertices>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_tq6jkWVJEd6OO_jl2pKiLg" iD="_tq6jkGVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_wBL3YWVJEd6OO_jl2pKiLg" iD="_wBL3YGVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_xo4N8WVJEd6OO_jl2pKiLg" iD="_xo4N8GVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_0fRzUWVJEd6OO_jl2pKiLg" iD="_0fRzUGVJEd6OO_jl2pKiLg"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_PK850WVMEd6OO_jl2pKiLg" iD="_PK850GVMEd6OO_jl2pKiLg"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_kmvbEWVOEd6OO_jl2pKiLg" iD="_kmvbEGVOEd6OO_jl2pKiLg"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_HolYIWWaEd6-yfGkbRd8AA" iD="_HolYIGWaEd6-yfGkbRd8AA"/>
   </pools>
 </bpmn:BpmnDiagram>
