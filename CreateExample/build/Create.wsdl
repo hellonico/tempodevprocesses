@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:Pool0="http://example.com/Create/Pool0" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:init1="http://example.com/forms/init/xform" xmlns:diag="http://example.com/Create" xmlns:Pool="http://example.com/Create/Pool" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://example.com/Create">
+    <wsdl:import namespace="http://example.com/forms/init/xform" location="init.xform.all.wsdl"/>
+    <wsdl:import namespace="http://tempo.intalio.org/security/tokenService/" location="token-service.wsdl"/>
+    <wsdl:import namespace="http://www.intalio.com/bpms/workflow/ib4p_20051115" location="TaskManagerProcess.wsdl"/>
+    <pnlk:partnerLinkType name="Pool0AndPoolForPortServicePlk">
+        <pnlk:role name="Pool_for_Pool0" portType="tns:TokenService"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="Pool0AndPoolForXformPortPlk">
+        <pnlk:role name="Pool_for_Pool0" portType="init1:Workflow"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="Pool0AndPoolForUIFWPortPlk">
+        <pnlk:role name="Pool_for_Pool0" portType="b4p:UIFWPortType"/>
+    </pnlk:partnerLinkType>
+    <pnlk:partnerLinkType name="Pool0AndPoolForPortTypeProcessPlk">
+        <pnlk:role name="Pool0_for_Pool" portType="init1:Process"/>
+    </pnlk:partnerLinkType>
+</wsdl:definitions>

@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://example.com/Create" xmlns:init1="http://example.com/forms/init/xform" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:Pool="http://example.com/Create/Pool" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:this="http://example.com/Create/Pool0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:Pool0" fileName="Create-Pool0.bpel">
+  <dd:property name="PATH">Create</dd:property>
+  <dd:property name="SVG">Create.svg</dd:property>
+  <dd:provide partnerLink="pool0AndPoolForPortTypeProcessPlkVar">
+    <dd:service name="this:Pool0AndPoolForPortTypeProcessPlkService" port="Pool0_for_PoolPort"></dd:service>
+  </dd:provide>
+  <dd:invoke partnerLink="pool0AndPoolForXformPortPlkVar">
+    <dd:service name="init1:WorkflowSoapService" port="xformPort"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="pool0AndPoolForPortServicePlkVar">
+    <dd:service name="tns:TokenService" port="Service"/>
+  </dd:invoke>
+  <dd:invoke partnerLink="pool0AndPoolForUIFWPortPlkVar">
+    <dd:service name="b4p:UIFWService" port="UIFWPort"/>
+  </dd:invoke>
+</dd:process>

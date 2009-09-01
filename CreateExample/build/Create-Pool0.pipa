@@ -1,0 +1,9 @@
+﻿#
+#Wed Aug 26 23:36:35 JST 2009
+formURI=oxf\://CreateExample/init.xform
+userProcessInitSOAPAction=http\://example.com/forms/init/xform/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/CreateExample/Create/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk
+task-description=Go for it\!
+task-role-owners=
+task-user-owners=intalio\\admin
+formNamespace=http\://example.com/forms/init/xform

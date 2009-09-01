@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:init1="http://example.com/forms/init/xform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:Pool="http://example.com/Create/Pool" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:diag="http://example.com/Create" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:this="http://example.com/Create/Pool0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://example.com/Create/Pool0">
+    <wsdl:import namespace="http://example.com/forms/init/xform" location="init.xform.all.wsdl"/>
+    <wsdl:binding name="Pool0AndPoolForPortTypeProcessPlkServiceBinding" type="init1:Process">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="initProcess">
+            <soap:operation style="document" soapAction="http://example.com/forms/init/xform/Process/initProcess"/>
+            <wsdl:input name="initProcessRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="initProcessResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="notifyTaskCompletion">
+            <soap:operation style="document" soapAction="http://example.com/forms/init/xform/Process/notifyTaskCompletion"/>
+            <wsdl:input name="notifyTaskCompletionRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="notifyTaskCompletionResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Pool0AndPoolForPortTypeProcessPlkService">
+        <wsdl:port name="Pool0_for_PoolPort" binding="this:Pool0AndPoolForPortTypeProcessPlkServiceBinding">
+            <soap:address location="http://localhost:8080/ode/processes/CreateExample/Create/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

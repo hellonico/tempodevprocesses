@@ -1,0 +1,41 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:Pool0="http://thisdiagram/Pool0" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:init1="http://example.com/forms/init/xform" xmlns:diag="http://thisdiagram" xmlns:Pool="http://thisdiagram/Pool" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_oIRvcJIBEd6HPrxDsat7JA" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="Pool0AndPool" bpdm:poolOneId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Pool0" bpdm:poolTwoId="_oISWgJIBEd6HPrxDsat7JA" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Pool">
+    <pnlk:role name="Pool0_for_Pool" portType="Pool0:ForPool" bpdm:thisPoolId="_rSGAEJIBEd6HPrxDsat7JA">
+      <wsdl:portType name="ForPool">
+        <wsdl:operation name="Task" bpdm:canid="_sSMyMJIBEd6HPrxDsat7JA._tdfgoJIBEd6HPrxDsat7JA." bpdm:dataobjectPointer="project:///init.xform.all.wsdl?wsdloperation={http://example.com/forms/init/xform}Process/initProcess">
+          <wsdl:input message="init1:initProcessRequest" name="Task" bpdm:canid="_tdjyEJIBEd6HPrxDsat7JA" bpdm:senderId="_sSMyMJIBEd6HPrxDsat7JA" bpdm:receiverId="_tdfgoJIBEd6HPrxDsat7JA" bpdm:senderName="init-init request" bpdm:receiverName="Task" bpdm:receiverPoolId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///init.xform.all.wsdl?messageForOperation={http://example.com/forms/init/xform}Process/initProcess/input/initProcessRequest"></wsdl:input>
+          <wsdl:output message="init1:initProcessResponse" name="TaskResponse" bpdm:canid="_t-5kkJIBEd6HPrxDsat7JA" bpdm:senderId="_tdfgoJIBEd6HPrxDsat7JA" bpdm:receiverId="_sSMyMJIBEd6HPrxDsat7JA" bpdm:senderName="Task" bpdm:receiverName="init-init request" bpdm:receiverPoolId="_oISWgJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///init.xform.all.wsdl?messageForOperation={http://example.com/forms/init/xform}Process/initProcess/output/initProcessResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+    <pnlk:role name="Pool_for_Pool0" portType="Pool:ForPool0" bpdm:thisPoolId="_oISWgJIBEd6HPrxDsat7JA">
+      <wsdl:portType name="ForPool0">
+        <wsdl:operation name="authenticateUser" bpdm:canid="_h8XqAJIFEd6HPrxDsat7JA._hIhLMpIFEd6HPrxDsat7JA." bpdm:dataobjectPointer="project:///token-service.wsdl?wsdloperationbound={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser">
+          <wsdl:input message="tns:authenticateUserRequest" name="authenticateUser" bpdm:canid="_ie8yoJIFEd6HPrxDsat7JA" bpdm:senderId="_h8XqAJIFEd6HPrxDsat7JA" bpdm:receiverId="_hIhLMpIFEd6HPrxDsat7JA" bpdm:senderName="Task" bpdm:receiverName="authenticateUser" bpdm:receiverPoolId="_oISWgJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///token-service.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/input/authenticateUserRequest"></wsdl:input>
+          <wsdl:output message="tns:authenticateUserResponse" name="authenticateUserResponse" bpdm:canid="_i8jUoJIFEd6HPrxDsat7JA" bpdm:senderId="_hIhLMpIFEd6HPrxDsat7JA" bpdm:receiverId="_h8XqAJIFEd6HPrxDsat7JA" bpdm:senderName="authenticateUser" bpdm:receiverName="Task" bpdm:receiverPoolId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///token-service.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/output/authenticateUserResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="completeTask" bpdm:canid="_Bl5espIVEd6HPrxDsat7JA.__rCUgJIUEd6HPrxDsat7JA." bpdm:dataobjectPointer="project:///TaskManagerProcess.wsdl?wsdloperationbound={http://www.intalio.com/bpms/workflow/ib4p_20051115}UIFWService/UIFWPort/completeTask">
+          <wsdl:input message="b4p:completeTaskRequest" name="completeTask" bpdm:canid="_CLNyQJIVEd6HPrxDsat7JA" bpdm:senderId="__rCUgJIUEd6HPrxDsat7JA" bpdm:receiverId="_Bl5espIVEd6HPrxDsat7JA" bpdm:senderName="Task" bpdm:receiverName="completeTask" bpdm:receiverPoolId="_oISWgJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///TaskManagerProcess.wsdl?messageForBoundOperation={http://www.intalio.com/bpms/workflow/ib4p_20051115}UIFWService/UIFWPort/completeTask/input/completeTaskRequest"></wsdl:input>
+          <wsdl:output message="b4p:completeTaskResponse" name="completeTaskResponse" bpdm:canid="_CoincJIVEd6HPrxDsat7JA" bpdm:senderId="_Bl5espIVEd6HPrxDsat7JA" bpdm:receiverId="__rCUgJIUEd6HPrxDsat7JA" bpdm:senderName="completeTask" bpdm:receiverName="Task" bpdm:receiverPoolId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///TaskManagerProcess.wsdl?messageForBoundOperation={http://www.intalio.com/bpms/workflow/ib4p_20051115}UIFWService/UIFWPort/completeTask/output/completeTaskResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createTask" bpdm:canid="_2gbgwJIBEd6HPrxDsat7JA._9UMeIJICEd6HPrxDsat7JA." bpdm:dataobjectPointer="project:///init.xform.all.wsdl?wsdloperationbound={http://example.com/forms/init/xform}WorkflowSoapService/xformPort/createTask">
+          <wsdl:input message="init1:createTaskRequest" name="createTask" bpdm:canid="_9wxFYJICEd6HPrxDsat7JA" bpdm:senderId="_2gbgwJIBEd6HPrxDsat7JA" bpdm:receiverId="_9UMeIJICEd6HPrxDsat7JA" bpdm:senderName="Task" bpdm:receiverName="createTask" bpdm:receiverPoolId="_oISWgJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///init.xform.all.wsdl?messageForBoundOperation={http://example.com/forms/init/xform}WorkflowSoapService/xformPort/createTask/input/createTaskRequest"></wsdl:input>
+          <wsdl:output message="init1:createTaskResponse" name="createTaskResponse" bpdm:canid="_9-MdYJICEd6HPrxDsat7JA" bpdm:senderId="_9UMeIJICEd6HPrxDsat7JA" bpdm:receiverId="_2gbgwJIBEd6HPrxDsat7JA" bpdm:senderName="createTask" bpdm:receiverName="Task" bpdm:receiverPoolId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:dataobjectPointer="project:///init.xform.all.wsdl?messageForBoundOperation={http://example.com/forms/init/xform}WorkflowSoapService/xformPort/createTask/output/createTaskResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Pool0AndPoolForPortServicePlk" bpdm:canPlkId="_rSGAEJIBEd6HPrxDsat7JA-_oISWgJIBEd6HPrxDsat7JA">
+    <pnlk:role name="Pool_for_Pool0" portType="tns:TokenService"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Pool0AndPoolForXformPortPlk" bpdm:canPlkId="_rSGAEJIBEd6HPrxDsat7JA-_oISWgJIBEd6HPrxDsat7JA">
+    <pnlk:role name="Pool_for_Pool0" portType="init1:Workflow"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Pool0AndPoolForUIFWPortPlk" bpdm:canPlkId="_rSGAEJIBEd6HPrxDsat7JA-_oISWgJIBEd6HPrxDsat7JA">
+    <pnlk:role name="Pool_for_Pool0" portType="b4p:UIFWPortType"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Pool0AndPoolForPortTypeProcessPlk" bpdm:canPlkId="_rSGAEJIBEd6HPrxDsat7JA-_oISWgJIBEd6HPrxDsat7JA">
+    <pnlk:role name="Pool0_for_Pool" portType="init1:Process"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>
