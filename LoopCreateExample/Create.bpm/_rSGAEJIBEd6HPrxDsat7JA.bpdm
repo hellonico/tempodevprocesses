@@ -1,0 +1,136 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:this="http://thisdiagram/Pool0" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:Pool="http://thisdiagram/Pool" xmlns:init1="http://example.com/forms/init/xform" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Pool0">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool0" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/forms/init/xform/attachments" bpdm:prefix="init" bpdm:comment="contrib=&apos;project:///init.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/tokenService/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///token-service.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/bpms/workflow/ib4p_20051115" bpdm:prefix="b4p" bpdm:comment="contrib=&apos;project:///TaskManagerProcess.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Pool" bpdm:prefix="Pool" bpdm:comment="contrib=&apos;partner-pool:///_oISWgJIBEd6HPrxDsat7JA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/forms/init/xform" bpdm:prefix="init1" bpdm:comment="contrib=&apos;project:///init.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_oISWgJIBEd6HPrxDsat7JA"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:service name="Pool0AndPoolForPortTypeProcessPlkService">
+                <wsdl:port name="Pool0_for_PoolPort" binding="this:Pool0AndPoolForPortTypeProcessPlkServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="Pool0AndPoolForPortTypeProcessPlkServiceBinding" type="init1:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///init.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///init.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///TaskManagerProcess.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///b4p.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///token-service.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_oISWgJIBEd6HPrxDsat7JA" bpdm:label="Pool"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Pool0" bpdm:ID="_rSGAEJIBEd6HPrxDsat7JA">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="pool0AndPoolForPortTypeProcessPlkVar" partnerLinkType="diag:Pool0AndPoolForPortTypeProcessPlk" initializePartnerRole="yes" myRole="Pool0_for_Pool" bpdm:enableSharing="false" bpdm:providedService="this:Pool0AndPoolForPortTypeProcessPlkService" bpdm:providedPort="Pool0_for_PoolPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk" bpdm:providedIsDefault="true" partnerRole="Pool_for_Pool0" bpdm:invokedService="init1:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_xg1PAJzdEd6D0Jh6WWC1lQ:_xKo8kJzdEd6D0Jh6WWC1lQ, _rSGAEJIBEd6HPrxDsat7JA:_tdfgoJIBEd6HPrxDsat7JA" bpdm:isManaged="true" bpdm:otherPoolId="_oISWgJIBEd6HPrxDsat7JA"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="variable" type="xs:anyType" bpdm:id="_GFvbYJJHEd6io8Tx6HjauQ">
+                <bpel:from>
+                    <bpel:literal bpdm:linkedType="xs:anyType" bpdm:linkedFile="anyType-_rSGAEJIBEd6HPrxDsat7JA-0-literal.xml"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="init1InitProcessRequestMsg" messageType="init1:initProcessRequest" bpdm:id="_tdzCoJIBEd6HPrxDsat7JA" bpdm:messageIds="inc:_tdjyEJIBEd6HPrxDsat7JA"/>
+            <bpel:variable name="init1InitProcessResponseMsg" messageType="init1:initProcessResponse" bpdm:id="_t_I1IJIBEd6HPrxDsat7JA" bpdm:messageIds=" out:_t-5kkJIBEd6HPrxDsat7JA">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="init1:initProcessResponse" bpdm:linkedPart="root"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="initProcess" partnerLink="pool0AndPoolForPortTypeProcessPlkVar" portType="init1:Process" isMyRole="true" enableSharing="false" bpdm:label="init" bpdm:ID="_tdfgoJIBEd6HPrxDsat7JA">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="init1InitProcessRequestMsg" bpdm:msgVarScopeId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:variableIsManaged="true" bpdm:messageType="init1:initProcessRequest" bpdm:ID="_tdjyEJIBEd6HPrxDsat7JA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="init1InitProcessResponseMsg" bpdm:msgVarScopeId="_rSGAEJIBEd6HPrxDsat7JA" bpdm:variableIsManaged="true" bpdm:messageType="init1:initProcessResponse" bpdm:ID="_t-5kkJIBEd6HPrxDsat7JA"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpel:scope bpdm:label="SubProcess" bpdm:ID="_xg1PAJzdEd6D0Jh6WWC1lQ">
+                <bpdm:linkset bpdm:type="loop" bpdm:loopType="forEach" parallel="no" counterName="emptyCounter">
+                    <bpel:condition bpdm:loopType="forEachStartCounter">1
+<mapper:mapperLink>
+  <mapper:vertice id="1327504054" targetPath="$Start counter" targetedBy="122432524-arg0"></mapper:vertice>
+  <mapper:vertice id="122432524" dimension="78x24" location="264,12">
+    <mapper:value>1</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
+                    <bpel:condition bpdm:loopType="forEachFinalCounter">100
+<mapper:mapperLink>
+  <mapper:vertice id="940346126" targetPath="$Final counter" targetedBy="943180781-arg0"></mapper:vertice>
+  <mapper:vertice id="943180781" dimension="78x24" location="264,60">
+    <mapper:value>100</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:condition>
+                </bpdm:linkset>
+                <bpel:variables>
+                    <bpel:variable name="init1CreateTaskRequestMsg" messageType="init1:createTaskRequest" binding="init1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_ynn38JzdEd6D0Jh6WWC1lQ" bpdm:messageIds=" out:_ynR5sJzdEd6D0Jh6WWC1lQ">
+                        <bpel:from bpdm:toPart="root">
+                            <bpel:literal bpdm:linkedMessageType="init1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="init1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                        </bpel:from>
+                    </bpel:variable>
+                    <bpel:variable name="init1CreateTaskResponseMsg" messageType="init1:createTaskResponse" binding="init1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_y8cRYJzdEd6D0Jh6WWC1lQ" bpdm:messageIds="inc:_y7w78JzdEd6D0Jh6WWC1lQ"/>
+                </bpel:variables>
+                <bpel:sequence>
+                    <bpdm:messagingtask operation="createTask" partnerLink="pool0AndPoolForPortTypeProcessPlkVar" portType="init1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="Task" bpdm:ID="_xKo8kJzdEd6D0Jh6WWC1lQ">
+                        <bpdm:linkset bpdm:type="assignments">
+                            <bpel:copy>
+                                <bpel:from>"&lt;test-input&gt;test&lt;/test-input&gt;"</bpel:from>
+                                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskInput/init1:input</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="957597086" targetPath="$init1CreateTaskRequestMsg.root/init1:taskInput/init1:input" targetedBy="433069463-arg0"></mapper:vertice>
+  <mapper:vertice id="433069463" dimension="78x24" location="300,276">
+    <mapper:value>"&lt;test-input&gt;test&lt;/test-input&gt;"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>current-time()</bpel:from>
+                                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:description</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="651695795" targetPath="$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:description" targetedBy="1656675163-arg0"></mapper:vertice>
+  <mapper:vertice id="1656675163" dimension="78x24" location="312,24">
+    <mapper:value>current-time()</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"activity"</bpel:from>
+                                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:taskType</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="364738552" targetPath="$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:taskType" targetedBy="1472782144-arg0"></mapper:vertice>
+  <mapper:vertice id="1472782144" dimension="78x24" location="263,67">
+    <mapper:value>"activity"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"intalio\admin"</bpel:from>
+                                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:userOwner</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1685967748" targetPath="$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:userOwner" targetedBy="614464217-arg0"></mapper:vertice>
+  <mapper:vertice id="614464217" dimension="78x24" location="334,193">
+    <mapper:value>"intalio\admin"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                            <bpel:copy>
+                                <bpel:from>"http://localhost/1"</bpel:from>
+                                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:formUrl</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="377962717" targetPath="$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:formUrl" targetedBy="600189066-arg0"></mapper:vertice>
+  <mapper:vertice id="600189066" dimension="78x24" location="498,282">
+    <mapper:value>"http://localhost/1"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                            </bpel:copy>
+                        </bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="init1CreateTaskRequestMsg" bpdm:msgVarScopeId="_xg1PAJzdEd6D0Jh6WWC1lQ" bpdm:variableIsManaged="true" bpdm:messageType="init1:createTaskRequest" bpdm:binding="init1:WorkflowSoapBinding" bpdm:ID="_ynR5sJzdEd6D0Jh6WWC1lQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="init1CreateTaskResponseMsg" bpdm:msgVarScopeId="_xg1PAJzdEd6D0Jh6WWC1lQ" bpdm:variableIsManaged="true" bpdm:messageType="init1:createTaskResponse" bpdm:binding="init1:WorkflowSoapBinding" bpdm:ID="_y7w78JzdEd6D0Jh6WWC1lQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpel:scope>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

@@ -1,0 +1,9 @@
+﻿#
+#Wed Sep 09 10:53:00 JST 2009
+formURI=oxf\://LoopCreateExample/init.xform
+userProcessInitSOAPAction=http\://example.com/forms/init/xform/Process/initProcess
+processEndpoint=http\://localhost\:8080/ode/processes/LoopCreateExample/Create/Pool0/Pool/Pool0AndPoolForPortTypeProcessPlk
+task-description=Loop Create
+task-role-owners=
+task-user-owners=intalio\\admin
+formNamespace=http\://example.com/forms/init/xform

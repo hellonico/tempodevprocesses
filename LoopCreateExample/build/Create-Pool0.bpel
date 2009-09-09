@@ -1,0 +1,163 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://example.com/Create/Pool0" xmlns:init="http://example.com/forms/init/xform/attachments" xmlns:tns="http://tempo.intalio.org/security/tokenService/" xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115" xmlns:init1="http://example.com/forms/init/xform" xmlns:Pool="http://example.com/Create/Pool" xmlns:diag="http://example.com/Create" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="Pool0" name="Pool0" bpmn:id="_rSGAEJIBEd6HPrxDsat7JA" targetNamespace="http://example.com/Create/Pool0">
+  <bpel:import namespace="http://example.com/forms/init/xform" location="init.xform.all.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:import namespace="http://example.com/Create" location="Create.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="pool0AndPoolForPortTypeProcessPlkVar" partnerLinkType="diag:Pool0AndPoolForPortTypeProcessPlk" initializePartnerRole="yes" myRole="Pool0_for_Pool" partnerRole="Pool_for_Pool0"></bpel:partnerLink>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="variable" type="xs:anyType"></bpel:variable>
+    <bpel:variable name="init1InitProcessRequestMsg" messageType="init1:initProcessRequest"></bpel:variable>
+    <bpel:variable name="init1InitProcessResponseMsg" messageType="init1:initProcessResponse"></bpel:variable>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="pool0AndPoolForPortTypeProcessPlkVar" portType="init1:Process" operation="initProcess" variable="init1InitProcessRequestMsg" createInstance="yes" bpmn:label="init" name="init" bpmn:id="_tdfgoJIBEd6HPrxDsat7JA"></bpel:receive>
+    <bpel:assign name="init-variables-Pool0" bpmn:id="_tdfgoJIBEd6HPrxDsat7JA">
+      <bpel:copy bpmn:label="$variable">
+        <bpel:from>
+          <bpel:literal><init1:output>output</init1:output></bpel:literal>
+        </bpel:from>
+        <bpel:to>$variable</bpel:to>
+      </bpel:copy>
+      <bpel:copy bpmn:label="$init1InitProcessResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<init1:initProcessResponse>
+  <init1:status>OK</init1:status>
+  <init1:errorCode></init1:errorCode>
+  <init1:errorReason></init1:errorReason>
+  <init1:taskMetaData>
+    <init1:nextTaskId></init1:nextTaskId>
+    <init1:nextTaskURL></init1:nextTaskURL>
+    <init1:instanceId></init1:instanceId>
+  </init1:taskMetaData>
+</init1:initProcessResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$init1InitProcessResponseMsg.root</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:assign>
+    <bpel:copy>
+        <bpel:from>$ode:pid</bpel:from>
+        <bpel:to>$init1InitProcessResponseMsg.root/init1:taskMetaData/init1:instanceId</bpel:to>
+    </bpel:copy>
+  </bpel:assign>
+  <bpel:reply partnerLink="pool0AndPoolForPortTypeProcessPlkVar" portType="init1:Process" operation="initProcess" variable="init1InitProcessResponseMsg" bpmn:label="init" name="init-1" bpmn:id="_tdfgoJIBEd6HPrxDsat7JA"></bpel:reply>
+    <bpel:scope bpmn:label="outer-SubProcess" name="outer-SubProcess" bpmn:id="_xg1PAJzdEd6D0Jh6WWC1lQ">
+      <bpel:forEach bpmn:label="SubProcess" name="SubProcess" bpmn:id="_xg1PAJzdEd6D0Jh6WWC1lQ" parallel="no" counterName="emptyCounter">
+        <bpel:startCounterValue>1</bpel:startCounterValue>
+        <bpel:finalCounterValue>100</bpel:finalCounterValue>
+        <bpel:scope bpmn:label="SubProcess" name="SubProcess-1" bpmn:id="_xg1PAJzdEd6D0Jh6WWC1lQ">
+          <bpel:variables>
+            <bpel:variable name="init1CreateTaskRequestMsg" messageType="init1:createTaskRequest"></bpel:variable>
+            <bpel:variable name="init1CreateTaskResponseMsg" messageType="init1:createTaskResponse"></bpel:variable>
+          </bpel:variables>
+          <bpel:sequence>
+            <bpel:assign name="init-variables-SubProcess" bpmn:id="_xg1PAJzdEd6D0Jh6WWC1lQ">
+              <bpel:copy bpmn:label="$init1CreateTaskRequestMsg">
+                <bpel:from>
+                  <bpel:literal>
+<init1:createTaskRequest>
+  <init1:taskMetaData>
+    <init1:taskId></init1:taskId>
+    <init1:taskState></init1:taskState>
+    <init1:taskType></init1:taskType>
+    <init1:description></init1:description>
+    <init1:processId></init1:processId>
+    <init1:instanceId></init1:instanceId>
+    <init1:business>
+      <init1:processName></init1:processName>
+      <init1:instanceId></init1:instanceId>
+      <init1:customData></init1:customData>
+    </init1:business>
+    <init1:creationDate></init1:creationDate>
+    <init1:userOwner></init1:userOwner>
+    <init1:roleOwner></init1:roleOwner>
+    <init1:claimAction>
+      <init1:user></init1:user>
+      <init1:role></init1:role>
+    </init1:claimAction>
+    <init1:revokeAction>
+      <init1:user></init1:user>
+      <init1:role></init1:role>
+    </init1:revokeAction>
+    <init1:saveAction>
+      <init1:user></init1:user>
+      <init1:role></init1:role>
+    </init1:saveAction>
+    <init1:completeAction>
+      <init1:user></init1:user>
+      <init1:role></init1:role>
+    </init1:completeAction>
+    <init1:formUrl></init1:formUrl>
+    <init1:failureCode></init1:failureCode>
+    <init1:failureReason></init1:failureReason>
+    <init1:priority></init1:priority>
+    <init1:scheduledActions>
+      <init1:expiration>
+        <init1:until></init1:until>
+        <init1:for></init1:for>
+      </init1:expiration>
+      <init1:deferActivation>
+        <init1:until></init1:until>
+        <init1:for></init1:for>
+      </init1:deferActivation>
+    </init1:scheduledActions>
+    <init1:attachments>
+      <attachment>
+        <attachmentMetadata>
+          <mimeType></mimeType>
+          <fileName></fileName>
+          <title></title>
+          <description></description>
+          <creationDate></creationDate>
+        </attachmentMetadata>
+        <payloadUrl></payloadUrl>
+      </attachment>
+    </init1:attachments>
+    <init1:userProcessCompleteSOAPAction></init1:userProcessCompleteSOAPAction>
+    <init1:isChainedBefore></init1:isChainedBefore>
+    <init1:previousTaskId></init1:previousTaskId>
+    <init1:userProcessEndpoint></init1:userProcessEndpoint>
+    <init1:userProcessNamespaceURI></init1:userProcessNamespaceURI>
+  </init1:taskMetaData>
+  <init1:participantToken></init1:participantToken>
+  <init1:taskInput>
+    <init1:input>
+      <init1:Start_the_process></init1:Start_the_process>
+    </init1:input>
+  </init1:taskInput>
+</init1:createTaskRequest></bpel:literal>
+                </bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root</bpel:to>
+              </bpel:copy>
+            </bpel:assign>
+            <bpel:assign bpmn:label="Task" name="Task" bpmn:id="_xKo8kJzdEd6D0Jh6WWC1lQ">
+              <bpel:copy>
+                <bpel:from>"&lt;test-input>test&lt;/test-input>"</bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskInput/init1:input</bpel:to>
+              </bpel:copy>
+              <bpel:copy>
+                <bpel:from>current-time()</bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:description</bpel:to>
+              </bpel:copy>
+              <bpel:copy>
+                <bpel:from>"activity"</bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:taskType</bpel:to>
+              </bpel:copy>
+              <bpel:copy>
+                <bpel:from>"intalio\admin"</bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:userOwner</bpel:to>
+              </bpel:copy>
+              <bpel:copy>
+                <bpel:from>"http://localhost/1"</bpel:from>
+                <bpel:to>$init1CreateTaskRequestMsg.root/init1:taskMetaData/init1:formUrl</bpel:to>
+              </bpel:copy>
+            </bpel:assign>
+            <bpel:invoke partnerLink="pool0AndPoolForPortTypeProcessPlkVar" portType="init1:Workflow" operation="createTask" inputVariable="init1CreateTaskRequestMsg" outputVariable="init1CreateTaskResponseMsg" bpmn:label="Task" name="Task-1" bpmn:id="_xKo8kJzdEd6D0Jh6WWC1lQ"></bpel:invoke>
+          </bpel:sequence>
+        </bpel:scope>
+      </bpel:forEach>
+    </bpel:scope>
+  </bpel:sequence>
+</bpel:process>

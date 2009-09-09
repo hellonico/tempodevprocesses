@@ -1,0 +1,13 @@
+﻿<bpel:literal xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:init="http://example.com/forms/init/xform/attachments"
+    xmlns:b4p="http://www.intalio.com/bpms/workflow/ib4p_20051115"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tns="http://tempo.intalio.org/security/tokenService/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:diag="http://thisdiagram"
+    xmlns:init1="http://example.com/forms/init/xform"
+    xmlns:Pool="http://thisdiagram/Pool"
+    xmlns:this="http://thisdiagram/Pool0">
+<init1:output>output</init1:output>
+</bpel:literal>
