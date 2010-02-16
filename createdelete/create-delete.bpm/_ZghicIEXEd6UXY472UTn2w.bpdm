@@ -1,0 +1,50 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:tns="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:this="http://thisdiagram/TMS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:token-service="http://tempo.intalio.org/security/tokenService/" xmlns:process="http://thisdiagram/process" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/TMS">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///TaskManagementServices.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/TMS" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/tokenService/" bpdm:prefix="token-service" bpdm:comment="contrib=&apos;project:///token-service.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/process" bpdm:prefix="process" bpdm:comment="contrib=&apos;partner-pool:///_hvVmsIEGEd6PXYQfGA_ZIQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_hvVmsIEGEd6PXYQfGA_ZIQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///TaskManagementServices.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:label="process"/>
+        <bpdm:namespaceContributor bpdm:url="project:///token-service.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="TMS" bpdm:ID="_ZghicIEXEd6UXY472UTn2w">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="processAndTMSForPortServicePlkVar" partnerLinkType="diag:processAndTMSForPortServicePlk" myRole="TMS_for_process" bpdm:enableSharing="false" bpdm:providedService="token-service:TokenService" bpdm:providedPort="Service" bpdm:provideSOAPAddress="http://localhost:8080/axis2/services/TokenService" bpdm:providedIsDefault="true" bpdm:clientTasks="_ZghicIEXEd6UXY472UTn2w:_d7D8oBr9Ed-YtemmdqGE-A" bpdm:isManaged="true" bpdm:otherPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ"/>
+            <bpel:partnerLink name="processAndTMSForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:processAndTMSForPortTaskManagementServicesSOAPPlk" myRole="TMS_for_process" bpdm:enableSharing="false" bpdm:providedService="tns:TaskManagementServices" bpdm:providedPort="TaskManagementServicesSOAP" bpdm:provideSOAPAddress="http://localhost:8080/axis2/services/TaskManagementServices.TaskManagementServicesSOAP/" bpdm:providedIsDefault="true" bpdm:clientTasks="_ZghicIEXEd6UXY472UTn2w:_iXMwwBr9Ed-YtemmdqGE-A" bpdm:isManaged="true" bpdm:otherPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="token-serviceAuthenticateUserRequestMsg" messageType="token-service:authenticateUser" binding="token-service:TokenServiceSOAP" operation="authenticateUser" opMsgType="0" bpdm:id="_enzt4Br9Ed-YtemmdqGE-A" bpdm:messageIds="inc:_enVMwBr9Ed-YtemmdqGE-A"/>
+            <bpel:variable name="token-serviceAuthenticateUserResponseMsg" messageType="token-service:authenticateUserResponse" binding="token-service:TokenServiceSOAP" operation="authenticateUser" opMsgType="1" bpdm:id="_e663IBr9Ed-YtemmdqGE-A" bpdm:messageIds=" out:_e6ag0Br9Ed-YtemmdqGE-A">
+                <bpel:from bpdm:toPart="payload">
+                    <bpel:literal bpdm:linkedMessageType="token-service:authenticateUserResponse" bpdm:linkedPart="payload" bpdm:binding="token-service:TokenServiceSOAP" bpdm:opMsgType="1" bpdm:operation="authenticateUser"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="tnsDeleteRequestMsg" messageType="tns:deleteRequest" binding="tns:TaskManagementServicesSOAP" operation="delete" opMsgType="0" bpdm:id="_knW1gBr9Ed-YtemmdqGE-A" bpdm:messageIds="inc:_kmsHIBr9Ed-YtemmdqGE-A"/>
+            <bpel:variable name="tnsDeleteResponseMsg" messageType="tns:okResponse" binding="tns:TaskManagementServicesSOAP" operation="delete" opMsgType="1" bpdm:id="_k5RE4Br9Ed-YtemmdqGE-A" bpdm:messageIds=" out:_k4QYQBr9Ed-YtemmdqGE-A">
+                <bpel:from bpdm:toPart="okResponse">
+                    <bpel:literal bpdm:linkedMessageType="tns:okResponse" bpdm:linkedPart="okResponse" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:opMsgType="1" bpdm:operation="delete"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:flow>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="delete" partnerLink="processAndTMSForPortTaskManagementServicesSOAPPlkVar" portType="tns:TaskManagementServicesPortType" isMyRole="true" enableSharing="false" bpdm:label="delete" bpdm:ID="_iXMwwBr9Ed-YtemmdqGE-A">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="tnsDeleteRequestMsg" bpdm:msgVarScopeId="_ZghicIEXEd6UXY472UTn2w" bpdm:variableIsManaged="true" bpdm:messageType="tns:deleteRequest" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:ID="_kmsHIBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="tnsDeleteResponseMsg" bpdm:msgVarScopeId="_ZghicIEXEd6UXY472UTn2w" bpdm:variableIsManaged="true" bpdm:messageType="tns:okResponse" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:ID="_k4QYQBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+            <bpel:sequence>
+                <bpdm:messagingtask operation="authenticateUser" partnerLink="processAndTMSForPortServicePlkVar" portType="token-service:TokenService" isMyRole="true" enableSharing="false" bpdm:label="authenticateUser" bpdm:ID="_d7D8oBr9Ed-YtemmdqGE-A">
+                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="token-serviceAuthenticateUserRequestMsg" bpdm:msgVarScopeId="_ZghicIEXEd6UXY472UTn2w" bpdm:variableIsManaged="true" bpdm:messageType="token-service:authenticateUser" bpdm:binding="token-service:TokenServiceSOAP" bpdm:ID="_enVMwBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="token-serviceAuthenticateUserResponseMsg" bpdm:msgVarScopeId="_ZghicIEXEd6UXY472UTn2w" bpdm:variableIsManaged="true" bpdm:messageType="token-service:authenticateUserResponse" bpdm:binding="token-service:TokenServiceSOAP" bpdm:ID="_e6ag0Br9Ed-YtemmdqGE-A"></bpdm:linkset>
+                </bpdm:messagingtask>
+            </bpel:sequence>
+        </bpel:flow>
+    </bpel:scope>
+</bpel:process>

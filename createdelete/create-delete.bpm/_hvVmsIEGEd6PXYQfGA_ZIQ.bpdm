@@ -1,0 +1,186 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:form1="http://example.com/form/xform" xmlns:tns="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:TMS="http://thisdiagram/TMS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:token-service="http://tempo.intalio.org/security/tokenService/" xmlns:form="http://example.com/form/xform/attachments" xmlns:this="http://thisdiagram/process" xmlns:variable="http://www.example.org/variable" xmlns:diag="http://thisdiagram" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/process">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform" bpdm:prefix="form1" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" bpdm:prefix="tns" bpdm:comment="contrib=&apos;project:///TaskManagementServices.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/TMS" bpdm:prefix="TMS" bpdm:comment="contrib=&apos;partner-pool:///_ZghicIEXEd6UXY472UTn2w"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://tempo.intalio.org/security/tokenService/" bpdm:prefix="token-service" bpdm:comment="contrib=&apos;project:///token-service.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://example.com/form/xform/attachments" bpdm:prefix="form" bpdm:comment="contrib=&apos;project:///form.xform.all.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/process" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.example.org/variable" bpdm:prefix="variable" bpdm:comment="contrib=&apos;project:///variable.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_gBXpBoEGEd6PXYQfGA_ZIQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="ForConsole">
+                <wsdl:operation name="EventStartMessage" bpdm:source="partner-pool:///_gBXpBoEGEd6PXYQfGA_ZIQ">
+                    <wsdl:input message="this:EventStartMessageRequest" name="EventStartMessage"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="EventStartMessageRequest" type="xs:string" bpdm:source="partner-pool:///_gBXpBoEGEd6PXYQfGA_ZIQ"/>
+            <wsdl:message name="EventStartMessageRequest" bpdm:source="partner-pool:///_gBXpBoEGEd6PXYQfGA_ZIQ">
+                <wsdl:part name="body" element="this:EventStartMessageRequest"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForConsole" type="this:ForConsole" bpdm:isSynchronized="true"/>
+            <wsdl:service name="WFmagic_5LS62IEGEd6PXYQfGA_ZIQService">
+                <wsdl:port name="process_for_UIForThePortTypeProcessPort" binding="this:WFmagic_5LS62IEGEd6PXYQfGA_ZIQServiceBinding">
+                    <address location="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/process/UI/WFmagic_5LS62IEGEd6PXYQfGA_ZIQ"/>
+                </wsdl:port>
+            </wsdl:service>
+            <bpel:binding name="WFmagic_5LS62IEGEd6PXYQfGA_ZIQServiceBinding" type="form1:Process" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_gBXpBoEGEd6PXYQfGA_ZIQ" bpdm:label="Console"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_iYw-MIEGEd6PXYQfGA_ZIQ" bpdm:label="UI"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.all.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///form.xform.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///TaskManagementServices.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///variable.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_ZghicIEXEd6UXY472UTn2w" bpdm:label="TMS"/>
+        <bpdm:namespaceContributor bpdm:url="project:///token-service.wsdl"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="process" bpdm:ID="_hvVmsIEGEd6PXYQfGA_ZIQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wFmagic_5LS62IEGEd6PXYQfGA_ZIQPlkVar" partnerLinkType="diag:WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" initializePartnerRole="no" myRole="process_for_UIForThePortTypeProcess" bpdm:enableSharing="false" bpdm:providedService="this:WFmagic_5LS62IEGEd6PXYQfGA_ZIQService" bpdm:providedPort="process_for_UIForThePortTypeProcessPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/process/UI/WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:providedIsDefault="true" partnerRole="UI_for_processForXformPort" bpdm:invokedService="form1:WorkflowSoapService" bpdm:invokedPort="xformPort" bpdm:invokedSOAPAddress="http://localhost:8080/fds/workflow/xform" bpdm:invokedIsDefault="true" bpdm:clientTasks="_hvVmsIEGEd6PXYQfGA_ZIQ:_oK6jAIEGEd6PXYQfGA_ZIQ, _D7bckIEHEd6PXYQfGA_ZIQ:_smogYIEGEd6PXYQfGA_ZIQ" bpdm:isManaged="true" bpdm:otherPoolId="_iYw-MIEGEd6PXYQfGA_ZIQ"/>
+            <bpel:partnerLink name="processAndConsolePlkVar" partnerLinkType="diag:processAndConsole" myRole="process_for_Console" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForConsole" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/process/Console" bpdm:providedIsDefault="true" bpdm:clientTasks="_hvVmsIEGEd6PXYQfGA_ZIQ:_nPAUYIEGEd6PXYQfGA_ZIQ" bpdm:isManaged="true" bpdm:otherPoolId="_gBXpBoEGEd6PXYQfGA_ZIQ"/>
+            <bpel:partnerLink name="processAndTMSForPortServicePlkVar" partnerLinkType="diag:processAndTMSForPortServicePlk" initializePartnerRole="yes" partnerRole="TMS_for_process" bpdm:invokedService="token-service:TokenService" bpdm:invokedPort="Service" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TokenService" bpdm:invokedIsDefault="true" bpdm:clientTasks="_f2y_MIGfEd6H9_nIEjYbDg:_MtzRIIEHEd6PXYQfGA_ZIQ" bpdm:isManaged="true" bpdm:otherPoolId="_ZghicIEXEd6UXY472UTn2w"/>
+            <bpel:partnerLink name="processAndTMSForPortTaskManagementServicesSOAPPlkVar" partnerLinkType="diag:processAndTMSForPortTaskManagementServicesSOAPPlk" initializePartnerRole="yes" partnerRole="TMS_for_process" bpdm:invokedService="tns:TaskManagementServices" bpdm:invokedPort="TaskManagementServicesSOAP" bpdm:invokedSOAPAddress="http://localhost:8080/axis2/services/TaskManagementServices.TaskManagementServicesSOAP/" bpdm:invokedIsDefault="true" bpdm:clientTasks="_f2y_MIGfEd6H9_nIEjYbDg:_hN9mcIGfEd6H9_nIEjYbDg" bpdm:isManaged="true" bpdm:otherPoolId="_ZghicIEXEd6UXY472UTn2w"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest" bpdm:id="_nPT2aYEGEd6PXYQfGA_ZIQ" bpdm:messageIds="inc:_nPAUaYEGEd6PXYQfGA_ZIQ"/>
+            <bpel:variable name="form1CreateTaskRequestMsg" messageType="form1:createTaskRequest" binding="form1:WorkflowSoapBinding" operation="createTask" opMsgType="0" bpdm:id="_6Qb98IEGEd6PXYQfGA_ZIQ" bpdm:messageIds=" out:_6P_SAIEGEd6PXYQfGA_ZIQ">
+                <bpel:from bpdm:toPart="root">
+                    <bpel:literal bpdm:linkedMessageType="form1:createTaskRequest" bpdm:linkedPart="root" bpdm:binding="form1:WorkflowSoapBinding" bpdm:opMsgType="0" bpdm:operation="createTask"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="form1CreateTaskResponseMsg" messageType="form1:createTaskResponse" binding="form1:WorkflowSoapBinding" operation="createTask" opMsgType="1" bpdm:id="_7CzPCYEGEd6PXYQfGA_ZIQ" bpdm:messageIds="inc:_7CDoIIEGEd6PXYQfGA_ZIQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="EventStartMessage" partnerLink="processAndConsolePlkVar" portType="this:ForConsole" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_nPAUYIEGEd6PXYQfGA_ZIQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisEventStartMessageRequest" bpdm:msgVarScopeId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:variableIsManaged="true" bpdm:messageType="this:EventStartMessageRequest" bpdm:ID="_nPAUaYEGEd6PXYQfGA_ZIQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="createTask" partnerLink="wFmagic_5LS62IEGEd6PXYQfGA_ZIQPlkVar" portType="form1:Workflow" isMyRole="false" enableSharing="false" bpdm:label="create  task" bpdm:ID="_oK6jAIEGEd6PXYQfGA_ZIQ">
+                <bpdm:linkset bpdm:type="assignments">
+                    <bpel:copy>
+                        <bpel:from>$thisEventStartMessageRequest.body/text()</bpel:from>
+                        <bpel:to>$form1CreateTaskRequestMsg.root/form1:taskMetaData/form1:description/text()</bpel:to><mapper:mapperLink><mapper:vertice id="32514821" targetPath="$form1CreateTaskRequestMsg.root/form1:taskMetaData/form1:description/text()" targetedBy="30928803-arg0"></mapper:vertice><mapper:vertice id="30928803" sourcePath="$thisEventStartMessageRequest.body/text()"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from>$thisEventStartMessageRequest.body/text()</bpel:from>
+                        <bpel:to>$form1CreateTaskRequestMsg.root/form1:taskInput/form1:input/form1:test/text()</bpel:to><mapper:mapperLink><mapper:vertice id="15068101" targetPath="$form1CreateTaskRequestMsg.root/form1:taskInput/form1:input/form1:test/text()" targetedBy="22613502-arg0"></mapper:vertice><mapper:vertice id="22613502" sourcePath="$thisEventStartMessageRequest.body/text()"></mapper:vertice></mapper:mapperLink>
+                    </bpel:copy>
+                </bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="form1CreateTaskRequestMsg" bpdm:msgVarScopeId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:variableIsManaged="true" bpdm:messageType="form1:createTaskRequest" bpdm:binding="form1:WorkflowSoapBinding" bpdm:ID="_6P_SAIEGEd6PXYQfGA_ZIQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="form1CreateTaskResponseMsg" bpdm:msgVarScopeId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:variableIsManaged="true" bpdm:messageType="form1:createTaskResponse" bpdm:binding="form1:WorkflowSoapBinding" bpdm:ID="_7CDoIIEGEd6PXYQfGA_ZIQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpel:scope bpdm:label="Task Complete" bpdm:ID="_D7bckIEHEd6PXYQfGA_ZIQ">
+                <bpel:variables>
+                    <bpel:variable name="form1NotifyTaskCompletionRequestMsg" messageType="form1:notifyTaskCompletionRequest" bpdm:messageIds="inc:_7oWMEIEGEd6PXYQfGA_ZIQ"/>
+                    <bpel:variable name="form1NotifyTaskCompletionResponseMsg" messageType="form1:notifyTaskCompletionResponse" bpdm:messageIds=" out:_8DBV4IEGEd6PXYQfGA_ZIQ">
+                        <bpel:from bpdm:toPart="root">
+                            <bpel:literal bpdm:linkedMessageType="form1:notifyTaskCompletionResponse" bpdm:linkedPart="root"></bpel:literal>
+                        </bpel:from>
+                    </bpel:variable>
+                </bpel:variables>
+                <bpel:eventHandlers>
+                    <bpel:onAlarm>
+                        <bpel:for>"PT10S"
+<mapper:mapperLink>
+  <mapper:vertice id="1391398812" targetPath="$duration" targetedBy="845924339-arg0"></mapper:vertice>
+  <mapper:vertice id="845924339" dimension="78x24" location="101,47">
+    <mapper:value>"PT10S"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:for>
+                        <bpdm:eventHandler bpdm:label="timeout" bpdm:ID="_F8n4QIEHEd6PXYQfGA_ZIQ" bpdm:type="timer">
+                            <bpdm:linkset bpdm:type="timer">
+                                <bpel:for>"PT10S"
+<mapper:mapperLink>
+  <mapper:vertice id="1391398812" targetPath="$duration" targetedBy="845924339-arg0"></mapper:vertice>
+  <mapper:vertice id="845924339" dimension="78x24" location="101,47">
+    <mapper:value>"PT10S"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink></bpel:for>
+                            </bpdm:linkset>
+                        </bpdm:eventHandler>
+                        <bpel:scope bpdm:label="Timeout Exception Handler level 1" bpdm:ID="_f2y_MIGfEd6H9_nIEjYbDg">
+                            <bpel:variables>
+                                <bpel:variable name="token-serviceAuthenticateUserRequestMsg" messageType="token-service:authenticateUser" binding="token-service:TokenServiceSOAP" operation="authenticateUser" opMsgType="0" bpdm:id="_enouwBr9Ed-YtemmdqGE-A" bpdm:messageIds=" out:_enVMwBr9Ed-YtemmdqGE-A">
+                                    <bpel:from bpdm:toPart="payload">
+                                        <bpel:literal bpdm:linkedMessageType="token-service:authenticateUser" bpdm:linkedPart="payload" bpdm:binding="token-service:TokenServiceSOAP" bpdm:opMsgType="0" bpdm:operation="authenticateUser"></bpel:literal>
+                                    </bpel:from>
+                                </bpel:variable>
+                                <bpel:variable name="token-serviceAuthenticateUserResponseMsg" messageType="token-service:authenticateUserResponse" binding="token-service:TokenServiceSOAP" operation="authenticateUser" opMsgType="1" bpdm:id="_e7L84Br9Ed-YtemmdqGE-A" bpdm:messageIds="inc:_e6ag0Br9Ed-YtemmdqGE-A"/>
+                                <bpel:variable name="tnsDeleteRequestMsg" messageType="tns:deleteRequest" binding="tns:TaskManagementServicesSOAP" operation="delete" opMsgType="0" bpdm:id="_knCscBr9Ed-YtemmdqGE-A" bpdm:messageIds=" out:_kmsHIBr9Ed-YtemmdqGE-A">
+                                    <bpel:from bpdm:toPart="deleteRequest">
+                                        <bpel:literal bpdm:linkedMessageType="tns:deleteRequest" bpdm:linkedPart="deleteRequest" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:opMsgType="0" bpdm:operation="delete"></bpel:literal>
+                                    </bpel:from>
+                                </bpel:variable>
+                                <bpel:variable name="tnsDeleteResponseMsg" messageType="tns:okResponse" binding="tns:TaskManagementServicesSOAP" operation="delete" opMsgType="1" bpdm:id="_k5o4UBr9Ed-YtemmdqGE-A" bpdm:messageIds="inc:_k4QYQBr9Ed-YtemmdqGE-A"/>
+                            </bpel:variables>
+                            <bpel:sequence>
+                                <bpdm:messagingtask operation="authenticateUser" partnerLink="processAndTMSForPortServicePlkVar" portType="token-service:TokenService" isMyRole="false" enableSharing="false" bpdm:label="get token" bpdm:ID="_MtzRIIEHEd6PXYQfGA_ZIQ">
+                                    <bpdm:linkset bpdm:type="assignments">
+                                        <bpel:copy>
+                                            <bpel:from>"admin"</bpel:from>
+                                            <bpel:to>$token-serviceAuthenticateUserRequestMsg.payload/token-service:user</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="99123980" targetPath="$token-serviceAuthenticateUserRequestMsg.payload/token-service:user" targetedBy="11042533-arg0"></mapper:vertice>
+  <mapper:vertice id="11042533" dimension="78x24" location="324,36">
+    <mapper:value>"admin"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                                        </bpel:copy>
+                                        <bpel:copy>
+                                            <bpel:from>"changeit"</bpel:from>
+                                            <bpel:to>$token-serviceAuthenticateUserRequestMsg.payload/token-service:password</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1650442270" targetPath="$token-serviceAuthenticateUserRequestMsg.payload/token-service:password" targetedBy="1701225701-arg0"></mapper:vertice>
+  <mapper:vertice id="1701225701" dimension="78x24" location="324,84">
+    <mapper:value>"changeit"</mapper:value>
+  </mapper:vertice>
+</mapper:mapperLink>
+                                        </bpel:copy>
+                                    </bpdm:linkset>
+                                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="token-serviceAuthenticateUserRequestMsg" bpdm:msgVarScopeId="_f2y_MIGfEd6H9_nIEjYbDg" bpdm:variableIsManaged="true" bpdm:messageType="token-service:authenticateUser" bpdm:binding="token-service:TokenServiceSOAP" bpdm:ID="_enVMwBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="token-serviceAuthenticateUserResponseMsg" bpdm:msgVarScopeId="_f2y_MIGfEd6H9_nIEjYbDg" bpdm:variableIsManaged="true" bpdm:messageType="token-service:authenticateUserResponse" bpdm:binding="token-service:TokenServiceSOAP" bpdm:ID="_e6ag0Br9Ed-YtemmdqGE-A"></bpdm:linkset>
+                                </bpdm:messagingtask>
+                                <bpdm:messagingtask operation="delete" partnerLink="processAndTMSForPortTaskManagementServicesSOAPPlkVar" portType="tns:TaskManagementServicesPortType" isMyRole="false" enableSharing="false" bpdm:label="delete task" bpdm:ID="_hN9mcIGfEd6H9_nIEjYbDg">
+                                    <bpdm:linkset bpdm:type="assignments">
+                                        <bpel:copy>
+                                            <bpel:from>$token-serviceAuthenticateUserResponseMsg.payload/token-service:token</bpel:from>
+                                            <bpel:to>$tnsDeleteRequestMsg.deleteRequest/tns:participantToken</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="319385911" targetPath="$tnsDeleteRequestMsg.deleteRequest/tns:participantToken" targetedBy="1483848502-arg0"></mapper:vertice>
+  <mapper:vertice id="1483848502" sourcePath="$token-serviceAuthenticateUserResponseMsg.payload/token-service:token"></mapper:vertice>
+</mapper:mapperLink>
+                                        </bpel:copy>
+                                        <bpel:copy>
+                                            <bpel:from>$form1CreateTaskResponseMsg.root/form1:taskMetaData/form1:taskId</bpel:from>
+                                            <bpel:to>$tnsDeleteRequestMsg.deleteRequest/tns:taskId</bpel:to>
+<mapper:mapperLink>
+  <mapper:vertice id="1897591226" targetPath="$tnsDeleteRequestMsg.deleteRequest/tns:taskId" targetedBy="1363945089-arg0"></mapper:vertice>
+  <mapper:vertice id="1363945089" sourcePath="$form1CreateTaskResponseMsg.root/form1:taskMetaData/form1:taskId"></mapper:vertice>
+</mapper:mapperLink>
+                                        </bpel:copy>
+                                    </bpdm:linkset>
+                                    <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="tnsDeleteRequestMsg" bpdm:msgVarScopeId="_f2y_MIGfEd6H9_nIEjYbDg" bpdm:variableIsManaged="true" bpdm:messageType="tns:deleteRequest" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:ID="_kmsHIBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                                    <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="tnsDeleteResponseMsg" bpdm:msgVarScopeId="_f2y_MIGfEd6H9_nIEjYbDg" bpdm:variableIsManaged="true" bpdm:messageType="tns:okResponse" bpdm:binding="tns:TaskManagementServicesSOAP" bpdm:ID="_k4QYQBr9Ed-YtemmdqGE-A"></bpdm:linkset>
+                                    <bpdm:thrownFault msgFaultNcName="accessDeniedFault" msgFaultTypeQname="tns:accessDeniedFault"/>
+                                    <bpdm:thrownFault msgFaultNcName="invalidInputMessageFault" msgFaultTypeQname="tns:invalidInputMessageFault"/>
+                                    <bpdm:thrownFault msgFaultNcName="unavailableTaskFault" msgFaultTypeQname="tns:unavailableTaskFault"/>
+                                    <bpdm:thrownFault msgFaultNcName="invalidParticipantTokenFault" msgFaultTypeQname="tns:invalidParticipantTokenFault"/>
+                                </bpdm:messagingtask>
+                            </bpel:sequence>
+                        </bpel:scope>
+                    </bpel:onAlarm>
+                </bpel:eventHandlers>
+                <bpel:sequence>
+                    <bpdm:messagingtask operation="notifyTaskCompletion" partnerLink="wFmagic_5LS62IEGEd6PXYQfGA_ZIQPlkVar" portType="form1:Process" isMyRole="true" enableSharing="false" bpdm:label="receive task" bpdm:ID="_smogYIEGEd6PXYQfGA_ZIQ">
+                        <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="form1NotifyTaskCompletionRequestMsg" bpdm:msgVarScopeId="_D7bckIEHEd6PXYQfGA_ZIQ" bpdm:variableIsManaged="true" bpdm:messageType="form1:notifyTaskCompletionRequest" bpdm:ID="_7oWMEIEGEd6PXYQfGA_ZIQ"></bpdm:linkset>
+                        <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="form1NotifyTaskCompletionResponseMsg" bpdm:msgVarScopeId="_D7bckIEHEd6PXYQfGA_ZIQ" bpdm:variableIsManaged="true" bpdm:messageType="form1:notifyTaskCompletionResponse" bpdm:ID="_8DBV4IEGEd6PXYQfGA_ZIQ"></bpdm:linkset>
+                    </bpdm:messagingtask>
+                </bpel:sequence>
+            </bpel:scope>
+            <bpdm:messagingtask eventType="end: empty" bpdm:label="Empty_End_Event" bpdm:ID="_xGc3gIKvEd6dmPTveoCHVg"></bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

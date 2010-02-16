@@ -7,6 +7,8 @@ For each process description, see below
 Show how to pass attachments from one task to an other one
 === CreateExample
 Show how to create and complete tasks using only the different Tempo APIs
+=== CreateDelete
+Show how to create and complete tasks, and delete the task completely if it has not been completed on time.
 === Escalate
 Shows how a task can be escalated to other users, when an event has occured.
 === LoopProject

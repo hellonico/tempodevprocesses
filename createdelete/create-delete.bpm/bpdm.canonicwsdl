@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:tns="http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:token-service="http://tempo.intalio.org/security/tokenService/" xmlns:process="http://thisdiagram/process" xmlns:diag="http://thisdiagram" xmlns:form1="http://example.com/form/xform" xmlns:TMS="http://thisdiagram/TMS" xmlns:form="http://example.com/form/xform/attachments" xmlns:variable="http://www.example.org/variable" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_gBXpAIEGEd6PXYQfGA_ZIQ" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="processAndConsole" bpdm:poolOneId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="process" bpdm:poolTwoId="_gBXpBoEGEd6PXYQfGA_ZIQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Console">
+    <pnlk:role name="process_for_Console" portType="process:ForConsole" bpdm:thisPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ">
+      <wsdl:portType name="ForConsole">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_gBXpCIEGEd6PXYQfGA_ZIQ._nPAUYIEGEd6PXYQfGA_ZIQ.">
+          <wsdl:input message="process:EventStartMessageRequest" name="EventStartMessage" bpdm:canid="_nPAUaYEGEd6PXYQfGA_ZIQ" bpdm:senderId="_gBXpCIEGEd6PXYQfGA_ZIQ" bpdm:receiverId="_nPAUYIEGEd6PXYQfGA_ZIQ" bpdm:senderName="init" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:bodyPartElemName="EventStartMessageRequest" bpdm:bodyPartElemType="xs:string"></wsdl:input>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="UiAndProcess" bpdm:poolOneId="_iYw-MIEGEd6PXYQfGA_ZIQ" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="UI" bpdm:poolTwoId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="process">
+    <pnlk:role name="UI_for_process" portType="{http://thisdiagram/UI}Forprocess" bpdm:thisPoolId="_iYw-MIEGEd6PXYQfGA_ZIQ">
+      <wsdl:portType name="Forprocess">
+        <wsdl:operation name="form-create" bpdm:canid="_5LS62IEGEd6PXYQfGA_ZIQ._oK6jAIEGEd6PXYQfGA_ZIQ." bpdm:dataobjectPointer="project:///form.xform.all.wsdl?wsdloperationbound={http://example.com/form/xform}WorkflowSoapService/xformPort/createTask">
+          <wsdl:input message="form1:createTaskRequest" name="form-create" bpdm:canid="_6P_SAIEGEd6PXYQfGA_ZIQ" bpdm:senderId="_oK6jAIEGEd6PXYQfGA_ZIQ" bpdm:receiverId="_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:senderName="create  task" bpdm:receiverName="form-create" bpdm:receiverPoolId="_iYw-MIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForBoundOperation={http://example.com/form/xform}WorkflowSoapService/xformPort/createTask/input/createTaskRequest" bpdm:plnkTypeKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:plnkVarKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ"></wsdl:input>
+          <wsdl:output message="form1:createTaskResponse" name="form-createResponse" bpdm:canid="_7CDoIIEGEd6PXYQfGA_ZIQ" bpdm:senderId="_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:receiverId="_oK6jAIEGEd6PXYQfGA_ZIQ" bpdm:senderName="form-create" bpdm:receiverName="create  task" bpdm:receiverPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForBoundOperation={http://example.com/form/xform}WorkflowSoapService/xformPort/createTask/output/createTaskResponse" bpdm:plnkTypeKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:plnkVarKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+    <pnlk:role name="process_for_UI" portType="process:ForUI" bpdm:thisPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ">
+      <wsdl:portType name="ForUI">
+        <wsdl:operation name="receive_task" bpdm:canid="_5LcEyIEGEd6PXYQfGA_ZIQ._smogYIEGEd6PXYQfGA_ZIQ." bpdm:dataobjectPointer="project:///form.xform.all.wsdl?wsdloperation={http://example.com/form/xform}Process/notifyTaskCompletion">
+          <wsdl:input message="form1:notifyTaskCompletionRequest" name="receive_task" bpdm:canid="_81slMIGkEd6H9_nIEjYbDg" bpdm:senderId="_5LcEyIEGEd6PXYQfGA_ZIQ" bpdm:receiverId="_smogYIEGEd6PXYQfGA_ZIQ" bpdm:senderName="form-complete" bpdm:receiverName="receive task" bpdm:receiverPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form/xform}Process/notifyTaskCompletion/input/notifyTaskCompletionRequest" bpdm:plnkTypeKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:plnkVarKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ"></wsdl:input>
+          <wsdl:output message="form1:notifyTaskCompletionResponse" name="receive_taskResponse" bpdm:canid="_9q5H0IGkEd6H9_nIEjYbDg" bpdm:senderId="_smogYIEGEd6PXYQfGA_ZIQ" bpdm:receiverId="_5LcEyIEGEd6PXYQfGA_ZIQ" bpdm:senderName="receive task" bpdm:receiverName="form-complete" bpdm:receiverPoolId="_iYw-MIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///form.xform.all.wsdl?messageForOperation={http://example.com/form/xform}Process/notifyTaskCompletion/output/notifyTaskCompletionResponse" bpdm:plnkTypeKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:plnkVarKey="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="WFmagic_5LS62IEGEd6PXYQfGA_ZIQ" bpdm:canPlkId="_iYw-MIEGEd6PXYQfGA_ZIQ-_hvVmsIEGEd6PXYQfGA_ZIQ">
+    <pnlk:role name="UI_for_processForXformPort" portType="form1:Workflow"></pnlk:role>
+    <pnlk:role name="process_for_UIForThePortTypeProcess" portType="form1:Process"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="processAndTMS" bpdm:poolOneId="_ZghicIEXEd6UXY472UTn2w" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="TMS" bpdm:poolTwoId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="process">
+    <pnlk:role name="TMS_for_process" portType="TMS:Forprocess" bpdm:thisPoolId="_ZghicIEXEd6UXY472UTn2w">
+      <wsdl:portType name="Forprocess">
+        <wsdl:operation name="authenticateUser" bpdm:canid="_MtzRIIEHEd6PXYQfGA_ZIQ._d7D8oBr9Ed-YtemmdqGE-A." bpdm:dataobjectPointer="project:///token-service.wsdl?wsdloperationbound={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser">
+          <wsdl:input message="token-service:authenticateUserRequest" name="authenticateUser" bpdm:canid="_enVMwBr9Ed-YtemmdqGE-A" bpdm:senderId="_MtzRIIEHEd6PXYQfGA_ZIQ" bpdm:receiverId="_d7D8oBr9Ed-YtemmdqGE-A" bpdm:senderName="get token" bpdm:receiverName="authenticateUser" bpdm:receiverPoolId="_ZghicIEXEd6UXY472UTn2w" bpdm:dataobjectPointer="project:///token-service.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/input/authenticateUserRequest"></wsdl:input>
+          <wsdl:output message="token-service:authenticateUserResponse" name="authenticateUserResponse" bpdm:canid="_e6ag0Br9Ed-YtemmdqGE-A" bpdm:senderId="_d7D8oBr9Ed-YtemmdqGE-A" bpdm:receiverId="_MtzRIIEHEd6PXYQfGA_ZIQ" bpdm:senderName="authenticateUser" bpdm:receiverName="get token" bpdm:receiverPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///token-service.wsdl?messageForBoundOperation={http://tempo.intalio.org/security/tokenService/}TokenService/Service/authenticateUser/output/authenticateUserResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="delete" bpdm:canid="_hN9mcIGfEd6H9_nIEjYbDg._iXMwwBr9Ed-YtemmdqGE-A." bpdm:dataobjectPointer="project:///TaskManagementServices.wsdl?wsdloperationbound={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete">
+          <wsdl:input message="tns:deleteRequest" name="delete" bpdm:canid="_kmsHIBr9Ed-YtemmdqGE-A" bpdm:senderId="_hN9mcIGfEd6H9_nIEjYbDg" bpdm:receiverId="_iXMwwBr9Ed-YtemmdqGE-A" bpdm:senderName="delete task" bpdm:receiverName="delete" bpdm:receiverPoolId="_ZghicIEXEd6UXY472UTn2w" bpdm:dataobjectPointer="project:///TaskManagementServices.wsdl?messageForBoundOperation={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete/input/deleteRequest"></wsdl:input>
+          <wsdl:output message="tns:deleteResponse" name="deleteResponse" bpdm:canid="_k4QYQBr9Ed-YtemmdqGE-A" bpdm:senderId="_iXMwwBr9Ed-YtemmdqGE-A" bpdm:receiverId="_hN9mcIGfEd6H9_nIEjYbDg" bpdm:senderName="delete" bpdm:receiverName="delete task" bpdm:receiverPoolId="_hvVmsIEGEd6PXYQfGA_ZIQ" bpdm:dataobjectPointer="project:///TaskManagementServices.wsdl?messageForBoundOperation={http://www.intalio.com/BPMS/Workflow/TaskManagementServices-20051109/}TaskManagementServices/TaskManagementServicesSOAP/delete/output/deleteResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="processAndTMSForPortServicePlk" bpdm:canPlkId="_hvVmsIEGEd6PXYQfGA_ZIQ-_ZghicIEXEd6UXY472UTn2w">
+    <pnlk:role name="TMS_for_process" portType="token-service:TokenService"></pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="processAndTMSForPortTaskManagementServicesSOAPPlk" bpdm:canPlkId="_hvVmsIEGEd6PXYQfGA_ZIQ-_ZghicIEXEd6UXY472UTn2w">
+    <pnlk:role name="TMS_for_process" portType="tns:TaskManagementServicesPortType"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>
